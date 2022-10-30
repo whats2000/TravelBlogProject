@@ -493,23 +493,23 @@ template {
 **********************************/
 /* Global */
 /* homepage.html */
-main {
+main section#carousel-travel {
   margin-top: 48px;
 }
-main div.carousel-item {
+main section#carousel-travel div.carousel-item {
   padding: 0px 30%;
   background-color: black;
 }
-main div.carousel-item img {
+main section#carousel-travel div.carousel-item img {
   height: 300px;
   width: 225px;
 }
-main h5 {
+main section#carousel-travel h5 {
   font-size: 1em;
   font-weight: bold;
   margin: 1em 0;
 }
-main p {
+main section#carousel-travel p {
   font-size: 0.5em;
   margin: 1em 0;
 }

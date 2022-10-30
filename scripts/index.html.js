@@ -1,3 +1,4 @@
+// Script from https://www.w3schools.com/HOWTO/howto_html_include.asp
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */

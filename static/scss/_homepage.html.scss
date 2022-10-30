@@ -1,0 +1,22 @@
+/* homepage.html */
+
+main {
+    margin-top: 48px;
+    div.carousel-item {
+        padding: 0px 30%;
+        background-color: black;
+        img {
+            height: 300px;
+            width: 225px;
+        }
+    }
+    h5 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 1em 0
+    }
+    p {
+        font-size: .5em;
+        margin: 1em 0
+    }
+}

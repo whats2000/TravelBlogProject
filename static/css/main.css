@@ -492,41 +492,55 @@ template {
 *
 **********************************/
 /* Global */
-/* homepage.html */
-main section#carousel-travel {
-  margin-top: 48px;
+footer {
+  margin: 20px;
 }
-main section#carousel-travel div.carousel-item {
-  padding: 0px 30%;
+
+/* carousel.html */
+section#carousel-travel div.carousel-inner div.carousel-item {
   background-color: black;
 }
-main section#carousel-travel div.carousel-item img {
-  height: 300px;
-  width: 225px;
+section#carousel-travel div.carousel-inner div.carousel-item img {
+  max-height: 500px;
 }
-main section#carousel-travel h5 {
+section#carousel-travel h5 {
   font-size: 1em;
   font-weight: bold;
   margin: 1em 0;
 }
-main section#carousel-travel p {
+section#carousel-travel p {
   font-size: 0.5em;
   margin: 1em 0;
 }
 
-main section#post {
-  padding: 50px;
+/* post.html */
+section#post {
+  margin-top: 50px;
 }
 
-main section#tips {
-  padding: 50px;
+/* tips.html */
+section#tips {
+  margin-top: 50px;
 }
-main section#tips h4 {
-  font-size: 1.5em;
-  font-weight: bold;
+section#tips article.blog-post {
+  padding: 15px;
+}
+section#tips div.position-sticky {
+  top: 1em;
+}
+section#tips p {
   padding: 15px 0px;
 }
-main section#tips h5 {
+section#tips h3 {
+  font-size: 2em;
+  font-weight: bold;
+}
+section#tips h4 {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+section#tips h5 {
   font-size: 1em;
   font-weight: bold;
   padding: 10px 0px;

@@ -517,6 +517,22 @@ section#carousel-travel p {
 section#post {
   margin-top: 50px;
 }
+section#post img.card-img {
+  height: 223px;
+}
+section#post h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+section#post h4 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+section#post h5 {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px 0px;
+}
 
 /* tips.html */
 section#tips {
@@ -525,22 +541,27 @@ section#tips {
 section#tips article.blog-post {
   padding: 15px;
 }
-section#tips div.position-sticky {
+section#tips div#tips-nav div.position-sticky {
   top: 1em;
+}
+@media only screen and (max-width: 768px) {
+  section#tips div#tips-nav {
+    display: none;
+  }
 }
 section#tips p {
   padding: 15px 0px;
 }
-section#tips h3 {
+section#tips h2 {
   font-size: 2em;
   font-weight: bold;
 }
-section#tips h4 {
+section#tips h3 {
   font-size: 1.5em;
   font-weight: bold;
   padding: 10px 0px;
 }
-section#tips h5 {
+section#tips h4 {
   font-size: 1em;
   font-weight: bold;
   padding: 10px 0px;

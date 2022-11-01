@@ -1,60 +1,136 @@
 <section class="accordion container" id="post">
+    <h2 class="pb-4 mb-4 fst-italic border-bottom text-center">
+        推薦景點
+    </h2>
     <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                <img src="/static/images/carousel/carousel1.jpg" class="d-block img-fluid me-5" alt="圖片無法載入">
-                地點 #1
+        <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="card w-100 m-5">
+                    <img src="/static/images/carousel/carousel1.jpg" alt="圖片無法載入">
+                    <div class="card-img-overlay d-flex flex-end align-items-center justify-content-center">
+                        <figcaption class="text-center">
+                            <h4 class="card-title">地點 #1</h4>
+                            <p>This is some placeholder content for the scrollspy page.</p>
+                        </figcaption>
+                    </div>
+                </div>
             </button>
-        </h2>
+        </h3>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
+            data-bs-parent="#post">
+            <div class="accordion-bodyc p-5">
+                <h5>標題一</h5>
+                <p> And yes, this is the last block of representative placeholder content. Again,
+                    not
+                    really intended
+                    to
+                    be actually read, simply here to give you a better view of what this would look like with
+                    some
+                    actual content. Your content.
+                </p>
+
+                <h5>標題二</h5>
+                <p> And yes, this is the last block of representative placeholder content. Again,
+                    not
+                    really intended
+                    to
+                    be actually read, simply here to give you a better view of what this would look like with
+                    some
+                    actual content. Your content.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div class="container text-start p-5">
+                    <div class="row">
+                        <div class="col justify-content-center align-self-center">
+                            <div class="p-3 h-100">
+                                <h4 class="mb-2">地點 #2</h4>
+                                <p>This is some placeholder content for the scrollspy page.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="/static/images/carousel/carousel2.jpg" class="d-block img-fluid float-end"
+                                alt="圖片無法載入">
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </h3>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#post">
             <div class="accordion-body">
-                <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page,
-                    the
-                    appropriate navigation link is highlighted. It's repeated throughout the component example. We
-                    keep
-                    adding some more example copy here to emphasize the scrolling and highlighting.</p>
+                <h5>標題一</h5>
+                <p> And yes, this is the last block of representative placeholder content. Again,
+                    not
+                    really intended
+                    to
+                    be actually read, simply here to give you a better view of what this would look like with
+                    some
+                    actual content. Your content.
+                </p>
+
+                <h5>標題二</h5>
+                <p> And yes, this is the last block of representative placeholder content. Again,
+                    not
+                    really intended
+                    to
+                    be actually read, simply here to give you a better view of what this would look like with
+                    some
+                    actual content. Your content.
+                </p>
             </div>
         </div>
     </div>
 
     <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                aria-controls="collapseTwo">
-                <img src="/static/images/carousel/carousel2.jpg" class="d-block img-fluid me-5" alt="圖片無法載入">
-                地點 #2
+        <h3 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="container text-end p-5">
+                    <div class="row">
+                        <div class="col">
+                            <img src="/static/images/carousel/carousel3.jpg" class="d-block img-fluid me-5"
+                                alt="圖片無法載入">
+                        </div>
+                        <div class="col justify-content-center align-self-center">
+                            <div class="p-3 h-100">
+                                <h4>地點 #3</h4>
+                                <p>This is some placeholder content for the scrollspy page.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page,
-                    the
-                    appropriate navigation link is highlighted. It's repeated throughout the component example. We
-                    keep
-                    adding some more example copy here to emphasize the scrolling and highlighting.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                aria-controls="collapseThree">
-                <img src="/static/images/carousel/carousel3.jpg" class="d-block img-fluid me-5" alt="圖片無法載入">
-                地點 #3
-            </button>
-        </h2>
+        </h3>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample">
+            data-bs-parent="#post">
             <div class="accordion-body">
-                <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page,
-                    the
-                    appropriate navigation link is highlighted. It's repeated throughout the component example. We
-                    keep
-                    adding some more example copy here to emphasize the scrolling and highlighting.</p>
+                <h5>標題一</h5>
+                <p> And yes, this is the last block of representative placeholder content. Again,
+                    not
+                    really intended
+                    to
+                    be actually read, simply here to give you a better view of what this would look like with
+                    some
+                    actual content. Your content.
+                </p>
+
+                <h5>標題二</h5>
+                <p> And yes, this is the last block of representative placeholder content. Again,
+                    not
+                    really intended
+                    to
+                    be actually read, simply here to give you a better view of what this would look like with
+                    some
+                    actual content. Your content.
+                </p>
             </div>
         </div>
     </div>

@@ -1,9 +1,14 @@
 @import "reset";
 @import "normalize";
 @import "basic";
-@import "footer.html";
-@import "carousel.html";
-@import "post.html";
-@import "tips.html";
-@import "index.html";
-@import "navbar.html";
+/**********************************
+*
+*          index.html
+*
+**********************************/
+@import "index/about.html";
+@import "index/carousel.html";
+@import "index/footer.html";
+@import "index/navbar.html";
+@import "index/post.html";
+@import "index/tips.html";

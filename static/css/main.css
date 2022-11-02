@@ -146,6 +146,11 @@ a {
   text-decoration: none;
 }
 
+/**********************************
+*
+*          css normalize
+*
+**********************************/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -492,11 +497,12 @@ template {
 *
 **********************************/
 /* Global */
-footer {
-  margin: 20px;
-}
-
-/* carousel.html */
+/**********************************
+*
+*          index.html
+*
+**********************************/
+/* about.html */ /* carousel.html */
 section#carousel-travel div.carousel-inner div.carousel-item {
   background-color: black;
 }
@@ -511,6 +517,19 @@ section#carousel-travel h5 {
 section#carousel-travel p {
   font-size: 0.5em;
   margin: 1em 0;
+}
+
+/* footer.html */
+footer {
+  margin: 20px;
+}
+
+/* navbar.html */
+nav#navbar {
+  transition: top 0.3s, background-color 0.5s;
+}
+nav#navbar.nav-bg-black {
+  background-color: black;
 }
 
 /* post.html */
@@ -565,6 +584,4 @@ section#tips h4 {
   font-size: 1em;
   font-weight: bold;
   padding: 10px 0px;
-}
-
-/* index.html */ /* navbar.html *//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

@@ -613,12 +613,12 @@ section#post div.img-container div.img-hov div.img-hov-item:hover div.img-hov-co
 section#post div.img-container div.img-hov div.img-hov-item:hover figcaption.img-hov-text {
   opacity: 1;
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
   section#post div.img-container div.display-2-col {
     display: none;
   }
 }
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 769px) {
   section#post div.img-container div.display-1-col {
     display: none;
   }
@@ -631,7 +631,7 @@ section#post p {
   font-size: 1em;
   margin: 0.5em 0;
 }
-@media only screen and (min-width: 640px) and (max-width: 992px) {
+@media only screen and (min-width: 769px) and (max-width: 992px) {
   section#post p {
     display: none;
   }

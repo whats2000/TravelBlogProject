@@ -1,24 +1,74 @@
 /* post.html */
 section#post {
-    margin-top: 50px;
 
-    img.card-img {
-        height: 223px;
+    // About opacity image https://stackoverflow.com/questions/50543929/how-do-i-center-this-image-and-hover-effect
+    div.img-container {
+        div.img-hov {
+            display: flex;
+
+            div.img-hov-item {
+                position: relative;
+
+                div.img-hov-cover {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    opacity: 0;
+                    transition: 0.3s ease;
+                    background-color: black;
+                }
+
+                figcaption.img-hov-text {
+                    color: white;
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transition: 0.5s ease;
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                }
+
+                &:hover div.img-hov-cover {
+                    opacity: 0.5;
+                }
+
+                &:hover figcaption.img-hov-text {
+                    opacity: 1;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 640px) {
+            div.display-2-col {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 641px) {
+            div.display-1-col {
+                display: none;
+            }
+        }
     }
 
-    h2 {
-        font-size: 2em;
-        font-weight: bold;
-    }
 
-    h4 {
+
+    h3 {
         font-size: 1.5em;
         font-weight: bold;
     }
 
-    h5 {
+    p {
         font-size: 1em;
-        font-weight: bold;
-        padding: 10px 0px;
+        margin: 0.5em 0
+    }
+
+    @media only screen and (min-width: 640px) and (max-width: 992px) {
+        p {
+            display: none;
+        }
     }
 }

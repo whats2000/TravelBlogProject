@@ -1,40 +1,49 @@
 /* tips.html */
 
 section#tips {
-    margin-top: 50px;
+    div.img-container {
+        background-color: lightgray;
 
-    article.blog-post {
-        padding: 15px;
+        div.tips-item {
+            position: relative;
+
+            figcaption.tips-item-text {
+                color: white;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transition: 0.5s ease;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+            }
+
+            &:hover figcaption.tips-item-text {
+                opacity: 1;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+                transition: transform 0.5s;
+                z-index: 1;
+            }
+        }
     }
 
-    div#tips-nav {
-        div.position-sticky {
-            top: 1em;
-        }
-
-        @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 768px) {
+        div.display-4-col {
             display: none;
         }
     }
 
-    p {
-        padding: 15px 0px;
-    }
-
-    h2 {
-        font-size: 2em;
-        font-weight: bold;
+    @media only screen and (min-width: 769px) {
+        div.display-1-col {
+            display: none;
+        }
     }
 
     h3 {
         font-size: 1.5em;
         font-weight: bold;
-        padding: 10px 0px;
-    }
-
-    h4 {
-        font-size: 1em;
-        font-weight: bold;
-        padding: 10px 0px;
     }
 }

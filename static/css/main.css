@@ -638,34 +638,41 @@ section#post p {
 }
 
 /* tips.html */
-section#tips {
-  margin-top: 50px;
+section#tips div.img-container {
+  background-color: lightgray;
 }
-section#tips article.blog-post {
-  padding: 15px;
+section#tips div.img-container div.tips-item {
+  position: relative;
 }
-section#tips div#tips-nav div.position-sticky {
-  top: 1em;
+section#tips div.img-container div.tips-item figcaption.tips-item-text {
+  color: white;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 0.5s ease;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+section#tips div.img-container div.tips-item:hover figcaption.tips-item-text {
+  opacity: 1;
+}
+section#tips div.img-container div.tips-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+  z-index: 1;
 }
 @media only screen and (max-width: 768px) {
-  section#tips div#tips-nav {
+  section#tips div.display-4-col {
     display: none;
   }
 }
-section#tips p {
-  padding: 15px 0px;
-}
-section#tips h2 {
-  font-size: 2em;
-  font-weight: bold;
+@media only screen and (min-width: 769px) {
+  section#tips div.display-1-col {
+    display: none;
+  }
 }
 section#tips h3 {
   font-size: 1.5em;
   font-weight: bold;
-  padding: 10px 0px;
-}
-section#tips h4 {
-  font-size: 1em;
-  font-weight: bold;
-  padding: 10px 0px;
 }/*# sourceMappingURL=main.css.map */

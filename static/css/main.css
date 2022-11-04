@@ -526,10 +526,11 @@ section#about p {
 /* carousel.html */
 section#carousel-travel div.carousel-inner div.carousel-item {
   background-color: black;
-  background-size: cover;
+  height: 100vh;
 }
 section#carousel-travel div.carousel-inner div.carousel-item img {
-  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section#carousel-travel .bounce {
   -webkit-animation: bounce 2s infinite;
@@ -668,7 +669,7 @@ section#tips div.img-container div.tips-item:hover {
   }
 }
 @media only screen and (min-width: 769px) {
-  section#tips div.display-1-col {
+  section#tips div.display-2-col {
     display: none;
   }
 }

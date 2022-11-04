@@ -4,10 +4,10 @@ section#carousel-travel {
     div.carousel-inner {
         div.carousel-item {
             background-color: black;
-            background-size: cover;
+            height: 100vh;
 
             img {
-                height: 100vh;
+                object-fit: cover;
             }
         }
     }

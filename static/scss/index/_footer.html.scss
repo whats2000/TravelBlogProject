@@ -1,4 +1,31 @@
 /* footer.html */
 footer {
-    margin: 20px;
+    color: white;
+    background-color: #494949;
+
+    img {
+        object-fit: cover;
+    }
+
+    a.nav-link,
+    a.icon-link {
+        color: white;
+
+        &:hover {
+            color: gray;
+        }
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding-top: 0.5em;
+    }
+
+    h5 {
+        font-size: 1em;
+        font-weight: bold;
+        border-bottom: 1px solid white;
+        margin: 1em 0;
+        padding: 0.5em 0;
+    }
 }

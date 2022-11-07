@@ -570,7 +570,31 @@ section#carousel-travel p {
 
 /* footer.html */
 footer {
-  margin: 20px;
+  color: white;
+  background-color: #494949;
+}
+footer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer a.nav-link,
+footer a.icon-link {
+  color: white;
+}
+footer a.nav-link:hover,
+footer a.icon-link:hover {
+  color: gray;
+}
+footer h2 {
+  font-size: 1.5em;
+  padding-top: 0.5em;
+}
+footer h5 {
+  font-size: 1em;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  margin: 1em 0;
+  padding: 0.5em 0;
 }
 
 /* navbar.html */

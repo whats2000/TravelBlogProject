@@ -3,6 +3,9 @@
 *          css reset
 *
 **********************************/
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap");
 html,
 body,
 div,
@@ -513,8 +516,12 @@ template {
     display: none;
   }
 }
+section#about h2 {
+  font-family: "Handlee", cursive;
+}
 section#about h3 {
   font-size: 1.5em;
+  font-family: "Kalam", cursive;
   border-bottom: 1px solid lightgray;
   padding: 0.5em 0;
 }
@@ -532,7 +539,7 @@ section#carousel-travel div.carousel-inner div.carousel-item img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-section#carousel-travel .bounce {
+section#carousel-travel div.bounce {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
 }
@@ -558,8 +565,9 @@ section#carousel-travel .bounce {
     transform: translateY(0);
   }
 }
-section#carousel-travel h5 {
+section#carousel-travel h2 {
   font-size: 1.5em;
+  font-family: "Handlee", cursive;
   font-weight: bold;
   margin: 1em 0;
 }
@@ -585,12 +593,18 @@ footer a.nav-link:hover,
 footer a.icon-link:hover {
   color: gray;
 }
+footer p.copy-right {
+  font-size: 0.5em;
+  color: gray;
+}
 footer h2 {
   font-size: 1.5em;
+  font-family: "Pacifico", cursive;
   padding-top: 0.5em;
 }
 footer h5 {
   font-size: 1em;
+  font-family: "Handlee", cursive;
   font-weight: bold;
   border-bottom: 1px solid white;
   margin: 1em 0;
@@ -603,6 +617,14 @@ nav#navbar {
 }
 nav#navbar.nav-bg-black {
   background-color: black;
+}
+nav#navbar a.navbar-brand {
+  font-size: 1.5em;
+  font-family: "Pacifico", cursive;
+}
+nav#navbar a.nav-link {
+  font-size: 1.25em;
+  font-family: "Handlee", cursive;
 }
 
 /* post.html */
@@ -647,6 +669,9 @@ section#post div.img-container div.img-hov div.img-hov-item:hover figcaption.img
   section#post div.img-container div.display-1-col {
     display: none;
   }
+}
+section#post h2 {
+  font-family: "Handlee", cursive;
 }
 section#post h3 {
   font-size: 1.5em;
@@ -696,6 +721,9 @@ section#tips div.img-container div.tips-item:hover {
   section#tips div.display-2-col {
     display: none;
   }
+}
+section#tips h2 {
+  font-family: "Handlee", cursive;
 }
 section#tips h3 {
   font-size: 1.5em;

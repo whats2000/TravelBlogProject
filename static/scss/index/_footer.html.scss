@@ -16,13 +16,21 @@ footer {
         }
     }
 
+    p.copy-right {
+        font-size: 0.5em;
+        color: gray
+    }
+
     h2 {
         font-size: 1.5em;
+        font-family: 'Pacifico', cursive;
         padding-top: 0.5em;
     }
 
     h5 {
         font-size: 1em;
+        font-family: 'Handlee',
+            cursive;
         font-weight: bold;
         border-bottom: 1px solid white;
         margin: 1em 0;

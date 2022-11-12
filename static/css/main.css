@@ -507,39 +507,39 @@ template {
 **********************************/
 /* about.html */
 @media only screen and (max-width: 768px) {
-  section#about div.display-2-col {
+  section#index-about div.display-2-col {
     display: none;
   }
 }
 @media only screen and (min-width: 769px) {
-  section#about div.display-1-col {
+  section#index-about div.display-1-col {
     display: none;
   }
 }
-section#about h2 {
+section#index-about h2 {
   font-family: "Handlee", cursive;
 }
-section#about h3 {
+section#index-about h3 {
   font-size: 1.5em;
   font-family: "Kalam", cursive;
   border-bottom: 1px solid lightgray;
   padding: 0.5em 0;
 }
-section#about p {
+section#index-about p {
   font-size: 1em;
   margin: 1em 0;
 }
 
 /* carousel.html */
-section#carousel-travel div.carousel-inner div.carousel-item {
+section#index-carousel-travel div.carousel-inner div.carousel-item {
   background-color: black;
   height: 100vh;
 }
-section#carousel-travel div.carousel-inner div.carousel-item img {
+section#index-carousel-travel div.carousel-inner div.carousel-item img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-section#carousel-travel div.bounce {
+section#index-carousel-travel div.bounce {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
 }
@@ -565,44 +565,44 @@ section#carousel-travel div.bounce {
     transform: translateY(0);
   }
 }
-section#carousel-travel h2 {
+section#index-carousel-travel h2 {
   font-size: 1.5em;
   font-family: "Handlee", cursive;
   font-weight: bold;
   margin: 1em 0;
 }
-section#carousel-travel p {
+section#index-carousel-travel p {
   font-size: 1em;
   margin: 1em 0;
 }
 
 /* footer.html */
-footer {
+footer#index-footer {
   color: white;
   background-color: #494949;
 }
-footer img {
+footer#index-footer img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-footer a.nav-link,
-footer a.icon-link {
+footer#index-footer a.nav-link,
+footer#index-footer a.icon-link {
   color: white;
 }
-footer a.nav-link:hover,
-footer a.icon-link:hover {
+footer#index-footer a.nav-link:hover,
+footer#index-footer a.icon-link:hover {
   color: gray;
 }
-footer p.copy-right {
+footer#index-footer p.copy-right {
   font-size: 0.5em;
   color: gray;
 }
-footer h2 {
+footer#index-footer h2 {
   font-size: 1.5em;
   font-family: "Pacifico", cursive;
   padding-top: 0.5em;
 }
-footer h5 {
+footer#index-footer h5 {
   font-size: 1em;
   font-family: "Handlee", cursive;
   font-weight: bold;
@@ -612,29 +612,29 @@ footer h5 {
 }
 
 /* navbar.html */
-nav#navbar {
+nav#index-navbar {
   transition: top 0.3s, background-color 0.5s;
 }
-nav#navbar.nav-bg-black {
+nav#index-navbar.nav-bg-black {
   background-color: black;
 }
-nav#navbar a.navbar-brand {
+nav#index-navbar a.navbar-brand {
   font-size: 1.5em;
   font-family: "Pacifico", cursive;
 }
-nav#navbar a.nav-link {
+nav#index-navbar a.nav-link {
   font-size: 1.25em;
   font-family: "Handlee", cursive;
 }
 
 /* post.html */
-section#post div.img-container div.img-hov {
+section#index-post div.img-container div.img-hov {
   display: flex;
 }
-section#post div.img-container div.img-hov div.img-hov-item {
+section#index-post div.img-container div.img-hov div.img-hov-item {
   position: relative;
 }
-section#post div.img-container div.img-hov div.img-hov-item div.img-hov-cover {
+section#index-post div.img-container div.img-hov div.img-hov-item div.img-hov-cover {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -644,7 +644,7 @@ section#post div.img-container div.img-hov div.img-hov-item div.img-hov-cover {
   transition: 0.3s ease;
   background-color: black;
 }
-section#post div.img-container div.img-hov div.img-hov-item figcaption.img-hov-text {
+section#index-post div.img-container div.img-hov div.img-hov-item figcaption.img-hov-text {
   color: white;
   opacity: 0;
   position: absolute;
@@ -654,47 +654,47 @@ section#post div.img-container div.img-hov div.img-hov-item figcaption.img-hov-t
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-section#post div.img-container div.img-hov div.img-hov-item:hover div.img-hov-cover {
+section#index-post div.img-container div.img-hov div.img-hov-item:hover div.img-hov-cover {
   opacity: 0.5;
 }
-section#post div.img-container div.img-hov div.img-hov-item:hover figcaption.img-hov-text {
+section#index-post div.img-container div.img-hov div.img-hov-item:hover figcaption.img-hov-text {
   opacity: 1;
 }
 @media only screen and (max-width: 768px) {
-  section#post div.img-container div.display-2-col {
+  section#index-post div.img-container div.display-2-col {
     display: none;
   }
 }
 @media only screen and (min-width: 769px) {
-  section#post div.img-container div.display-1-col {
+  section#index-post div.img-container div.display-1-col {
     display: none;
   }
 }
-section#post h2 {
+section#index-post h2 {
   font-family: "Handlee", cursive;
 }
-section#post h3 {
+section#index-post h3 {
   font-size: 1.5em;
   font-weight: bold;
 }
-section#post p {
+section#index-post p {
   font-size: 1em;
   margin: 0.5em 0;
 }
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-  section#post p {
+  section#index-post p {
     display: none;
   }
 }
 
 /* tips.html */
-section#tips div.img-container {
+section#index-tips div.img-container {
   background-color: lightgray;
 }
-section#tips div.img-container div.tips-item {
+section#index-tips div.img-container div.tips-item {
   position: relative;
 }
-section#tips div.img-container div.tips-item figcaption.tips-item-text {
+section#index-tips div.img-container div.tips-item figcaption.tips-item-text {
   color: white;
   opacity: 0;
   position: absolute;
@@ -704,28 +704,28 @@ section#tips div.img-container div.tips-item figcaption.tips-item-text {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-section#tips div.img-container div.tips-item:hover figcaption.tips-item-text {
+section#index-tips div.img-container div.tips-item:hover figcaption.tips-item-text {
   opacity: 1;
 }
-section#tips div.img-container div.tips-item:hover {
+section#index-tips div.img-container div.tips-item:hover {
   transform: scale(1.05);
   transition: transform 0.5s;
   z-index: 1;
 }
 @media only screen and (max-width: 768px) {
-  section#tips div.display-4-col {
+  section#index-tips div.display-4-col {
     display: none;
   }
 }
 @media only screen and (min-width: 769px) {
-  section#tips div.display-2-col {
+  section#index-tips div.display-2-col {
     display: none;
   }
 }
-section#tips h2 {
+section#index-tips h2 {
   font-family: "Handlee", cursive;
 }
-section#tips h3 {
+section#index-tips h3 {
   font-size: 1.5em;
   font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

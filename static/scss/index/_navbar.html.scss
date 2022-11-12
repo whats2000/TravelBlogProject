@@ -1,5 +1,5 @@
 /* navbar.html */
-nav#navbar {
+nav#index-navbar {
     transition: top 0.3s, background-color 0.5s;
 
     &.nav-bg-black {
@@ -11,7 +11,8 @@ nav#navbar {
         font-family: 'Pacifico', cursive;
     }
 
-    a.nav-link {font-size: 1.25em;
+    a.nav-link {
+        font-size: 1.25em;
         font-family: 'Handlee', cursive;
     }
 }

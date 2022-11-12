@@ -786,4 +786,25 @@ nav#tips-navbar a.nav-link {
   font-family: "Handlee", cursive;
 }
 
-/* topic.html *//*# sourceMappingURL=main.css.map */
+/* topic.html */
+section#tips-topic {
+  height: 100vh;
+}
+section#tips-topic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#tips-topic .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+section#tips-topic .Pacifico {
+  font-family: "Pacifico", cursive;
+}
+section#tips-topic h3 {
+  font-size: 4em;
+  color: white;
+}/*# sourceMappingURL=main.css.map */

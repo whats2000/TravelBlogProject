@@ -728,4 +728,62 @@ section#index-tips h2 {
 section#index-tips h3 {
   font-size: 1.5em;
   font-weight: bold;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/**********************************
+*
+*          tips.html
+*
+**********************************/
+/* content.html */ /* footer.html */
+footer#tips-footer {
+  color: white;
+  background-color: #494949;
+}
+footer#tips-footer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer#tips-footer a.nav-link,
+footer#tips-footer a.icon-link {
+  color: white;
+}
+footer#tips-footer a.nav-link:hover,
+footer#tips-footer a.icon-link:hover {
+  color: gray;
+}
+footer#tips-footer p.copy-right {
+  font-size: 0.5em;
+  color: gray;
+}
+footer#tips-footer h2 {
+  font-size: 1.5em;
+  font-family: "Pacifico", cursive;
+  padding-top: 0.5em;
+}
+footer#tips-footer h5 {
+  font-size: 1em;
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  margin: 1em 0;
+  padding: 0.5em 0;
+}
+
+/* navbar.html */
+nav#tips-navbar {
+  transition: top 0.3s, background-color 0.5s;
+}
+nav#tips-navbar.nav-bg-black {
+  background-color: black;
+}
+nav#tips-navbar a.navbar-brand {
+  font-size: 1.5em;
+  font-family: "Pacifico", cursive;
+}
+nav#tips-navbar a.nav-link {
+  font-size: 1.25em;
+  font-family: "Handlee", cursive;
+}
+
+/* topic.html *//*# sourceMappingURL=main.css.map */

@@ -739,6 +739,13 @@ section#index-tips h3 {
 section#tips-content #sitcky-tips-nav {
   transition: 0.3s;
 }
+section#tips-content h4 {
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+}
+section#tips-content p {
+  font-family: "Kalam", cursive;
+}
 
 /* footer.html */
 footer#tips-footer {

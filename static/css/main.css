@@ -786,4 +786,13 @@ nav#tips-navbar a.nav-link {
   font-family: "Handlee", cursive;
 }
 
-/* topic.html *//*# sourceMappingURL=main.css.map */
+/* topic.html */
+/**********************************
+*
+*          post1.html
+*
+**********************************/
+/*about html*/
+section#posts-content .card {
+  background-image: url("staticimagespostsposts1-1fade.jpg");
+}/*# sourceMappingURL=main.css.map */

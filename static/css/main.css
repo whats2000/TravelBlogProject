@@ -807,4 +807,8 @@ section#tips-topic .Pacifico {
 section#tips-topic h3 {
   font-size: 4em;
   color: white;
+}
+
+section#tips-content .Pacifico {
+  font-family: "Pacifico", cursive;
 }/*# sourceMappingURL=main.css.map */

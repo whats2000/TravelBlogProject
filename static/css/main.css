@@ -736,23 +736,28 @@ section#index-tips h3 {
 *
 **********************************/
 /* content.html */
-section#tips-content #sitcky-tips-nav {
+section#tips-content nav#sitcky-tips-nav {
+  top: 0px;
   transition: 0.3s;
 }
-section#tips-content h4 {
+section#tips-content h3 {
+  font-size: 2em;
   font-family: "Handlee", cursive;
   font-weight: bold;
+  margin: 20px 0px;
 }
 section#tips-content p {
-  font-family: "Kalam", cursive;
+  font-size: 1em;
+  padding: 10px;
 }
 section#tips-content a {
+  color: black;
   font-size: 30px;
   font-family: "Kalam", cursive;
-  color: lightblue;
 }
-section#tips-content a:hover {
-  color: black;
+section#tips-content a:hover, section#tips-content a:active {
+  color: white;
+  background-color: gray;
 }
 
 /* footer.html */

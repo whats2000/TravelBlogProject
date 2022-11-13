@@ -1,25 +1,30 @@
 /* content.html */
 section#tips-content {
-    #sitcky-tips-nav {
+    nav#sitcky-tips-nav {
+        top: 0px;
         transition: 0.3s;
     }
 
-    h4 {
+    h3 {
+        font-size: 2em;
         font-family: 'Handlee', cursive;
         font-weight: bold;
+        margin: 20px 0px;
     }
 
     p {
-        font-family: 'Kalam', cursive;
+        font-size: 1em;
+        padding: 10px;
     }
 
     a {
+        color: black;
         font-size: 30px;
         font-family: 'Kalam', cursive;
-        color: lightblue;
 
-        &:hover {
-            color: black;
+        &:hover, &:active {
+            color: white;
+            background-color: gray;
         }
     }
 

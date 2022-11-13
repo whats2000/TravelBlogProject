@@ -21,5 +21,4 @@ function navbar_scroll() {
     }
     prev_scroll_pos = current_scroll_pos;
 }
-
 window.onscroll = navbar_scroll;

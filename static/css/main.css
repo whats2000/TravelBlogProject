@@ -735,7 +735,12 @@ section#index-tips h3 {
 *          tips.html
 *
 **********************************/
-/* content.html */ /* footer.html */
+/* content.html */
+section#tips-content #sitcky-tips-nav {
+  transition: 0.3s;
+}
+
+/* footer.html */
 footer#tips-footer {
   color: white;
   background-color: #494949;

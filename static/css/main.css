@@ -735,7 +735,32 @@ section#index-tips h3 {
 *          tips.html
 *
 **********************************/
-/* content.html */ /* footer.html */
+/* content.html */
+section#tips-content nav#sitcky-tips-nav {
+  top: 0px;
+  transition: 0.3s;
+}
+section#tips-content h3 {
+  font-size: 2em;
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+section#tips-content p {
+  font-size: 1em;
+  padding: 10px;
+}
+section#tips-content a {
+  color: black;
+  font-size: 30px;
+  font-family: "Kalam", cursive;
+}
+section#tips-content a:hover, section#tips-content a:active {
+  color: white;
+  background-color: gray;
+}
+
+/* footer.html */
 footer#tips-footer {
   color: white;
   background-color: #494949;
@@ -786,4 +811,29 @@ nav#tips-navbar a.nav-link {
   font-family: "Handlee", cursive;
 }
 
-/* topic.html *//*# sourceMappingURL=main.css.map */
+/* topic.html */
+section#tips-topic {
+  height: 100vh;
+}
+section#tips-topic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#tips-topic .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+section#tips-topic .Pacifico {
+  font-family: "Pacifico", cursive;
+}
+section#tips-topic h3 {
+  font-size: 4em;
+  color: white;
+}
+
+section#tips-content .Pacifico {
+  font-family: "Pacifico", cursive;
+}/*# sourceMappingURL=main.css.map */

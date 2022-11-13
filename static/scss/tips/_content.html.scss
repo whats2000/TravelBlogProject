@@ -1,4 +1,31 @@
 /* content.html */
 section#tips-content {
-    
+    nav#sitcky-tips-nav {
+        top: 0px;
+        transition: 0.3s;
+    }
+
+    h3 {
+        font-size: 2em;
+        font-family: 'Handlee', cursive;
+        font-weight: bold;
+        margin: 20px 0px;
+    }
+
+    p {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    a {
+        color: black;
+        font-size: 30px;
+        font-family: 'Kalam', cursive;
+
+        &:hover, &:active {
+            color: white;
+            background-color: gray;
+        }
+    }
+
 }

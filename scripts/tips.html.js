@@ -11,12 +11,14 @@ function navbar_scroll() {
     if (current_scroll_pos < document.getElementById("tips-topic").offsetHeight)
         return;
 
-    if (prev_scroll_pos > current_scroll_pos)
+    if (prev_scroll_pos > current_scroll_pos) {
         document.getElementById("tips-navbar").style.top = "0";
-    else
+        document.getElementById("sitcky-tips-nav").style.top = `${document.getElementById("tips-navbar").offsetHeight}px`;
+    }
+    else {
         document.getElementById("tips-navbar").style.top = `-${document.getElementById("tips-navbar").offsetHeight}px`;
-
+        document.getElementById("sitcky-tips-nav").style.top = "0px";
+    }
     prev_scroll_pos = current_scroll_pos;
 }
-
 window.onscroll = navbar_scroll;

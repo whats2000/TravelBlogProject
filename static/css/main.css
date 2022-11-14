@@ -836,7 +836,37 @@ section#tips-topic h3 {
 *          posts.html
 *
 **********************************/
-/*about html*/ /* navbar.html */
+/* content.html */
+section#posts-content nav#sitcky-tips-nav {
+  top: 0px;
+  padding-top: 12px;
+  transition: 0.3s;
+}
+section#posts-content h3 {
+  font-size: 2em;
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+section#posts-content p {
+  font-size: 1em;
+  padding: 10px;
+  text-align: justify;
+}
+section#posts-content a {
+  color: black;
+  font-size: 30px;
+  font-family: "Kalam", cursive;
+}
+section#posts-content a:hover {
+  color: white;
+  background-color: gray;
+}
+section#posts-content h5 {
+  font-size: 21px;
+}
+
+/* navbar.html */
 nav#posts-navbar {
   transition: top 0.3s, background-color 0.5s;
 }

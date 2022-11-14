@@ -24,3 +24,5 @@ function get_current_scroll() {
 }
 
 window.onscroll = navbar_scroll;
+
+window.onscroll = navbar_scroll;

@@ -528,6 +528,7 @@ section#index-about h3 {
 section#index-about p {
   font-size: 1em;
   margin: 1em 0;
+  text-align: justify;
 }
 
 /* carousel.html */

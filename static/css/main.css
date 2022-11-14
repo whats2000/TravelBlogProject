@@ -820,21 +820,53 @@ section#tips-topic img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-section#tips-topic .centered {
+section#tips-topic h3 {
+  font-size: 4em;
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-}
-section#tips-topic .Pacifico {
   font-family: "Pacifico", cursive;
 }
-section#tips-topic h3 {
-  font-size: 4em;
-  color: white;
+
+/**********************************
+*
+*          posts.html
+*
+**********************************/
+/*about html*/ /* navbar.html */
+nav#posts-navbar {
+  transition: top 0.3s, background-color 0.5s;
+}
+nav#posts-navbar.nav-bg-black {
+  background-color: black;
+}
+nav#posts-navbar a.navbar-brand {
+  font-size: 1.5em;
+  font-family: "Pacifico", cursive;
+}
+nav#posts-navbar a.nav-link {
+  font-size: 1.25em;
+  font-family: "Handlee", cursive;
 }
 
-section#tips-content .Pacifico {
+/* topic.html */
+section#posts-topic {
+  height: 100vh;
+}
+section#posts-topic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#posts-topic h3 {
+  font-size: 4em;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   font-family: "Pacifico", cursive;
 }/*# sourceMappingURL=main.css.map */

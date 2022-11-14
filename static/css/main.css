@@ -691,12 +691,12 @@ section#index-post p {
 section#index-tips div.img-container {
   background-color: lightgray;
 }
-section#index-tips div.img-container div.tips-item {
+section#index-tips div.img-container a.tips-item {
   position: relative;
 }
-section#index-tips div.img-container div.tips-item figcaption.tips-item-text {
+section#index-tips div.img-container a.tips-item figcaption.tips-item-text {
   color: white;
-  opacity: 0;
+  opacity: 0.7;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -704,10 +704,10 @@ section#index-tips div.img-container div.tips-item figcaption.tips-item-text {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-section#index-tips div.img-container div.tips-item:hover figcaption.tips-item-text {
+section#index-tips div.img-container a.tips-item:hover figcaption.tips-item-text {
   opacity: 1;
 }
-section#index-tips div.img-container div.tips-item:hover {
+section#index-tips div.img-container a.tips-item:hover {
   transform: scale(1.05);
   transition: transform 0.5s;
   z-index: 1;
@@ -738,6 +738,7 @@ section#index-tips h3 {
 /* content.html */
 section#tips-content nav#sitcky-tips-nav {
   top: 0px;
+  padding-top: 12px;
   transition: 0.3s;
 }
 section#tips-content h3 {
@@ -755,7 +756,7 @@ section#tips-content a {
   font-size: 30px;
   font-family: "Kalam", cursive;
 }
-section#tips-content a:hover, section#tips-content a:active {
+section#tips-content a:hover {
   color: white;
   background-color: gray;
 }

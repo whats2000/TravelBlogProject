@@ -1,8 +1,8 @@
 /* Script from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp */
-var prev_scroll_pos = window.pageYOffset;
+var prev_scroll_pos = window.pageYOffset || document.documentElement.scrollTop;
 
 function navbar_scroll() {
-    let current_scroll_pos = window.pageYOffset;
+    let current_scroll_pos = get_current_scroll();
     if (current_scroll_pos > 1)
         document.getElementById("index-navbar").classList.add("nav-bg-black");
     else
@@ -17,6 +17,10 @@ function navbar_scroll() {
         document.getElementById("index-navbar").style.top = `-${document.getElementById("index-navbar").offsetHeight}px`;
 
     prev_scroll_pos = current_scroll_pos;
+}
+
+function get_current_scroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
 }
 
 window.onscroll = navbar_scroll;

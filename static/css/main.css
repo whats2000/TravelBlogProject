@@ -836,7 +836,7 @@ section#tips-topic h3 {
 *          posts.html
 *
 **********************************/
-/*about html*/ /* navbar.html */
+/*content html*/ /* navbar.html */
 nav#posts-navbar {
   transition: top 0.3s, background-color 0.5s;
 }

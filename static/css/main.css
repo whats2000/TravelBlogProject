@@ -567,13 +567,14 @@ section#index-carousel-travel div.bounce {
   }
 }
 section#index-carousel-travel h2 {
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-family: "Handlee", cursive;
   font-weight: bold;
   margin: 1em 0;
 }
 section#index-carousel-travel p {
-  font-size: 1em;
+  font-size: 1.25em;
+  font-family: "Kalam", cursive;
   margin: 1em 0;
 }
 
@@ -695,9 +696,22 @@ section#index-tips div.img-container {
 section#index-tips div.img-container a.tips-item {
   position: relative;
 }
+section#index-tips div.img-container a.tips-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#index-tips div.img-container a.tips-item div.img-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  background-color: black;
+}
 section#index-tips div.img-container a.tips-item figcaption.tips-item-text {
   color: white;
-  opacity: 0.8;
+  opacity: 0.5;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -727,7 +741,7 @@ section#index-tips h2 {
   font-family: "Handlee", cursive;
 }
 section#index-tips h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: bold;
 }
 

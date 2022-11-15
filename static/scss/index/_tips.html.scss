@@ -7,9 +7,23 @@ section#index-tips {
         a.tips-item {
             position: relative;
 
+            img {
+                object-fit: cover;
+            }
+
+            div.img-cover {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0.5;
+                background-color: black;
+            }
+
             figcaption.tips-item-text {
                 color: white;
-                opacity: 0.8;
+                opacity: 0.5;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -47,7 +61,7 @@ section#index-tips {
     }
 
     h3 {
-        font-size: 1.5em;
+        font-size: 1.25em;
         font-weight: bold;
     }
 }

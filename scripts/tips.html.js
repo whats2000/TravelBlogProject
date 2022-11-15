@@ -11,13 +11,13 @@ function navbar_scroll() {
     if (current_scroll_pos < document.getElementById("tips-topic").offsetHeight)
         return;
 
-    if (prev_scroll_pos > current_scroll_pos) {
-        document.getElementById("tips-navbar").style.top = "0";
-        document.getElementById("sitcky-tips-nav").style.top = `${document.getElementById("tips-navbar").offsetHeight}px`;
-    }
-    else {
+    if (prev_scroll_pos < current_scroll_pos) {
         document.getElementById("tips-navbar").style.top = `-${document.getElementById("tips-navbar").offsetHeight}px`;
         document.getElementById("sitcky-tips-nav").style.top = "0px";
+    }
+    else {
+        document.getElementById("tips-navbar").style.top = "0";
+        document.getElementById("sitcky-tips-nav").style.top = `${document.getElementById("tips-navbar").offsetHeight}px`;
     }
     prev_scroll_pos = current_scroll_pos;
 }
@@ -27,4 +27,3 @@ function get_current_scroll() {
 }
 
 window.onscroll = navbar_scroll;
-window.onload = page_load;

@@ -25,7 +25,7 @@ function includeHTML() {
             return;
         }
     }
-    // When load with hash scroll down
+    /* when load with hash scroll down */
     if (window.location.hash) {
         let hash = window.location.hash;
 

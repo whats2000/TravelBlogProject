@@ -632,10 +632,10 @@ nav#index-navbar a.nav-link {
 section#index-post div.img-container div.img-hov {
   display: flex;
 }
-section#index-post div.img-container div.img-hov div.img-hov-item {
+section#index-post div.img-container div.img-hov a.img-hov-item {
   position: relative;
 }
-section#index-post div.img-container div.img-hov div.img-hov-item div.img-hov-cover {
+section#index-post div.img-container div.img-hov a.img-hov-item div.img-hov-cover {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -645,7 +645,7 @@ section#index-post div.img-container div.img-hov div.img-hov-item div.img-hov-co
   transition: 0.3s ease;
   background-color: black;
 }
-section#index-post div.img-container div.img-hov div.img-hov-item figcaption.img-hov-text {
+section#index-post div.img-container div.img-hov a.img-hov-item figcaption.img-hov-text {
   color: white;
   opacity: 0;
   position: absolute;
@@ -655,10 +655,10 @@ section#index-post div.img-container div.img-hov div.img-hov-item figcaption.img
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-section#index-post div.img-container div.img-hov div.img-hov-item:hover div.img-hov-cover {
+section#index-post div.img-container div.img-hov a.img-hov-item:hover div.img-hov-cover {
   opacity: 0.5;
 }
-section#index-post div.img-container div.img-hov div.img-hov-item:hover figcaption.img-hov-text {
+section#index-post div.img-container div.img-hov a.img-hov-item:hover figcaption.img-hov-text {
   opacity: 1;
 }
 @media only screen and (max-width: 768px) {
@@ -697,7 +697,7 @@ section#index-tips div.img-container a.tips-item {
 }
 section#index-tips div.img-container a.tips-item figcaption.tips-item-text {
   color: white;
-  opacity: 0.7;
+  opacity: 0.8;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -746,11 +746,12 @@ section#tips-content h3 {
   font-size: 2em;
   font-family: "Handlee", cursive;
   font-weight: bold;
-  margin: 20px 0px;
+  padding: 20px 0px;
 }
 section#tips-content p {
   font-size: 1em;
   padding: 10px;
+  text-align: justify;
 }
 section#tips-content a {
   color: black;
@@ -838,7 +839,7 @@ section#tips-topic h3 {
 *
 **********************************/
 /* content.html */
-section#posts-content nav#sitcky-tips-nav {
+section#posts-content nav#sitcky-posts-nav {
   top: 0px;
   padding-top: 12px;
   transition: 0.3s;
@@ -847,7 +848,7 @@ section#posts-content h3 {
   font-size: 2em;
   font-family: "Handlee", cursive;
   font-weight: bold;
-  margin: 20px 0px;
+  padding: 20px 0px;
 }
 section#posts-content p {
   font-size: 1em;

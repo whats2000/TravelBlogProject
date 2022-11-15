@@ -1,16 +1,16 @@
 /* content.html */
 section#posts-content {
-    nav#sitcky-tips-nav {
+    nav#sitcky-posts-nav {
         top: 0px;
         padding-top: 12px;
         transition: 0.3s;
     }
-    
+
     h3 {
         font-size: 2em;
         font-family: 'Handlee', cursive;
         font-weight: bold;
-        margin: 20px 0px;
+        padding: 20px 0px;
     }
 
     p {
@@ -29,8 +29,9 @@ section#posts-content {
             background-color: gray;
         }
     }
-    h5{
+
+    h5 {
         font-size: 21px;
     }
-    
+
 }

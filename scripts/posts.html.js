@@ -8,13 +8,16 @@ function navbar_scroll() {
     else
         document.getElementById("posts-navbar").classList.remove("nav-bg-black");
 
-    if (current_scroll_pos < document.getElementById("posts-topic").offsetHeight)
+    if (current_scroll_pos < document.getElementById("posts-topic").offsetHeight) {
+        document.getElementById("posts-navbar").style.top = "0";
         return;
+    }
 
     if (prev_scroll_pos < current_scroll_pos)
-        document.getElementById("posts-navbar").style.top = `-${document.getElementById("index-navbar").offsetHeight}px`;
+        document.getElementById("posts-navbar").style.top = `-${document.getElementById("posts-navbar").offsetHeight}px`;
     else
         document.getElementById("posts-navbar").style.top = "0";
+
 
     prev_scroll_pos = current_scroll_pos;
 }

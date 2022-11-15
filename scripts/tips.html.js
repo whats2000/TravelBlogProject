@@ -8,17 +8,17 @@ function navbar_scroll() {
     else
         document.getElementById("tips-navbar").classList.remove("nav-bg-black");
 
-    if (current_scroll_pos < document.getElementById("tips-topic").offsetHeight)
-        return;
-
-    if (prev_scroll_pos < current_scroll_pos) {
-        document.getElementById("tips-navbar").style.top = `-${document.getElementById("tips-navbar").offsetHeight}px`;
-        document.getElementById("sitcky-tips-nav").style.top = "0px";
-    }
-    else {
+    if (current_scroll_pos < document.getElementById("tips-topic").offsetHeight) {
         document.getElementById("tips-navbar").style.top = "0";
-        document.getElementById("sitcky-tips-nav").style.top = `${document.getElementById("tips-navbar").offsetHeight}px`;
+        return;
     }
+
+    if (prev_scroll_pos < current_scroll_pos)
+        document.getElementById("tips-navbar").style.top = `-${document.getElementById("tips-navbar").offsetHeight}px`;
+
+    else
+        document.getElementById("tips-navbar").style.top = "0";
+
     prev_scroll_pos = current_scroll_pos;
 }
 

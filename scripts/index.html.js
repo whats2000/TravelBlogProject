@@ -11,10 +11,10 @@ function navbar_scroll() {
     if (current_scroll_pos < document.getElementById("index-carousel-travel").offsetHeight)
         return;
 
-    if (prev_scroll_pos > current_scroll_pos)
-        document.getElementById("index-navbar").style.top = "0";
-    else
+    if (prev_scroll_pos < current_scroll_pos)
         document.getElementById("index-navbar").style.top = `-${document.getElementById("index-navbar").offsetHeight}px`;
+    else
+        document.getElementById("index-navbar").style.top = "0";
 
     prev_scroll_pos = current_scroll_pos;
 }

@@ -11,10 +11,10 @@ function navbar_scroll() {
     if (current_scroll_pos < document.getElementById("posts-topic").offsetHeight)
         return;
 
-    if (prev_scroll_pos > current_scroll_pos)
-        document.getElementById("posts-navbar").style.top = "0";
+    if (prev_scroll_pos < current_scroll_pos)
+        document.getElementById("posts-navbar").style.top = `-${document.getElementById("index-navbar").offsetHeight}px`;
     else
-        document.getElementById("posts-navbar").style.top = `-${document.getElementById("posts-navbar").offsetHeight}px`;
+        document.getElementById("posts-navbar").style.top = "0";
 
     prev_scroll_pos = current_scroll_pos;
 }
@@ -22,7 +22,5 @@ function navbar_scroll() {
 function get_current_scroll() {
     return window.pageYOffset || document.documentElement.scrollTop;
 }
-
-window.onscroll = navbar_scroll;
 
 window.onscroll = navbar_scroll;

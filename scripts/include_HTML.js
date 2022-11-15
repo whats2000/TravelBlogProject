@@ -25,4 +25,12 @@ function includeHTML() {
             return;
         }
     }
+    // When load with hash scroll down
+    if (window.location.hash) {
+        let hash = window.location.hash;
+
+        scroll_down = document.getElementById(hash.replace('#', '')).offsetTop;
+
+        window.scroll(0, scroll_down);
+    }
 }

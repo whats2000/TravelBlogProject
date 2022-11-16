@@ -498,9 +498,7 @@ template {
 *
 *          Main Style
 *
-**********************************/
-/* Global */
-/**********************************
+**********************************/ /**********************************
 *
 *          index.html
 *
@@ -579,32 +577,30 @@ section#index-carousel-travel p {
 }
 
 /* footer.html */
-footer#index-footer {
+section#index-footer {
   color: white;
   background-color: #494949;
 }
-footer#index-footer img {
+section#index-footer img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-footer#index-footer a.nav-link,
-footer#index-footer a.icon-link {
+section#index-footer a {
   color: white;
 }
-footer#index-footer a.nav-link:hover,
-footer#index-footer a.icon-link:hover {
+section#index-footer a:hover {
   color: gray;
 }
-footer#index-footer p.copy-right {
+section#index-footer p.copy-right {
   font-size: 0.5em;
   color: gray;
 }
-footer#index-footer h2 {
+section#index-footer h2 {
   font-size: 1.5em;
   font-family: "Pacifico", cursive;
   padding-top: 0.5em;
 }
-footer#index-footer h5 {
+section#index-footer h5 {
   font-size: 1em;
   font-family: "Handlee", cursive;
   font-weight: bold;
@@ -627,6 +623,47 @@ nav#index-navbar a.navbar-brand {
 nav#index-navbar a.nav-link {
   font-size: 1.25em;
   font-family: "Handlee", cursive;
+}
+nav#index-navbar form {
+  vertical-align: baseline;
+}
+nav#index-navbar form input.form-control {
+  height: 0.75em;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  box-shadow: none;
+  padding: 0 5px;
+}
+nav#index-navbar form ::-moz-placeholder {
+  color: white;
+}
+nav#index-navbar form :-ms-input-placeholder {
+  color: white;
+}
+nav#index-navbar form ::placeholder {
+  color: white;
+}
+nav#index-navbar div.dropdown a.dropdown-toggle::after {
+  display: none;
+}
+nav#index-navbar div.dropdown img {
+  vertical-align: baseline;
+  display: inline;
+}
+nav#index-navbar a.top-link {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease-in-out;
+}
+nav#index-navbar a.top-link.button-hidden {
+  transform: scale(0);
 }
 
 /* post.html */
@@ -776,56 +813,12 @@ section#tips-content a:hover {
   color: white;
   background-color: gray;
 }
-
-/* footer.html */
-footer#tips-footer {
-  color: white;
-  background-color: #494949;
+section#tips-content ol {
+  list-style-type: circle;
 }
-footer#tips-footer img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-footer#tips-footer a.nav-link,
-footer#tips-footer a.icon-link {
-  color: white;
-}
-footer#tips-footer a.nav-link:hover,
-footer#tips-footer a.icon-link:hover {
-  color: gray;
-}
-footer#tips-footer p.copy-right {
-  font-size: 0.5em;
-  color: gray;
-}
-footer#tips-footer h2 {
-  font-size: 1.5em;
-  font-family: "Pacifico", cursive;
-  padding-top: 0.5em;
-}
-footer#tips-footer h5 {
-  font-size: 1em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  border-bottom: 1px solid white;
-  margin: 1em 0;
-  padding: 0.5em 0;
-}
-
-/* navbar.html */
-nav#tips-navbar {
-  transition: top 0.3s, background-color 0.5s;
-}
-nav#tips-navbar.nav-bg-black {
-  background-color: black;
-}
-nav#tips-navbar a.navbar-brand {
-  font-size: 1.5em;
-  font-family: "Pacifico", cursive;
-}
-nav#tips-navbar a.nav-link {
-  font-size: 1.25em;
-  font-family: "Handlee", cursive;
+section#tips-content ol li {
+  margin-left: 15px;
+  padding: 5px;
 }
 
 /* topic.html */
@@ -852,22 +845,6 @@ section#tips-topic h3 {
 *          posts.html
 *
 **********************************/
-/* navbar.html */
-nav#posts-navbar {
-  transition: top 0.3s, background-color 0.5s;
-}
-nav#posts-navbar.nav-bg-black {
-  background-color: black;
-}
-nav#posts-navbar a.navbar-brand {
-  font-size: 1.5em;
-  font-family: "Pacifico", cursive;
-}
-nav#posts-navbar a.nav-link {
-  font-size: 1.25em;
-  font-family: "Handlee", cursive;
-}
-
 /* content.html */
 section#posts-content nav#sitcky-posts-nav {
   top: 0px;
@@ -884,6 +861,9 @@ section#posts-content h3 {
   font-weight: bold;
   padding: 20px 0px;
 }
+section#posts-content h5 {
+  font-size: 21px;
+}
 section#posts-content p {
   font-size: 1em;
   padding: 10px;
@@ -897,9 +877,6 @@ section#posts-content a {
 section#posts-content a:hover {
   color: white;
   background-color: gray;
-}
-section#posts-content h5 {
-  font-size: 21px;
 }
 
 /* topic.html */

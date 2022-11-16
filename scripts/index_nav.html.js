@@ -11,14 +11,18 @@ function navbar_scroll() {
 
     if (current_scroll_pos < document.getElementsByClassName("topic-content")[0].offsetHeight) {
         document.getElementById("index-navbar").style.top = "0";
+        document.getElementById("to-top-button").classList.add("button-hidden");
         return;
+    } else {
+        document.getElementById("to-top-button").classList.remove("button-hidden");
     }
 
-    if (prev_scroll_pos < current_scroll_pos)
+    if (prev_scroll_pos < current_scroll_pos) {
         document.getElementById("index-navbar").style.top = `-${document.getElementById("index-navbar").offsetHeight}px`;
-    else
+    } else {
         document.getElementById("index-navbar").style.top = "0";
 
+    }
     prev_scroll_pos = current_scroll_pos;
 }
 

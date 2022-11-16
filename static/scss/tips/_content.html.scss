@@ -30,4 +30,12 @@ section#tips-content {
         }
     }
 
+    ol {
+        list-style-type: circle;
+
+        li {
+            margin-left: 15px;
+            padding: 5px;
+        }
+    }
 }

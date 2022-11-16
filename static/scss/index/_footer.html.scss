@@ -1,5 +1,5 @@
 /* footer.html */
-footer#index-footer {
+section#index-footer {
     color: white;
     background-color: #494949;
 
@@ -7,8 +7,7 @@ footer#index-footer {
         object-fit: cover;
     }
 
-    a.nav-link,
-    a.icon-link {
+    a {
         color: white;
 
         &:hover {

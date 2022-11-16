@@ -868,6 +868,40 @@ nav#posts-navbar a.nav-link {
   font-family: "Handlee", cursive;
 }
 
+/* content.html */
+section#posts-content nav#sitcky-posts-nav {
+  top: 0px;
+  padding-top: 12px;
+  transition: 0.3s;
+}
+section#posts-content img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#posts-content h3 {
+  font-size: 2em;
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  padding: 20px 0px;
+}
+section#posts-content p {
+  font-size: 1em;
+  padding: 10px;
+  text-align: justify;
+}
+section#posts-content a {
+  color: black;
+  font-size: 30px;
+  font-family: "Kalam", cursive;
+}
+section#posts-content a:hover {
+  color: white;
+  background-color: gray;
+}
+section#posts-content h5 {
+  font-size: 21px;
+}
+
 /* topic.html */
 section#posts-topic {
   height: 100vh;
@@ -885,321 +919,4 @@ section#posts-topic h3 {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   font-family: "Pacifico", cursive;
-}
-
-/* content.html */
-section#posts-content nav#sitcky-posts-nav {
-  top: 0px;
-  padding-top: 12px;
-  transition: 0.3s;
-}
-section#posts-content h3 {
-  font-size: 2em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  padding: 20px 0px;
-}
-section#posts-content h4 {
-  font-size: 1.5em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 10px 0px;
-  padding-top: 3em;
-}
-section#posts-content p {
-  font-size: 1em;
-  padding: 20px;
-  text-align: justify;
-}
-section#posts-content a {
-  color: black;
-  font-size: 30px;
-  font-family: "Kalam", cursive;
-}
-section#posts-content a:hover {
-  color: white;
-  background-color: gray;
-}
-section#posts-content h5 {
-  font-size: 21px;
-}
-
-/* topic.html */
-section#posts-topic2 {
-  height: 100vh;
-}
-section#posts-topic2 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-section#posts-topic2 h3 {
-  font-size: 4em;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-family: "Pacifico", cursive;
-}
-
-/* content.html */
-section#posts-content nav#sitcky-tips-nav {
-  top: 0px;
-  padding-top: 12px;
-  transition: 0.3s;
-}
-section#posts-content h3 {
-  font-size: 2em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-}
-section#posts-content h4 {
-  font-size: 1.5em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 10px 0px;
-  padding-top: 3em;
-}
-section#posts-content p {
-  font-size: 1em;
-  padding: 20px;
-  text-align: justify;
-}
-section#posts-content a {
-  color: black;
-  font-size: 30px;
-  font-family: "Kalam", cursive;
-}
-section#posts-content a:hover {
-  color: white;
-  background-color: gray;
-}
-section#posts-content h5 {
-  font-size: 21px;
-}
-
-/* topic.html */
-section#posts-topic3 {
-  height: 100vh;
-}
-section#posts-topic3 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-section#posts-topic3 h3 {
-  font-size: 4em;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-family: "Pacifico", cursive;
-}
-
-/* content.html */
-section#posts-content nav#sitcky-tips-nav {
-  top: 0px;
-  padding-top: 12px;
-  transition: 0.3s;
-}
-section#posts-content h3 {
-  font-size: 2em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-}
-section#posts-content h4 {
-  font-size: 1.5em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-  padding-top: 3em;
-}
-section#posts-content p {
-  font-size: 1em;
-  padding: 20px;
-  text-align: justify;
-}
-section#posts-content a {
-  color: black;
-  font-size: 30px;
-  font-family: "Kalam", cursive;
-}
-section#posts-content a:hover {
-  color: white;
-  background-color: gray;
-}
-section#posts-content h5 {
-  font-size: 21px;
-}
-
-/* topic.html */
-section#posts-topic4 {
-  height: 100vh;
-}
-section#posts-topic4 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-section#posts-topic4 h3 {
-  font-size: 4em;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-family: "Pacifico", cursive;
-}
-
-/* content.html */
-section#posts-content nav#sitcky-tips-nav {
-  top: 0px;
-  padding-top: 12px;
-  transition: 0.3s;
-}
-section#posts-content h3 {
-  font-size: 2em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-}
-section#posts-content h4 {
-  font-size: 1.5em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-  padding-top: 3em;
-}
-section#posts-content p {
-  font-size: 1em;
-  padding: 20px;
-  text-align: justify;
-}
-section#posts-content a {
-  color: black;
-  font-size: 30px;
-  font-family: "Kalam", cursive;
-}
-section#posts-content a:hover {
-  color: white;
-  background-color: gray;
-}
-section#posts-content h5 {
-  font-size: 21px;
-}
-
-/* topic.html */
-section#posts-topic5 {
-  height: 100vh;
-}
-section#posts-topic5 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-section#posts-topic5 h3 {
-  font-size: 4em;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-family: "Pacifico", cursive;
-}
-
-/* content.html */
-section#posts-content nav#sitcky-tips-nav {
-  top: 0px;
-  padding-top: 12px;
-  transition: 0.3s;
-}
-section#posts-content h3 {
-  font-size: 2em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-}
-section#posts-content h4 {
-  font-size: 1.5em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-  padding-top: 3em;
-}
-section#posts-content p {
-  font-size: 1em;
-  padding: 20px;
-  text-align: justify;
-}
-section#posts-content a {
-  color: black;
-  font-size: 30px;
-  font-family: "Kalam", cursive;
-}
-section#posts-content a:hover {
-  color: white;
-  background-color: gray;
-}
-section#posts-content h5 {
-  font-size: 21px;
-}
-
-/* topic.html */
-section#posts-topic6 {
-  height: 100vh;
-}
-section#posts-topic6 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-section#posts-topic6 h3 {
-  font-size: 4em;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-family: "Pacifico", cursive;
-}
-
-/* content.html */
-section#posts-content nav#sitcky-tips-nav {
-  top: 0px;
-  padding-top: 12px;
-  transition: 0.3s;
-}
-section#posts-content h3 {
-  font-size: 2em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-}
-section#posts-content h4 {
-  font-size: 1.5em;
-  font-family: "Handlee", cursive;
-  font-weight: bold;
-  margin: 20px 0px;
-  padding-top: 3em;
-}
-section#posts-content p {
-  font-size: 1em;
-  padding: 20px;
-  text-align: justify;
-}
-section#posts-content a {
-  color: black;
-  font-size: 30px;
-  font-family: "Kalam", cursive;
-}
-section#posts-content a:hover {
-  color: white;
-  background-color: gray;
-}
-section#posts-content h5 {
-  font-size: 21px;
 }/*# sourceMappingURL=main.css.map */

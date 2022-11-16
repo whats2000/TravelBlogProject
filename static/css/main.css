@@ -858,6 +858,10 @@ section#posts-content nav#sitcky-posts-nav {
   padding-top: 12px;
   transition: 0.3s;
 }
+section#posts-content img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 section#posts-content h3 {
   font-size: 2em;
   font-family: "Handlee", cursive;

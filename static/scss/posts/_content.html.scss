@@ -6,6 +6,10 @@ section#posts-content {
         transition: 0.3s;
     }
 
+    img {
+        object-fit: cover;
+    }
+
     h3 {
         font-size: 2em;
         font-family: 'Handlee', cursive;

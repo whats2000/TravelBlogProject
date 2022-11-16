@@ -852,6 +852,22 @@ section#tips-topic h3 {
 *          posts.html
 *
 **********************************/
+/* navbar.html */
+nav#posts-navbar {
+  transition: top 0.3s, background-color 0.5s;
+}
+nav#posts-navbar.nav-bg-black {
+  background-color: black;
+}
+nav#posts-navbar a.navbar-brand {
+  font-size: 1.5em;
+  font-family: "Pacifico", cursive;
+}
+nav#posts-navbar a.nav-link {
+  font-size: 1.25em;
+  font-family: "Handlee", cursive;
+}
+
 /* content.html */
 section#posts-content nav#sitcky-posts-nav {
   top: 0px;
@@ -884,22 +900,6 @@ section#posts-content a:hover {
 }
 section#posts-content h5 {
   font-size: 21px;
-}
-
-/* navbar.html */
-nav#posts-navbar {
-  transition: top 0.3s, background-color 0.5s;
-}
-nav#posts-navbar.nav-bg-black {
-  background-color: black;
-}
-nav#posts-navbar a.navbar-brand {
-  font-size: 1.5em;
-  font-family: "Pacifico", cursive;
-}
-nav#posts-navbar a.nav-link {
-  font-size: 1.25em;
-  font-family: "Handlee", cursive;
 }
 
 /* topic.html */

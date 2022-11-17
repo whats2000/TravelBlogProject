@@ -136,29 +136,24 @@
     </div>
 
     <div class="row mb-5">
-        <div class="col-12">
-            <div id="nav-content">
-                <div id="Comments" class="mb-5">
-                    <h3>Comments</h3>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">
-                            Email address
-                        </label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
-                            placeholder="name@example.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">
-                            Please leave your message here
-                        </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                            placeholder="Welcome to Wanna Go !"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-secondary d-flex float-end">
-                        Submit
-                    </button>
-                </div>
+        <form id="Comments" class="mb-5" action="" method="post">
+            <h3>Comments</h3>
+            <div class="mb-3">
+                <label for="comment-email" class="form-label">
+                    Email address
+                </label>
+                <input type="email" class="form-control" id="comment-email" placeholder="name@example.com">
             </div>
-        </div>
+            <div class="mb-3">
+                <label for="comment-article" class="form-label">
+                    Please leave your message here
+                </label>
+                <textarea class="form-control" id="comment-article" rows="3"
+                    placeholder="Welcome to Wanna Go !"></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary d-flex float-end">
+                Submit
+            </button>
+        </form>
     </div>
 </section>

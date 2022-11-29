@@ -1,3 +1,7 @@
+<?php include '../login/loginform.php';?>
+<?php include '../login/signinform.php';?>
+<?php include '../login/policy.html';?>
+
 <nav id="index-navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
     <div id="navbar-content" class="container-fluid">
         <a class="navbar-brand" href="index.php">Wanna Go !</a>
@@ -35,7 +39,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Login</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#model-login">Login</a></li>
                     </ul>
                 </div>
             </div>

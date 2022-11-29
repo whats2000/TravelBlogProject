@@ -649,6 +649,9 @@ nav#index-navbar form ::placeholder {
 nav#index-navbar div.dropdown a.dropdown-toggle::after {
   display: none;
 }
+nav#index-navbar div.dropdown a.dropdown-item:active {
+  background-color: gray;
+}
 nav#index-navbar div.dropdown img {
   vertical-align: baseline;
   display: inline;
@@ -896,4 +899,34 @@ section#posts-topic h3 {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   font-family: "Pacifico", cursive;
+}
+
+/**********************************
+*
+*          login modal
+*
+**********************************/
+div#policy-dialog h1 {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+div#policy-dialog h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.5em 0;
+  border-bottom: 1px solid lightgray;
+}
+div#policy-dialog h3 {
+  font-size: 1.25em;
+  padding: 0.5em 0;
+}
+div#policy-dialog p {
+  font-size: 1em;
+  margin: 1em 0;
+}
+div#policy-dialog ul {
+  list-style-type: disc;
+}
+div#policy-dialog ul li {
+  margin-left: 25px;
 }/*# sourceMappingURL=main.css.map */

@@ -40,6 +40,10 @@ nav#index-navbar {
             display: none;
         }
 
+        a.dropdown-item:active {
+            background-color: gray;
+        }
+
         img {
             vertical-align: baseline;
             display: inline;

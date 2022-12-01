@@ -1,4 +1,4 @@
-<div class="modal fade" id="model-login" aria-hidden="true" aria-labelledby="model-login-label" tabindex="-1">
+<div class="modal fade" id="modal-login" aria-hidden="true" aria-labelledby="model-login-label" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content rounded-4 shadow">
             <div class="modal-header p-5 pb-4 border-bottom-0">
@@ -7,15 +7,17 @@
             </div>
 
             <div class="modal-body p-5 pt-0">
-                <form class="">
+                <form action="./login/member.php" method="POST">
+                    <input type="hidden" name="method" value="login">
+
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-3" id="login-floating-input"
-                            placeholder="name@example.com">
-                        <label for="login-floating-input">Email address</label>
+                        <input type="email" name="email" class="form-control rounded-3 shadow-none"
+                            id="login-floating-email" placeholder="name@example.com" required>
+                        <label for="login-floating-email">Email address</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control rounded-3" id="login-floating-password"
-                            placeholder="Password">
+                        <input type="password" name="password" class="form-control rounded-3 shadow-none"
+                            id="login-floating-password" placeholder="Password" required>
                         <label for="login-floating-password">Password</label>
                     </div>
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Login</button>

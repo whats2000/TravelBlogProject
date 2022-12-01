@@ -1,7 +1,9 @@
+<?php session_start();?>
 <?php include '../login/loginform.php';?>
-<?php include '../login/signinform.php';?>
+<?php include '../login/logoutform.php';?>
 <?php include '../login/policy.html';?>
-
+<?php include '../login/showmessage.php';?>
+<?php include '../login/signinform.php';?>
 <nav id="index-navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
     <div id="navbar-content" class="container-fluid">
         <a class="navbar-brand" href="index.php">Wanna Go !</a>
@@ -39,7 +41,15 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#model-login">Login</a></li>
+                        <?php if (!isset($_SESSION["user"])) {?>
+                        <li>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-login">Login</a>
+                        </li>
+                        <?php } else {?>
+                        <li>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-logout">Logout</a>
+                        </li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>

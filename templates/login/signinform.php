@@ -7,18 +7,35 @@
             </div>
 
             <div class="modal-body p-5 pt-0">
-                <form class="">
+                <form action="./login/member.php" method="POST">
+                    <input type="hidden" name="method" value="signup">
+
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-3" id="signin-floating-input"
-                            placeholder="name@example.com">
-                        <label for="signin-floating-input">Email address</label>
+                        <input type="text" name="name" class="form-control rounded-3 shadow-none"
+                            id="login-floating-name" placeholder="user123" required>
+                        <label for="login-floating-name">User name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control rounded-3 shadow-none"
+                            id="signin-floating-email" placeholder="name@example.com" required>
+                        <label for="signin-floating-email">Email address</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control rounded-3" id="signin-floating-password"
-                            placeholder="Password">
+                        <input type="password" name="password" class="form-control rounded-3  shadow-none"
+                            id="signin-floating-password" placeholder="Password" required>
                         <label for="signin-floating-password">Password</label>
                     </div>
-                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Sign up</button>
+
+                    <div class="form-check my-2 d-flex align-items-center">
+                        <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault"
+                            data-bs-toggle="modal" data-bs-target="#modal-policy" required>
+                        <label class="form-check-label ps-2" for="flexCheckDefault">
+                            <p>I agree Privacy Policy</p>
+                        </label>
+                    </div>
+
+                    <button class="w-100 my-2 btn btn-lg rounded-3 btn-secondary" type="submit">Sign up</button>
                     <hr class="my-4">
                     <small class="text-muted">By clicking Sign up, you agree to the
                         <a class="border-bottom border-secondary" data-bs-toggle="modal" data-bs-target="#modal-policy">

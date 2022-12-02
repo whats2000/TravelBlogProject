@@ -63,7 +63,6 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
 <script>
 includeHTML();
-includeHTML();
 
 $(document).ready(function() {
     $('#modal-show-message').modal('show');

@@ -21,6 +21,7 @@ if (@$_POST) {
 if (@$_GET["method"] == "logout") {
     $return_msg = "Logout successfully";
     unset($_SESSION["user"]);
+    unset($_SESSION["profile"]);
 }
 
 if (@$_POST["method"] == "login") {
@@ -56,7 +57,8 @@ if (@$_POST["method"] == "login") {
     if ($result) {
         $num = $result->rowCount();
         if ($num == 0) {
-            $current_time = date('d-m-y h:i:s');
+            date_default_timezone_set('Asia/Taipei');
+            $current_time = date('Y-m-d h:i:s');
             $sql = "INSERT INTO `user` (`name`, `email`, `password`, `create_at`) 
                     VALUES ('$name', '$email', '$password', '$current_time')";
 

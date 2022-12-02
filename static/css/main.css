@@ -500,7 +500,7 @@ template {
 *
 **********************************/ /**********************************
 *
-*          index.html
+*          index.php
 *
 **********************************/
 /* about.html */
@@ -787,7 +787,7 @@ section#index-tips h3 {
 
 /**********************************
 *
-*          tips.html
+*          tips.php
 *
 **********************************/
 /* content.html */
@@ -929,4 +929,90 @@ div#policy-dialog ul {
 }
 div#policy-dialog ul li {
   margin-left: 25px;
+}
+
+/**********************************
+*
+*          profile.php
+*
+**********************************/
+/* content.html */
+section#profile-content nav#sitcky-posts-nav {
+  top: 0px;
+  padding-top: 12px;
+  transition: 0.3s;
+}
+section#profile-content img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#profile-content h3 {
+  font-size: 2em;
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  padding: 20px 0px;
+}
+section#profile-content h5 {
+  font-size: 21px;
+}
+section#profile-content p {
+  font-size: 1em;
+  padding: 10px;
+  text-align: justify;
+}
+section#profile-content a {
+  color: black;
+  font-size: 30px;
+  font-family: "Kalam", cursive;
+}
+section#profile-content a:hover {
+  color: white;
+  background-color: gray;
+}
+
+/* topic.html */
+section#profile-topic {
+  height: 100vh;
+}
+section#profile-topic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#profile-topic div.img-cover {
+  position: absolute;
+  height: 55vh;
+  top: 45vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  opacity: 0.9;
+}
+section#profile-topic figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+section#profile-topic figure img {
+  background-color: gray;
+  outline: 10px solid gray;
+}
+section#profile-topic figure figcaption {
+  color: gray;
+  font-size: 2em;
+  font-family: "Pacifico", cursive;
+}
+section#profile-topic div.config-button {
+  padding: 15px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 80%;
+}
+section#profile-topic div.config-button p {
+  font-size: 2em;
 }/*# sourceMappingURL=main.css.map */

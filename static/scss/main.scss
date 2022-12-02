@@ -4,7 +4,7 @@
 @import "googlefont";
 /**********************************
 *
-*          index.html
+*          index.php
 *
 **********************************/
 @import "index/about.html";
@@ -15,7 +15,7 @@
 @import "index/tips.html";
 /**********************************
 *
-*          tips.html
+*          tips.php
 *
 **********************************/
 @import "tips/content.html";
@@ -33,3 +33,10 @@
 *
 **********************************/
 @import "login/policy.html";
+/**********************************
+*
+*          profile.php
+*
+**********************************/
+@import "profile/content.html";
+@import "profile/topic.html";

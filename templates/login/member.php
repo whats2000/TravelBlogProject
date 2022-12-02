@@ -56,7 +56,9 @@ if (@$_POST["method"] == "login") {
     if ($result) {
         $num = $result->rowCount();
         if ($num == 0) {
-            $sql = "INSERT INTO `user` (`name`, `email`, `password`) VALUES ('$name', '$email', '$password')";
+            $current_time = date('d-m-y h:i:s');
+            $sql = "INSERT INTO `user` (`name`, `email`, `password`, `create_at`) 
+                    VALUES ('$name', '$email', '$password', '$current_time')";
 
             if ($sql_link->exec($sql)) {
                 $return_msg = "Sign up successfully";

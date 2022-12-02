@@ -35,9 +35,21 @@
                             height="31px" width="31px">
                     </a>
                     <ul class="dropdown-menu text-small dropdown-menu-end mt-2">
-                        <li><a class="dropdown-item" href="#">New post...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <?php if (isset($_SESSION["user"])) {?> <li>
+                            <a class="dropdown-item" href="#">New post...</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Settings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./profile.php">Profile</a>
+                        </li>
+                        <?php } else {?>
+                        <li>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-policy">
+                                Privacy Policy</a>
+                        </li>
+                        <?php }?>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

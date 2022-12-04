@@ -86,7 +86,9 @@ if (isset($_SESSION["last_url"])) {
     $url = "../index.php";
 }
 
-$_SESSION["show_message"] = $return_msg;
+if ($return_msg != "") {
+    $_SESSION["show_message"] = $return_msg;
+}
 
 ?>
 <script>

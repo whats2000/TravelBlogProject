@@ -73,13 +73,37 @@ if (isset($_POST["save-image"])) {
         "../../" . $dir_original . $image_name,
         "../../" . $dir_target . $image_name
     );
-    ?>
+
+    $files = glob("../../" . $dir_original . '/*');
+    foreach ($files as $file) {
+        if (is_file($file)) {
+            unlink($file);
+        }
+    } ?>
 <script>
 window.location.href = "./profile_edit_handle.php";
 </script>
 <?php
 }
-$_SESSION["show_message"] = $return_msg;
+
+if (isset($_POST["cancel-save"])) {
+    $dir = "static/images/user/upload/";
+
+    $files = glob("../../" . $dir . '/*');
+    foreach ($files as $file) {
+        if (is_file($file)) {
+            unlink($file);
+        }
+    } ?>
+<script>
+window.location.href = "./profile_edit_handle.php";
+</script>
+<?php
+}
+
+if ($return_msg != "") {
+    $_SESSION["show_message"] = $return_msg;
+}
 
 exit();
 ?>

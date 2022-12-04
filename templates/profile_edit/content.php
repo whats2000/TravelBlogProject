@@ -1,10 +1,13 @@
 <?php
 session_start();
 if (isset($_SESSION["profile"])) { ?>
-<section id="profile-content" class="container p-5">
+<section id="profile-edit-content" class="container p-5">
     <h2 class="pb-4 mb-4 fst-italic border-bottom fs-2 fw-bold">
         Hey, welcome back <?=$_SESSION["profile"]["name"]?>
     </h2>
+
+    
+
     <div class="row">
         <div class="col-md-8">
             <div id="nav-content">

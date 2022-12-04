@@ -1,6 +1,7 @@
 @import "reset";
 @import "normalize";
 @import "basic";
+@import "croppie";
 @import "googlefont";
 /**********************************
 *
@@ -40,3 +41,11 @@
 **********************************/
 @import "profile/content.html";
 @import "profile/topic.html";
+/**********************************
+*
+*          profile_edit.php
+*
+**********************************/
+@import "profile_edit/content.php";
+@import "profile_edit/icon_form.php";
+@import "profile_edit/topic.php";

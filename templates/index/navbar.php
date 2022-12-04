@@ -1,9 +1,17 @@
-<?php session_start();?>
-<?php include '../login/loginform.php';?>
-<?php include '../login/logoutform.php';?>
-<?php include '../login/policy.html';?>
-<?php include '../login/showmessage.php';?>
-<?php include '../login/signinform.php';?>
+<?php
+session_start();
+include '../login/login_form.php';
+include '../login/logout_form.php';
+include '../login/policy.html';
+include '../login/show_message.php';
+include '../login/signin_form.php';
+
+if (isset($_SESSION['user']) && ($_SESSION['user']['icon'] != "")) {
+    $icon = "../static/images/user/icon/".$_SESSION['user']['icon'];
+} else {
+    $icon = "../static/images/icon/person-circle.svg";
+}
+?>
 <nav id="index-navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
     <div id="navbar-content" class="container-fluid">
         <a class="navbar-brand" href="index.php">Wanna Go !</a>
@@ -31,8 +39,7 @@
                 <div class="dropdown text-end">
                     <a href="#" class="d-block text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="../static/images/icon/person-circle.svg" alt="mdo" class="rounded-circle"
-                            height="31px" width="31px">
+                        <img src="<?=$icon?>" alt="mdo" class="rounded-circle" height="31px" width="31px">
                     </a>
                     <ul class="dropdown-menu text-small dropdown-menu-end mt-2">
                         <?php if (isset($_SESSION["user"])) {?> <li>
@@ -42,7 +49,7 @@
                             <a class="dropdown-item" href="#">Settings</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="./profile/profilehandle.php">Profile</a>
+                            <a class="dropdown-item" href="./profile/profile_handle.php">Profile</a>
                         </li>
                         <?php } else {?>
                         <li>

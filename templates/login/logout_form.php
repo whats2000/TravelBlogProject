@@ -5,7 +5,8 @@
                 <h5 class="mb-0" id="modal-logout-label"><strong>Are you sure to logout?</strong></h5>
             </div>
             <div class="modal-footer flex-nowrap p-0">
-                <form action="./login/member.php" method="GET" class="col-6 m-0 rounded-0 border-end text-center">
+                <form action="./login/member_handle.php" method="GET"
+                    class="col-6 m-0 rounded-0 border-end text-center">
                     <input type="hidden" name="method" value="logout">
 
                     <button type="submit" class="btn btn-lg btn-link fs-6 text-decoration-none text-danger">

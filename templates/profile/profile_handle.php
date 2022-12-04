@@ -24,7 +24,8 @@ if (isset($_SESSION["user"])) {
         } else {
             $row = $result->fetch();
 
-            $_SESSION["profile"] = ["name" => $row["name"],
+            $_SESSION["profile"] = ["id" => $row["id"],
+                                    "name" => $row["name"],
                                     "email" => $row["email"],
                                     "icon" => $row["icon"],
                                     "about" => $row["about"],

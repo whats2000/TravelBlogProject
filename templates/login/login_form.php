@@ -7,7 +7,7 @@
             </div>
 
             <div class="modal-body p-5 pt-0">
-                <form action="./login/member.php" method="POST">
+                <form action="./login/member_handle.php" method="POST">
                     <input type="hidden" name="method" value="login">
 
                     <div class="form-floating mb-3">

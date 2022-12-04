@@ -14,14 +14,16 @@ if ($_SESSION['profile']['icon'] != "") {
         <figure class="figure">
             <div class="image_area">
                 <a data-bs-toggle="modal" data-bs-target="#icon-form">
-                    <div class="icon d-flex justify-content-center">
-                        <img src="<?=$icon?>" alt="mdo" class="rounded-circle d-block" height="100px" width="100px">
-                        <i class="rounded-circle text-secondary bi bi-pencil icon-edit text-end"></i>
+                    <div class="d-flex justify-content-center">
+                        <div class="icon">
+                            <img src="<?=$icon?>" alt="mdo" class="rounded-circle d-block" height="100px" width="100px">
+                            <i class="rounded-circle text-secondary bi bi-pencil icon-edit text-end"></i>
+                        </div>
                     </div>
                 </a>
 
                 <a class="border-bottom border-secondary">
-                    <figcaption class="figure-caption mt-4">
+                    <figcaption class="figure-caption mt-4 text-center">
                         <?=$_SESSION["profile"]["name"]?>
                         <i class="rounded-circle text-secondary bi bi-pencil fs-5"></i>
                     </figcaption>

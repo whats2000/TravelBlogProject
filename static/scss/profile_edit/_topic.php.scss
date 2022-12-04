@@ -38,8 +38,8 @@ section#profile-edit-topic {
                     background-color: lightgray;
                     padding: 5px;
                     position: absolute;
-                    bottom: -10%;
-                    right: 10%;
+                    bottom: -15%;
+                    right: -15%;
                     transform: translate(-50%, -50%);
                     -ms-transform: translate(-50%, -50%);
                     outline: 2px solid white;
@@ -47,7 +47,7 @@ section#profile-edit-topic {
                 }
 
                 &:hover i.icon-edit {
-                    transform: scale(1.05);
+                    transform: translate(-20%, -20%);
                     z-index: 1;
                 }
             }

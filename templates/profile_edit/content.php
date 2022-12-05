@@ -6,50 +6,32 @@ if (isset($_SESSION["profile"])) { ?>
         Hey, welcome back <?=$_SESSION["profile"]["name"]?>
     </h2>
 
-    
-
     <div class="row">
         <div class="col-md-8">
             <div id="nav-content">
-                <div id="overview" class="mb-5 pt-5">
-                    <h3>Overview</h3>
-                    <p class="lh-base">
-                        <strong><?=$_SESSION["profile"]["name"]?></strong> have been member since
-                        <strong><?=date('Y-m-d', strtotime($_SESSION["profile"]["create_at"]))?></strong>
-                    </p>
-                    <P class="lh-base">
-                        You have already crate <strong>0</strong> blog contain, in the past time.
-                        What a wonderful work, keep going!
-                    </P>
-                    <P class="lh-base">
-                        Also you have give great comment to others, you have <strong>0</strong> comments which are
-                        impressive to
-                        anyone!
-                    </P>
-                </div>
-                <div id="about-me" class="mb-5 pt-5">
-                    <h3>About me</h3>
-                    <?php if ($_SESSION["profile"]["about"] != "") { ?>
-                    <p><?=$_SESSION["profile"]["about"]?></p>
-                    <?php } else {?>
-                    <p>I am a new blogger here, I glad to learn some new tips around, also thank you for visiting
-                        my page.</p>
-                    <?php }?>
-                </div>
-                <div id="my-post" class="mb-5 pt-5">
-                    <h3>My post</h3>
+                <div id="about-me" class="mb-5 pt-5" data-bs-toggle="modal" data-bs-target="#about-form">
+                    <div class="align-middle">
+                        <h3>About me</h3>
+                    </div>
                     <div class="card text-center">
                         <div class="card-header">
                             Content
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Oops</h5>
-                            <p class="card-text text-center">
-                                There is no post here.
-                            </p>
+                            <div class="card-text text-center">
+                                <?php if ($_SESSION["profile"]["about"] != "") { ?>
+                                <?=$_SESSION["profile"]["about"]?>
+                                <?php } else {?>
+                                <p>I am a new blogger here, I glad to learn some new tips around, also thank you for
+                                    visiting
+                                    my page.</p>
+                                <?php }?>
+                            </div>
                         </div>
                         <div class="card-footer text-muted w-100">
-                            <button href="#" class="btn btn-sm btn-secondary">Create one</button>
+                            <button href="#" class="btn btn-sm btn-secondary">
+                                Edit <i class="rounded-circle bi bi-pencil icon-edit text-end fs-6 ms-2"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -58,14 +40,8 @@ if (isset($_SESSION["profile"])) { ?>
         <div class="col-4 mb-5">
             <nav id="sitcky-posts-nav" class="position-sticky d-none d-md-block">
                 <nav class="nav nav-pills flex-column pt-5">
-                    <a class="nav-link" href="#overview">
-                        Overview
-                    </a>
                     <a class="nav-link" href="#about-me">
                         About me
-                    </a>
-                    <a class="nav-link" href="#my-post">
-                        My post
                     </a>
                 </nav>
             </nav>

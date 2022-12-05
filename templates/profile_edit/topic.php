@@ -22,7 +22,7 @@ if ($_SESSION['profile']['icon'] != "") {
                     </div>
                 </a>
 
-                <a class="border-bottom border-secondary">
+                <a class="border-bottom border-secondary" data-bs-toggle="modal" data-bs-target="#name-form">
                     <figcaption class="figure-caption mt-4 text-center">
                         <?=$_SESSION["profile"]["name"]?>
                         <i class="rounded-circle text-secondary bi bi-pencil fs-5"></i>

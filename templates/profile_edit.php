@@ -7,6 +7,14 @@ window.location.href = './profile_edit/profile_edit_handle.php';
 </script>
 <?php }
 $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
+
+if (isset($_SESSION["profile"]["about"])) {
+    $about = $_SESSION["profile"]["about"];
+} else {
+    $about = "<p>I am a new blogger here, 
+    I glad to learn some new tips around, 
+    also thank you for visiting my page.</p>";
+}
 ?>
 
 <script>
@@ -38,6 +46,8 @@ var exports = {};
 
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
 
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
@@ -75,6 +85,12 @@ includeHTML();
 // image crop jquery from https://youtu.be/pVatkCgU-Rg
 $(document).ready(function() {
     $('#modal-show-message').modal('show');
+
+    CKEDITOR.replace("about-article", {
+        height: "200px"
+    });
+
+    CKEDITOR.instances["about-article"].setData("<?=preg_replace("/\r|\n/", "", $about)?>");
 });
 </script>
 
@@ -82,3 +98,4 @@ $(document).ready(function() {
 include './profile_edit/icon_edit/icon_form.php';
 include './profile_edit/icon_edit/icon_form_crop.php';
 include './profile_edit/name_edit/name_form.php';
+include './profile_edit/about_edit/about_form.php';

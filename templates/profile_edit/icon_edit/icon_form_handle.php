@@ -2,13 +2,13 @@
 
 session_start();
 
+if (!isset($_SESSION["profile"]) || !isset($_SESSION["user"])) {
+    exit();
+}
+
 include("../../core/config.php");
 
 $return_msg = "";
-
-if (!isset($_SESSION["profile"]) || !isset($_SESSION["user"])) {
-    exit;
-}
 
 if (isset($_POST["image"])) {
     $data = $_POST["image"];

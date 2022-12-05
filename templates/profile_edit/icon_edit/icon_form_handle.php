@@ -2,7 +2,7 @@
 
 session_start();
 
-include("../core/config.php");
+include("../../core/config.php");
 
 $return_msg = "";
 
@@ -26,11 +26,11 @@ if (isset($_POST["image"])) {
 
     file_put_contents($image_name, $data);
 
-    if (!file_exists("../../" . $dir)) {
-        mkdir("../../" . $dir, 0777, true);
+    if (!file_exists("../../../" . $dir)) {
+        mkdir("../../../" . $dir, 0777, true);
     }
 
-    rename($image_name, "../../" . $dir . $image_name);
+    rename($image_name, "../../../" . $dir . $image_name);
 
     $_SESSION["profile"]["upload-icon"] = $image_name;
 
@@ -53,8 +53,8 @@ if (isset($_POST["save-image"])) {
     $dir_target = "static/images/user/icon/";
 
     if ($_SESSION["profile"]["icon"] != "") {
-        if (file_exists("../../" . $dir_target . $_SESSION["profile"]["icon"])) {
-            unlink("../../" . $dir_target . $_SESSION["profile"]["icon"]);
+        if (file_exists("../../../" . $dir_target . $_SESSION["profile"]["icon"])) {
+            unlink("../../../" . $dir_target . $_SESSION["profile"]["icon"]);
         }
     }
 
@@ -70,18 +70,18 @@ if (isset($_POST["save-image"])) {
     }
 
     rename(
-        "../../" . $dir_original . $image_name,
-        "../../" . $dir_target . $image_name
+        "../../../" . $dir_original . $image_name,
+        "../../../" . $dir_target . $image_name
     );
 
-    $files = glob("../../" . $dir_original . '/*');
+    $files = glob("../../../" . $dir_original . '/*');
     foreach ($files as $file) {
         if (is_file($file)) {
             unlink($file);
         }
     } ?>
 <script>
-window.location.href = "./profile_edit_handle.php";
+window.location.href = "../profile_edit_handle.php";
 </script>
 <?php
 }
@@ -89,14 +89,14 @@ window.location.href = "./profile_edit_handle.php";
 if (isset($_POST["cancel-save"])) {
     $dir = "static/images/user/upload/";
 
-    $files = glob("../../" . $dir . '/*');
+    $files = glob("../../../" . $dir . '/*');
     foreach ($files as $file) {
         if (is_file($file)) {
             unlink($file);
         }
     } ?>
 <script>
-window.location.href = "./profile_edit_handle.php";
+window.location.href = "../profile_edit_handle.php";
 </script>
 <?php
 }

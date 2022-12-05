@@ -107,7 +107,7 @@ $(document).ready(function() {
             size: 'viewport'
         }).then(function(response) {
             $.ajax({
-                url: "./profile_edit/icon_form_handle.php",
+                url: "./profile_edit/icon_edit/icon_form_handle.php",
                 type: "POST",
                 data: {
                     "image": response
@@ -123,5 +123,5 @@ $(document).ready(function() {
 </script>
 
 <?php
-include './profile_edit/icon_form.php';
-include './profile_edit/icon_form_crop.php';
+include './profile_edit/icon_edit/icon_form.php';
+include './profile_edit/icon_edit/icon_form_crop.php';

@@ -6,7 +6,7 @@
                 <h1 class="modal-title fs-5" id="icon-form-label">Upload icon image</h1>
                 <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="./profile_edit/icon_form_handle.php" method="POST">
+            <form action="./profile_edit/icon_edit/icon_form_handle.php" method="POST">
                 <div class="modal-body">
                     <div class="container px-5">
                         <!-- Select image area-->

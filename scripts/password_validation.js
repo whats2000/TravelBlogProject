@@ -1,3 +1,4 @@
+// Script from https://mdbootstrap.com/snippets/jquery/tomekmakowski/631899#css-tab-view
 $(function () {
     var $password = $(".check-password[type='password']");
     var $passwordConfirm = $(".check-password-confirm[type='password']");

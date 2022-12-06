@@ -8,6 +8,7 @@ window.location.href = './profile_edit/profile_edit_handle.php';
 <?php }
 $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
+
 if (isset($_SESSION["profile"]["about"])) {
     $about = $_SESSION["profile"]["about"];
 } else {
@@ -16,10 +17,6 @@ if (isset($_SESSION["profile"]["about"])) {
     also thank you for visiting my page.</p>";
 }
 ?>
-
-<script>
-var exports = {};
-</script>
 
 <!DOCTYPE html>
 <html lang="en-us">
@@ -47,7 +44,7 @@ var exports = {};
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
+    <script src="../scripts/ckeditor/ckeditor.js"></script>
 
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
@@ -60,6 +57,10 @@ var exports = {};
 
 <body>
     <header>
+        <?php include './profile_edit/icon_edit/icon_form.php';?>
+        <?php include './profile_edit/icon_edit/icon_form_crop.php';?>
+        <?php include './profile_edit/name_edit/name_form.php';?>
+        <?php include './profile_edit/about_edit/about_form.php';?>
         <?php include('./index/navbar.php');?>
 
         <div include-html="profile_edit/topic.php">
@@ -91,10 +92,8 @@ $(document).ready(function() {
 
     CKEDITOR.instances["about-article"].setData('<?=json_encode($about);?>'.slice(1, -1));
 });
-</script>
 
-<?php
-include './profile_edit/icon_edit/icon_form.php';
-include './profile_edit/icon_edit/icon_form_crop.php';
-include './profile_edit/name_edit/name_form.php';
-include './profile_edit/about_edit/about_form.php';
+const myModalAlternative = new bootstrap.Modal('#about-form', {
+    focus: false
+})
+</script>

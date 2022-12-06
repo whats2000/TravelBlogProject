@@ -10,3 +10,7 @@
 .good {
     display: none;
 }
+
+.cke_dialog_container {
+    z-index: 20000 !important;
+}

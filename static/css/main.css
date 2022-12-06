@@ -508,6 +508,10 @@ template {
   display: none;
 }
 
+.cke_dialog_container {
+  z-index: 20000 !important;
+}
+
 .croppie-container {
   width: 100%;
   height: 100%;

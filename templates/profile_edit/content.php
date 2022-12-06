@@ -6,7 +6,7 @@ if (isset($_SESSION["profile"])) { ?>
     </h2>
 
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-md-8">
             <div id="nav-content">
                 <div id="account-safety" class="mb-5 pt-5">
                     <div class="align-middle">
@@ -15,9 +15,9 @@ if (isset($_SESSION["profile"])) { ?>
                     <div class="accordion accordion-flush" id="account-option">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="account-password">
-                                <button class="rounded-top accordion-button collapsed shadow-none" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-password" aria-expanded="false"
-                                    aria-controls="flush-password">
+                                <button class="rounded-top accordion-button collapsed shadow-none border-bottom"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-password"
+                                    aria-expanded="false" aria-controls="flush-password">
                                     Change your account password
                                 </button>
                             </h2>
@@ -94,24 +94,6 @@ if (isset($_SESSION["profile"])) { ?>
                                 </div>
                             </div>
                         </div>
-                        <!--
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="account-cookie">
-                                <button class="rounded-top accordion-button collapsed shadow-none" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                    Cookie setting
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-heading-two" data-bs-parent="#account-option">
-                                <div class="accordion-body">
-                                    Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the second item's
-                                    accordion body. Let's imagine this being filled with some actual content.
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
                 <div id="about-me" class="mb-5 pt-5" data-bs-toggle="modal" data-bs-target="#about-form">

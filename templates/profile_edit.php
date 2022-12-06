@@ -89,7 +89,7 @@ $(document).ready(function() {
         height: "200px"
     });
 
-    CKEDITOR.instances["about-article"].setData('<?=json_encode($about);?>');
+    CKEDITOR.instances["about-article"].setData('<?=json_encode($about);?>'.slice(1, -1));
 });
 </script>
 

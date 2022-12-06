@@ -105,4 +105,8 @@ $(function () {
             }
         }
     });
+
+    $submit.on("click", function (e) {
+        passwordVal == "";
+    })
 });

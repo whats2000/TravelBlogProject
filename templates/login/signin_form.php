@@ -22,9 +22,40 @@
                         <label for="signin-floating-email">Email address</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" name="password" class="form-control rounded-3  shadow-none"
-                            id="signin-floating-password" placeholder="Password" required>
+                        <input type="password" name="password" class="check-password form-control rounded-3 shadow-none"
+                            id="signin-floating-password" placeholder="Password" minlength="8" autocomplete="off"
+                            required>
                         <label for="signin-floating-password">Password</label>
+                        <div class="invalid-feedback">
+                            <ul>
+                                <li class="requirements my-1 leng">
+                                    <i class="bi bi-x-circle red-text"></i>
+                                    Your password must have at least 8 characters.
+                                </li>
+                                <li class="requirements my-1 big-letter">
+                                    <i class="bi bi-x-circle red-text"></i>
+                                    Your password must have at least 1 upper letter.
+                                </li>
+                                <li class="requirements my-1 num">
+                                    <i class="bi bi-x-circle red-text"></i>
+                                    Your password must have at least 1 number.
+                                </li>
+                                <li class="requirements my-1 special-char">
+                                    <i class="bi bi-x-circle red-text"></i>
+                                    Your password must have at least 1 special character.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password"
+                            class="check-password-confirm form-control rounded-3 shadow-none"
+                            id="signin-floating-password-confirm" placeholder="Password" minlength="8"
+                            autocomplete="off" required>
+                        <label for="signin-floating-password-confirm">Confirm Password</label>
+                        <div class="invalid-feedback">
+                            You have to enter the same password or valid password
+                        </div>
                     </div>
 
                     <div class="form-check my-2 d-flex align-items-center">
@@ -35,7 +66,9 @@
                         </label>
                     </div>
 
-                    <button class="w-100 my-2 btn btn-lg rounded-3 btn-secondary" type="submit">Sign up</button>
+                    <button class="check-password-submit w-100 my-2 btn btn-lg rounded-3 btn-secondary disabled"
+                        type="submit">Sign
+                        up</button>
                     <hr class="my-4">
                     <small class="text-muted">By clicking Sign up, you agree to the
                         <a class="border-bottom border-secondary" data-bs-toggle="modal" data-bs-target="#modal-policy">

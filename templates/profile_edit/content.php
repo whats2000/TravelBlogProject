@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_SESSION["profile"])) { ?>
 <section id="profile-edit-content" class="container p-5">
     <h2 class="pb-4 mb-4 fst-italic border-bottom fs-2 fw-bold">
@@ -40,10 +39,30 @@ if (isset($_SESSION["profile"])) { ?>
                                                 <label for="inputPassword" class="col-lg-4 col-form-label">New
                                                     Password</label>
                                                 <div class="col-lg-8">
-                                                    <input type="password" class="form-control shadow-none"
-                                                        id="password-new" name="password-new"
-                                                        aria-describedby="change-password-feedback" minlength="8"
+                                                    <input type="password"
+                                                        class="check-password form-control shadow-none"
+                                                        id="password-new" name="password-new" minlength="8"
                                                         autocomplete="off" required>
+                                                    <div class="invalid-feedback">
+                                                        <ul>
+                                                            <li class="requirements my-1 leng">
+                                                                <i class="bi bi-x-circle red-text"></i>
+                                                                Your password must have at least 8 characters.
+                                                            </li>
+                                                            <li class="requirements my-1 big-letter">
+                                                                <i class="bi bi-x-circle red-text"></i>
+                                                                Your password must have at least 1 upper letter.
+                                                            </li>
+                                                            <li class="requirements my-1 num">
+                                                                <i class="bi bi-x-circle red-text"></i>
+                                                                Your password must have at least 1 number.
+                                                            </li>
+                                                            <li class="requirements my-1 special-char">
+                                                                <i class="bi bi-x-circle red-text"></i>
+                                                                Your password must have at least 1 special character.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -51,9 +70,13 @@ if (isset($_SESSION["profile"])) { ?>
                                                 <label for="inputPassword" class="col-lg-4 col-form-label">Enter
                                                     Again</label>
                                                 <div class="col-lg-8">
-                                                    <input type="password" class="form-control shadow-none"
-                                                        id="password-repeat" name="password-repeat" minlength="8"
+                                                    <input type="password"
+                                                        class="check-password-confirm form-control shadow-none"
+                                                        id="password-confirm" name="password-confirm" minlength="8"
                                                         autocomplete="off" required>
+                                                    <div class="invalid-feedback">
+                                                        You have to enter the same password or valid password
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +84,8 @@ if (isset($_SESSION["profile"])) { ?>
                                         <hr class="my-5">
 
                                         <div class="px-5">
-                                            <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+                                            <button
+                                                class="check-password-submit w-100 py-2 mb-2 btn btn-outline-secondary rounded-3 disabled"
                                                 type="submit">
                                                 Confirm
                                             </button>

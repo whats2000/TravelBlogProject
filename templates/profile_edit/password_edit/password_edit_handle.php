@@ -18,7 +18,7 @@ if (!isset($_SESSION["user"])) {
 } elseif (@$_POST) {
     $password = $_POST["password"];
     $password_new = $_POST["password-new"];
-    $password_repeat = $_POST["password-repeat"];
+    $password_confirm = $_POST["password-confirm"];
 
     $email = $_SESSION["user"]["email"];
     $sql = "SELECT * FROM `user` WHERE `email` = '$email'";
@@ -31,7 +31,7 @@ if (!isset($_SESSION["user"])) {
         } else {
             $row = $result->fetch();
             if ($row["password"] == $password) {
-                if ($password_new == $password_repeat) {
+                if ($password_new == $password_confirm) {
                     $user_email = $_SESSION["user"]["email"];
 
                     $sql = "UPDATE `user` 
@@ -44,10 +44,10 @@ if (!isset($_SESSION["user"])) {
                         $return_msg = "Fail to update name";
                     }
                 } else {
-                    $return_msg = "New password are not repeat the same";
+                    $return_msg = "New password are not confirm the same";
                 }
             } else {
-                $return_msg = "Password is incorrect";
+                $return_msg = "Orignal password is incorrect";
             }
         }
     } else {

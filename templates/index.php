@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
+
 ?>
 
 <!DOCTYPE html>
@@ -30,14 +31,14 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
+    <script src="../scripts/password_validation.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <header>
-        <div include-html="index/navbar.php">
-        </div>
+        <?php include('./index/navbar.php');?>
 
         <div include-html="index/carousel.html">
         </div>

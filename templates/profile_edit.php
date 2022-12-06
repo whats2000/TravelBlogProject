@@ -53,22 +53,21 @@ var exports = {};
     <script src="../scripts/include_HTML.js"></script>
     <script src="../scripts/croppie.js"></script>
     <script src="../scripts/profile_edit/icon_edit.js"></script>
+    <script src="../scripts/password_validation.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <header>
-        <div include-html="index/navbar.php">
-        </div>
+        <?php include('./index/navbar.php');?>
 
         <div include-html="profile_edit/topic.php">
         </div>
     </header>
 
     <main>
-        <div include-html="profile_edit/content.php">
-        </div>
+        <?php include('./profile_edit/content.php');?>
     </main>
 
     <footer>

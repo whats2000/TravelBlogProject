@@ -38,48 +38,51 @@ if (isset($_POST["image"])) {
 }
 
 if (isset($_POST["save-image"])) {
-    $sql_link = connect('root', '');
+    if (isset($_SESSION["profile"]["upload-icon"])) {
+        $sql_link = connect('root', '');
 
-    if (!$sql_link) {
-        $_SESSION["show_message"] = "Error at connect to database";
-        exit();
-    }
-
-    $user_id = $_SESSION["profile"]["id"];
-
-    $image_name = $_SESSION["profile"]["upload-icon"];
-
-    $dir_original = "static/images/user/upload/";
-    $dir_target = "static/images/user/icon/";
-
-    if ($_SESSION["profile"]["icon"] != "") {
-        if (file_exists("../../../" . $dir_target . $_SESSION["profile"]["icon"])) {
-            unlink("../../../" . $dir_target . $_SESSION["profile"]["icon"]);
+        if (!$sql_link) {
+            $_SESSION["show_message"] = "Error at connect to database";
+            exit();
         }
-    }
 
-    $sql = "UPDATE `user` 
+        $user_id = $_SESSION["profile"]["id"];
+
+        $image_name = $_SESSION["profile"]["upload-icon"];
+
+        $dir_original = "static/images/user/upload/";
+        $dir_target = "static/images/user/icon/";
+
+        if ($_SESSION["profile"]["icon"] != "") {
+            if (file_exists("../../../" . $dir_target . $_SESSION["profile"]["icon"])) {
+                unlink("../../../" . $dir_target . $_SESSION["profile"]["icon"]);
+            }
+        }
+
+        $sql = "UPDATE `user` 
             SET `icon`='$image_name'
             WHERE `id`='$user_id'";
 
-    if ($sql_link->exec($sql)) {
-        $_SESSION["user"]["icon"] = $image_name;
-        $return_msg = "Upload successfully";
-    } else {
-        $return_msg = "Fail to upload icon";
-    }
-
-    rename(
-        "../../../" . $dir_original . $image_name,
-        "../../../" . $dir_target . $image_name
-    );
-
-    $files = glob("../../../" . $dir_original . '/*');
-    foreach ($files as $file) {
-        if (is_file($file)) {
-            unlink($file);
+        if ($sql_link->exec($sql)) {
+            $_SESSION["user"]["icon"] = $image_name;
+            $return_msg = "Upload successfully";
+        } else {
+            $return_msg = "Fail to upload icon";
         }
-    } ?>
+
+        rename(
+            "../../../" . $dir_original . $image_name,
+            "../../../" . $dir_target . $image_name
+        );
+
+        $files = glob("../../../" . $dir_original . '/*');
+        foreach ($files as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
+        }
+    }
+    ?>
 <script>
 window.location.href = "../profile_edit_handle.php";
 </script>

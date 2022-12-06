@@ -25,7 +25,7 @@ if (isset($_SESSION["profile"])) { ?>
                             <div id="flush-password" class="accordion-collapse collapse"
                                 aria-labelledby="flush-heading-one" data-bs-parent="#account-option">
                                 <div class="accordion-body p-5">
-                                    <form>
+                                    <form action="./profile_edit/password_edit/password_edit_handle.php" method="POST">
                                         <div class="px-5 mt-2">
                                             <div class="mb-3 row">
                                                 <label for="inputPassword"
@@ -41,7 +41,9 @@ if (isset($_SESSION["profile"])) { ?>
                                                     Password</label>
                                                 <div class="col-lg-8">
                                                     <input type="password" class="form-control shadow-none"
-                                                        id="password-new" name="password-new" required>
+                                                        id="password-new" name="password-new"
+                                                        aria-describedby="change-password-feedback" minlength="8"
+                                                        autocomplete="off" required>
                                                 </div>
                                             </div>
 
@@ -50,7 +52,8 @@ if (isset($_SESSION["profile"])) { ?>
                                                     Again</label>
                                                 <div class="col-lg-8">
                                                     <input type="password" class="form-control shadow-none"
-                                                        id="password-repeat" name="password-repeat" required>
+                                                        id="password-repeat" name="password-repeat" minlength="8"
+                                                        autocomplete="off" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,6 +70,7 @@ if (isset($_SESSION["profile"])) { ?>
                                 </div>
                             </div>
                         </div>
+                        <!--
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="account-cookie">
                                 <button class="rounded-top accordion-button collapsed shadow-none" type="button"
@@ -83,7 +87,7 @@ if (isset($_SESSION["profile"])) { ?>
                                     accordion body. Let's imagine this being filled with some actual content.
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div id="about-me" class="mb-5 pt-5" data-bs-toggle="modal" data-bs-target="#about-form">

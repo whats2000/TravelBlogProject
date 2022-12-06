@@ -46,7 +46,7 @@ if (@$_POST["method"] == "login") {
             }
         }
     } else {
-        $return_msg = "Fail to deal with this cast";
+        $return_msg = "Fail to fetch data from database";
     }
 } elseif (@$_POST["method"] == "signup") {
     $name = $_POST["name"];
@@ -70,13 +70,13 @@ if (@$_POST["method"] == "login") {
                                      "icon" => "",
                                      "permission" => "user"];
             } else {
-                $return_msg = "Fail to deal with this cast";
+                $return_msg = "Fail to write data to database";
             }
         } else {
             $return_msg = "This email have already sign up, please use other email";
         }
     } else {
-        $return_msg = "Fail to deal with this cast";
+        $return_msg = "Fail to fetch data from database";
     }
 }
 

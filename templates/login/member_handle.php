@@ -67,7 +67,7 @@ if (@$_POST["method"] == "login") {
                 // 將會員名稱存入session
                 $_SESSION["user"] = ["name" => $name,
                                      "email" => $email,
-                                     "icon" => "default",
+                                     "icon" => "",
                                      "permission" => "user"];
             } else {
                 $return_msg = "Fail to deal with this cast";

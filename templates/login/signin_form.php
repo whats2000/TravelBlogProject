@@ -12,8 +12,8 @@
 
                     <div class="form-floating mb-3">
                         <input type="text" name="name" class="form-control rounded-3 shadow-none"
-                            id="login-floating-name" placeholder="user123" required>
-                        <label for="login-floating-name">User name</label>
+                            id="signin-floating-name" placeholder="user123" required>
+                        <label for="signin-floating-name">User name</label>
                     </div>
 
                     <div class="form-floating mb-3">

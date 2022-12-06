@@ -13,7 +13,7 @@ if ($_SESSION['profile']['icon'] != "") {
     <div class="d-block d-xs-none">
         <figure class="figure">
             <img src="<?=$icon?>" alt="mdo" class="rounded-circle mx-auto d-block" height="100px" width="100px">
-            <figcaption class="figure-caption mt-4"><?=$_SESSION["profile"]["name"]?></figcaption>
+            <figcaption class="figure-caption mt-4 text-center"><?=$_SESSION["profile"]["name"]?></figcaption>
         </figure>
     </div>
     <div class="d-block d-xs-none">

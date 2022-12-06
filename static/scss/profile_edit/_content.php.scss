@@ -37,4 +37,13 @@ section#profile-edit-content {
             background-color: gray;
         }
     }
+
+    button.accordion-button:not(.collapsed) {
+        background-color: #6c757d;
+        color: white;
+
+        &::after {
+            background-image: url(../images/icon/chevron-down.svg);
+        }
+    }
 }

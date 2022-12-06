@@ -90,7 +90,7 @@ $(document).ready(function() {
         height: "200px"
     });
 
-    CKEDITOR.instances["about-article"].setData("<?=preg_replace("/\r|\n/", "", $about)?>");
+    CKEDITOR.instances["about-article"].setData('<?=preg_replace("/\r|\n/", "", $about)?>');
 });
 </script>
 

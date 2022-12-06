@@ -1316,6 +1316,13 @@ section#profile-edit-content a:hover {
   color: white;
   background-color: gray;
 }
+section#profile-edit-content button.accordion-button:not(.collapsed) {
+  background-color: #6c757d;
+  color: white;
+}
+section#profile-edit-content button.accordion-button:not(.collapsed)::after {
+  background-image: url(../images/icon/chevron-down.svg);
+}
 
 div#icon-form input#upload-image {
   opacity: 0;

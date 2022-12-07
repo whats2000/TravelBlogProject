@@ -6,6 +6,15 @@ section#profile-edit-content {
         transition: 0.3s;
     }
 
+    button.accordion-button:not(.collapsed) {
+        background-color: #6c757d;
+        color: white;
+
+        &::after {
+            background-image: url(../images/icon/chevron-down.svg);
+        }
+    }
+
     img {
         object-fit: cover;
     }
@@ -23,6 +32,7 @@ section#profile-edit-content {
 
     p {
         font-size: 1em;
+        margin: 13px 0;
         padding: 10px;
         text-align: justify;
     }
@@ -35,15 +45,6 @@ section#profile-edit-content {
         &:hover {
             color: white;
             background-color: gray;
-        }
-    }
-
-    button.accordion-button:not(.collapsed) {
-        background-color: #6c757d;
-        color: white;
-
-        &::after {
-            background-image: url(../images/icon/chevron-down.svg);
         }
     }
 }

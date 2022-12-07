@@ -54,7 +54,7 @@
                             autocomplete="off" required>
                         <label for="signin-floating-password-confirm">Confirm Password</label>
                         <div class="invalid-feedback">
-                            You have to enter the same password or valid password
+                            You have to enter the same password or invalid password
                         </div>
                     </div>
 

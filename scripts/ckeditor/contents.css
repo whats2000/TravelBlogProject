@@ -206,3 +206,28 @@ a > img {
 	max-height: 1080px;
 	margin:0 auto;
 }
+
+table {
+    border-spacing: 0;
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+}

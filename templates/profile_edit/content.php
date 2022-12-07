@@ -75,7 +75,7 @@ if (isset($_SESSION["profile"])) { ?>
                                                         id="password-confirm" name="password-confirm" minlength="8"
                                                         autocomplete="off" required>
                                                     <div class="invalid-feedback">
-                                                        You have to enter the same password or valid password
+                                                        You have to enter the same password or invalid password
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,22 +100,20 @@ if (isset($_SESSION["profile"])) { ?>
                     <div class="align-middle">
                         <h3>About me</h3>
                     </div>
-                    <div class="card text-center">
-                        <div class="card-header">
+                    <div class="card">
+                        <div class="card-header text-center">
                             Content
                         </div>
                         <div class="card-body">
-                            <div class="card-text text-center">
+                            <div class="article-text card-text">
                                 <?php if ($_SESSION["profile"]["about"] != "") { ?>
                                 <?=$_SESSION["profile"]["about"]?>
                                 <?php } else {?>
-                                <p>I am a new blogger here, I glad to learn some new tips around, also thank you for
-                                    visiting
-                                    my page.</p>
+                                <p>I am new here, thank you for visiting my page!</p>
                                 <?php }?>
                             </div>
                         </div>
-                        <div class="card-footer text-muted w-100">
+                        <div class="card-footer text-muted w-100 text-center">
                             <button href="#" class="btn btn-sm btn-secondary">
                                 Edit <i class="rounded-circle bi bi-pencil icon-edit text-end fs-6 ms-2"></i>
                             </button>

@@ -508,8 +508,40 @@ template {
   display: none;
 }
 
-.cke_dialog_container {
-  z-index: 20000 !important;
+div.article-text p,
+.ck-editor p {
+  display: block !important;
+  margin: 1em 0 !important;
+  padding: 0px !important;
+}
+div.article-text p em,
+.ck-editor p em {
+  font-style: italic;
+}
+div.article-text table,
+.ck-editor table {
+  text-align: center;
+}
+div.article-text table td,
+div.article-text table th,
+.ck-editor table td,
+.ck-editor table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+div.article-text table tr:nth-child(even),
+.ck-editor table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+div.article-text table tr:hover,
+.ck-editor table tr:hover {
+  background-color: #ddd;
+}
+div.article-text table th,
+.ck-editor table th {
+  background-color: #6c757d;
+  color: white;
+  text-align: center;
 }
 
 .croppie-container {
@@ -1301,6 +1333,13 @@ section#profile-edit-content nav#sitcky-posts-nav {
   padding-top: 12px;
   transition: 0.3s;
 }
+section#profile-edit-content button.accordion-button:not(.collapsed) {
+  background-color: #6c757d;
+  color: white;
+}
+section#profile-edit-content button.accordion-button:not(.collapsed)::after {
+  background-image: url(../images/icon/chevron-down.svg);
+}
 section#profile-edit-content img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1316,6 +1355,7 @@ section#profile-edit-content h5 {
 }
 section#profile-edit-content p {
   font-size: 1em;
+  margin: 13px 0;
   padding: 10px;
   text-align: justify;
 }
@@ -1327,13 +1367,6 @@ section#profile-edit-content a {
 section#profile-edit-content a:hover {
   color: white;
   background-color: gray;
-}
-section#profile-edit-content button.accordion-button:not(.collapsed) {
-  background-color: #6c757d;
-  color: white;
-}
-section#profile-edit-content button.accordion-button:not(.collapsed)::after {
-  background-image: url(../images/icon/chevron-down.svg);
 }
 
 div#icon-form input#upload-image {

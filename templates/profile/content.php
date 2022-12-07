@@ -24,13 +24,12 @@ if (isset($_SESSION["profile"])) { ?>
                         anyone!
                     </P>
                 </div>
-                <div id="about-me" class="mb-5 pt-5">
+                <div id="about-me" class="article-text mb-5 pt-5">
                     <h3>About me</h3>
                     <?php if ($_SESSION["profile"]["about"] != "") { ?>
                     <p><?=$_SESSION["profile"]["about"]?></p>
                     <?php } else {?>
-                    <p>I am a new blogger here, I glad to learn some new tips around, also thank you for visiting
-                        my page.</p>
+                    <p>I am new here, thank you for visiting my page!</p>
                     <?php }?>
                 </div>
                 <div id="my-post" class="mb-5 pt-5">

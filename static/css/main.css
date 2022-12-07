@@ -520,7 +520,9 @@ div.article-text p em,
 }
 div.article-text table,
 .ck-editor table {
+  table-layout: fixed;
   text-align: center;
+  width: 100% !important;
 }
 div.article-text table td,
 div.article-text table th,

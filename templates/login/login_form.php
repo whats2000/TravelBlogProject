@@ -26,7 +26,7 @@
                         Not a member yet?
                         <a class="border-bottom border-secondary" data-bs-toggle="modal" data-bs-target="#modal-signin">
                             Sign Up
-                        </a> now.
+                        </a> .
                     </small>
                 </form>
             </div>

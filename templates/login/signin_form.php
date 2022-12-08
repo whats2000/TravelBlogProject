@@ -78,11 +78,22 @@
                         Sign up
                     </button>
                     <hr class="my-4">
-                    <small class="text-muted">By clicking Sign up, you agree to the
-                        <a class="border-bottom border-secondary" data-bs-toggle="modal" data-bs-target="#modal-policy">
-                            Privacy Policy
-                        </a> .
-                    </small>
+                    <p>
+                        <small class="text-muted">Have a account?
+                            <a class="border-bottom border-secondary" data-bs-toggle="modal"
+                                data-bs-target="#modal-login">
+                                Login
+                            </a> .
+                        </small>
+                    </p>
+                    <p class="mt-1">
+                        <small class="text-muted">By clicking Sign up, you agree to the
+                            <a class="border-bottom border-secondary" data-bs-toggle="modal"
+                                data-bs-target="#modal-policy">
+                                Privacy Policy
+                            </a> .
+                        </small>
+                    </p>
                 </form>
             </div>
         </div>

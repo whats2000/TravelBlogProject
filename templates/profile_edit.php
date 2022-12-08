@@ -61,7 +61,7 @@ if (isset($_SESSION["profile"]["about"])) {
         <?php include './profile_edit/icon_edit/icon_form_crop.php';?>
         <?php include './profile_edit/name_edit/name_form.php';?>
         <?php include './profile_edit/about_edit/about_form.php';?>
-        <?php include('./index/navbar.php');?>
+        <?php include('./core/navbar.php');?>
 
         <div include-html="profile_edit/topic.php">
         </div>
@@ -72,7 +72,7 @@ if (isset($_SESSION["profile"]["about"])) {
     </main>
 
     <footer>
-        <div include-html="index/footer.html">
+        <div include-html="core/footer.php">
         </div>
     </footer>
 </body>

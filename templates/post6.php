@@ -31,7 +31,7 @@
 
 <body>
     <header>
-        <?php include('./index/navbar.php');?>
+        <?php include('./core/navbar.php');?>
 
         <div include-html="posts/topic6.html">
         </div>
@@ -43,7 +43,7 @@
     </main>
 
     <footer>
-        <div include-html="index/footer.html">
+        <div include-html="core/footer.php">
         </div>
     </footer>
 </body>

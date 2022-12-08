@@ -10,16 +10,20 @@
                 <form action="./login/member_handle.php" method="POST">
                     <input type="hidden" name="method" value="signup">
 
-                    <div class="mb-3">
-                        <label for="signin-name" class="form-label">User Name</label>
-                        <input type="text" name="name" class="form-control rounded-3 shadow-none" id="signin-name"
-                            required>
+                    <label for="signin-name" class="form-label">User Name</label>
+                    <div class="input-group mb-3">
+                        <input type="text" name="name" class="form-control shadow-none" id="signin-name" required>
+                        <span class="input-group-text">
+                            <i class="bi bi-person-fill"></i>
+                        </span>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="signin-email" class="form-label">Email Address</label>
-                        <input type="email" name="email" class="form-control rounded-3 shadow-none" id="signin-email"
-                            required>
+                    <label for="signin-email" class="form-label">Email Address</label>
+                    <div class="input-group mb-3">
+                        <input type="email" name="email" class="form-control shadow-none" id="signin-email" required>
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope"></i>
+                        </span>
                     </div>
 
                     <hr class="my-4">

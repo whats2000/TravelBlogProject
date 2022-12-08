@@ -10,17 +10,23 @@
                 <form action="./login/member_handle.php" method="POST">
                     <input type="hidden" name="method" value="login">
 
-                    <div class="form-floating mb-3">
-                        <input type="email" name="email" class="form-control rounded-3 shadow-none"
-                            id="login-floating-email" placeholder="name@example.com" required>
-                        <label for="login-floating-email">Email address</label>
+                    <label for="login-email" class="mb-3">Email address</label>
+                    <div class="input-group mb-3">
+                        <input type="email" name="email" class="form-control shadow-none" id="login-email"
+                            placeholder="name@example.com" required>
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope"></i>
+                        </span>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" name="password" class="form-control rounded-3 shadow-none"
-                            id="login-floating-password" placeholder="Password" required>
-                        <label for="login-floating-password">Password</label>
+                    <label for="login-password" class="mb-3">Password</label>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="check-password form-control shadow-none"
+                            id="login-password" placeholder="Password" required>
+                        <span class="input-group-text">
+                            <i class="bi bi-eye-slash toggle-password" id="toggle-password"></i>
+                        </span>
                     </div>
-                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" type="submit">Login</button>
+                    <button class="w-100 my-2 btn btn-lg rounded-3 btn-secondary" type="submit">Login</button>
                     <hr class="my-4">
                     <small class="text-muted">
                         Not a member yet?

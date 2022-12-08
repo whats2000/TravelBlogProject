@@ -30,8 +30,13 @@ if (isset($_SESSION["profile"])) { ?>
                                                 <label for="inputPassword"
                                                     class="col-lg-4 col-form-label">Password</label>
                                                 <div class="col-lg-8">
-                                                    <input type="password" class="form-control shadow-none"
-                                                        id="password" name="password" required>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control shadow-none"
+                                                            id="password" name="password" required>
+                                                        <span class="input-group-text">
+                                                            <i class="bi bi-shield-lock"></i>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -46,7 +51,8 @@ if (isset($_SESSION["profile"])) { ?>
                                                             autocomplete="off" required>
                                                         <span class="input-group-text rounded-end">
                                                             <i class="bi bi-eye-slash toggle-password"
-                                                                id="toggle-password"></i>
+                                                                id="toggle-password">
+                                                            </i>
                                                         </span>
                                                         <div class="invalid-feedback">
                                                             <ul>

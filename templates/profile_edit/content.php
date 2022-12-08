@@ -39,43 +39,57 @@ if (isset($_SESSION["profile"])) { ?>
                                                 <label for="inputPassword" class="col-lg-4 col-form-label">New
                                                     Password</label>
                                                 <div class="col-lg-8">
-                                                    <input type="password"
-                                                        class="check-password form-control shadow-none"
-                                                        id="password-new" name="password-new" minlength="8"
-                                                        autocomplete="off" required>
-                                                    <div class="invalid-feedback">
-                                                        <ul>
-                                                            <li class="requirements my-1 leng">
-                                                                <i class="bi bi-x-circle red-text"></i>
-                                                                Your password must have at least 8 characters.
-                                                            </li>
-                                                            <li class="requirements my-1 big-letter">
-                                                                <i class="bi bi-x-circle red-text"></i>
-                                                                Your password must have at least 1 upper letter.
-                                                            </li>
-                                                            <li class="requirements my-1 num">
-                                                                <i class="bi bi-x-circle red-text"></i>
-                                                                Your password must have at least 1 number.
-                                                            </li>
-                                                            <li class="requirements my-1 special-char">
-                                                                <i class="bi bi-x-circle red-text"></i>
-                                                                Your password must have at least 1 special character.
-                                                            </li>
-                                                        </ul>
+                                                    <div class="input-group">
+                                                        <input type="password"
+                                                            class="check-password form-control shadow-none"
+                                                            id="password-new" name="password-new" minlength="8"
+                                                            autocomplete="off" required>
+                                                        <span class="input-group-text rounded-end">
+                                                            <i class="bi bi-eye-slash toggle-password"
+                                                                id="toggle-password"></i>
+                                                        </span>
+                                                        <div class="invalid-feedback">
+                                                            <ul>
+                                                                <li class="requirements my-1 leng">
+                                                                    <i class="bi bi-x-circle red-text"></i>
+                                                                    Your password must have at least 8 characters.
+                                                                </li>
+                                                                <li class="requirements my-1 big-letter">
+                                                                    <i class="bi bi-x-circle red-text"></i>
+                                                                    Your password must have at least 1 upper letter.
+                                                                </li>
+                                                                <li class="requirements my-1 num">
+                                                                    <i class="bi bi-x-circle red-text"></i>
+                                                                    Your password must have at least 1 number.
+                                                                </li>
+                                                                <li class="requirements my-1 special-char">
+                                                                    <i class="bi bi-x-circle red-text"></i>
+                                                                    Your password must have at least 1 special
+                                                                    character.
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="mb-3 row">
-                                                <label for="inputPassword" class="col-lg-4 col-form-label">Enter
-                                                    Again</label>
+                                                <label for="inputPassword" class="col-lg-4 col-form-label">
+                                                    Enter Again
+                                                </label>
                                                 <div class="col-lg-8">
-                                                    <input type="password"
-                                                        class="check-password-confirm form-control shadow-none"
-                                                        id="password-confirm" name="password-confirm" minlength="8"
-                                                        autocomplete="off" required>
-                                                    <div class="invalid-feedback">
-                                                        You have to enter the same password or invalid password
+                                                    <div class="input-group">
+                                                        <input type="password"
+                                                            class="check-password-confirm form-control shadow-none"
+                                                            id="password-confirm" name="password-confirm" minlength="8"
+                                                            autocomplete="off" required>
+                                                        <span class="input-group-text rounded-end">
+                                                            <i class="bi bi-eye-slash toggle-password-confirm"
+                                                                id="toggle-password-confirm"></i>
+                                                        </span>
+                                                        <div class="invalid-feedback">
+                                                            You have to enter the same password or invalid password
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

@@ -1342,6 +1342,9 @@ section#profile-edit-content button.accordion-button:not(.collapsed) {
 section#profile-edit-content button.accordion-button:not(.collapsed)::after {
   background-image: url(../images/icon/chevron-down.svg);
 }
+section#profile-edit-content form i.bi-eye-slash {
+  cursor: pointer;
+}
 section#profile-edit-content img {
   -o-object-fit: cover;
      object-fit: cover;

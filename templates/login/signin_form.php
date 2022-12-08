@@ -10,22 +10,27 @@
                 <form action="./login/member_handle.php" method="POST">
                     <input type="hidden" name="method" value="signup">
 
-                    <div class="form-floating mb-3">
-                        <input type="text" name="name" class="form-control rounded-3 shadow-none"
-                            id="signin-floating-name" placeholder="user123" required>
-                        <label for="signin-floating-name">User name</label>
+                    <div class="mb-3">
+                        <label for="signin-name" class="form-label">User Name</label>
+                        <input type="text" name="name" class="form-control rounded-3 shadow-none" id="signin-name"
+                            required>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="email" name="email" class="form-control rounded-3 shadow-none"
-                            id="signin-floating-email" placeholder="name@example.com" required>
-                        <label for="signin-floating-email">Email address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" name="password" class="check-password form-control rounded-3 shadow-none"
-                            id="signin-floating-password" placeholder="Password" minlength="8" autocomplete="off"
+                    <div class="mb-3">
+                        <label for="signin-email" class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-control rounded-3 shadow-none" id="signin-email"
                             required>
-                        <label for="signin-floating-password">Password</label>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <label for="signin-password" class="form-label">Password</label>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="check-password form-control shadow-none"
+                            id="signin-password" minlength="8" autocomplete="off" required>
+                        <span class="input-group-text rounded-end">
+                            <i class="bi bi-eye-slash toggle-password" id="toggle-password"></i>
+                        </span>
                         <div class="invalid-feedback">
                             <ul>
                                 <li class="requirements my-1 leng">
@@ -47,12 +52,14 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" name="password"
-                            class="check-password-confirm form-control rounded-3 shadow-none"
-                            id="signin-floating-password-confirm" placeholder="Password" minlength="8"
-                            autocomplete="off" required>
-                        <label for="signin-floating-password-confirm">Confirm Password</label>
+
+                    <label for="signin-password" class="form-label">Confirm Password</label>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="check-password-confirm form-control shadow-none"
+                            id="signin-password-confirm" minlength="8" autocomplete="off" required>
+                        <span class="input-group-text rounded-end">
+                            <i class="bi bi-eye-slash toggle-password-confirm" id="toggle-password-confirm"></i>
+                        </span>
                         <div class="invalid-feedback">
                             You have to enter the same password or invalid password
                         </div>
@@ -67,12 +74,15 @@
                     </div>
 
                     <button class="check-password-submit w-100 my-2 btn btn-lg rounded-3 btn-secondary disabled"
-                        type="submit">Sign
-                        up</button>
+                        type="submit">
+                        Sign up
+                    </button>
                     <hr class="my-4">
                     <small class="text-muted">By clicking Sign up, you agree to the
                         <a class="border-bottom border-secondary" data-bs-toggle="modal" data-bs-target="#modal-policy">
-                            Privacy Policy</a> .</small>
+                            Privacy Policy
+                        </a> .
+                    </small>
                 </form>
             </div>
         </div>

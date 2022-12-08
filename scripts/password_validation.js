@@ -1,7 +1,9 @@
 // Script from https://mdbootstrap.com/snippets/jquery/tomekmakowski/631899#css-tab-view
 $(function () {
     var $password = $(".check-password[type='password']");
+    var $passwordView = $(".toggle-password");
     var $passwordConfirm = $(".check-password-confirm[type='password']");
+    var $passwordConfirmView = $(".toggle-password-confirm");
     var passwordVal = "";
     var passwordConfirmVal = "";
     var $submit = $(".check-password-submit[type='submit']");
@@ -118,5 +120,17 @@ $(function () {
     $submit.on("click", function (e) {
         passwordVal = "";
         passwordConfirmVal = ""
+    })
+
+    $passwordView.on("click", function (e) {
+        $(this).toggleClass("bi-eye-slash bi-eye");
+        var type = $(this).hasClass("bi-eye") ? "text" : "password";
+        $password.attr("type", type);
+    })
+
+    $passwordConfirmView.on("click", function (e) {
+        $(this).toggleClass("bi-eye-slash bi-eye");
+        var type = $(this).hasClass("bi-eye") ? "text" : "password";
+        $passwordConfirm.attr("type", type);
     })
 });

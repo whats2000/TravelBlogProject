@@ -19,7 +19,8 @@ if ($_SESSION['profile']['icon'] != "") {
     <div class="d-block d-xs-none">
         <div class="config-button">
             <div class="d-grid mx-auto">
-                <a class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" href="./profile_edit.php">
+                <a class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3"
+                    href="./profile_edit/profile_edit_handle.php">
                     <i class="bi me-1 bi-pencil-square fs-5"></i>
                     Edit Profile
                 </a>

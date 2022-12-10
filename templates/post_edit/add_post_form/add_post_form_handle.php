@@ -38,33 +38,30 @@ if (isset($_POST["image"])) {
 
     rename($image_name, "../../../" . $dir . $image_name);
 
-    //$_SESSION["profile"]["upload-icon"] = $image_name;
     $_SESSION["post"]["upload-picture"] = $image_name;
     echo '<img src="../' . $dir . $image_name . '" class="img-thumbnail" />';
 }
 if (isset($_POST["save-add-post"])) {
-    //INSERT name, title, description, create_at upload
+    //INSERT email, name, title, description, create_at upload
+    $email = $_SESSION['profile']['email'];
     $title = $_POST["title"];
     $description = $_POST["description"];
     date_default_timezone_set("Asia/Taipei");
     $datetime = date("Y-m-d H:i:s");
     $temp_pic_name = uniqid("PIC-", true);
-    $add_post = $sql_link->exec("INSERT INTO post(picture, title, description, create_at) VALUES('$temp_pic_name','$title', '$description', '$datetime')");
+    $add_post = $sql_link->exec("INSERT INTO post(email, picture, title, description, create_at) VALUES('$email', '$temp_pic_name','$title', '$description', '$datetime')");
 
-    //if (isset($_SESSION["profile"]["upload-icon"])) {
     if (isset($_SESSION["post"]["upload-picture"])) {
 
         $post_id = $sql_link->query("SELECT id FROM post WHERE picture='$temp_pic_name'");
         $post_id = $post_id->fetch(PDO::FETCH_ASSOC); //turn php object into array
         $post_id = implode($post_id);
 
-        //$image_name = $_SESSION["profile"]["upload-icon"];
         $image_name = $_SESSION["post"]["upload-picture"];
 
         $dir_original = "static/images/blog_post/upload/";
         $dir_target = "static/images/blog_post/post/";
 
-        //if ($_SESSION["profile"]["icon"] != "") {
         if ($_SESSION["post"]["picture"] != "") {
             if (file_exists("../../../" . $dir_target . $_SESSION["post"]["picture"])) {
                 unlink("../../../" . $dir_target . $_SESSION["post"]["picture"]);
@@ -95,7 +92,7 @@ if (isset($_POST["save-add-post"])) {
     }
 ?>
     <script>
-        window.location.href = "../../index.php";
+        window.location.href = "../../posts/post_handle.php";
     </script>
 <?php
 }
@@ -119,44 +116,4 @@ if ($return_msg != "") {
 }
 
 exit();
-
-// if (isset($_POST["add_post_upload"])) {
-//     //INSERT name, title, description, create_at upload
-//     $title = $_POST["title"];
-//     $description = $_POST["description"];
-//     date_default_timezone_set("Asia/Taipei");
-//     $datetime = date("Y-m-d H:i:s");
-//     $temp_pic_name = uniqid("PIC-", true);
-//     $add_post = $sql_link->exec("INSERT INTO post(picture, title, description, create_at) VALUES('$temp_pic_name','$title', '$description', '$datetime')");
-
-//     //UPDATE picture
-//     $pic_name = $_FILES["sub_pic"]["name"];
-//     $pic_size = $_FILES["sub_pic"]["size"];
-//     $tmp_name = $_FILES["sub_pic"]["tmp_name"];
-//     $error = $_FILES["sub_pic"]["error"];
-
-//     if ($error === 0) {
-//         $pic_ex = pathinfo($pic_name, PATHINFO_EXTENSION);
-//         $pic_ex_lc = strtolower($pic_ex);
-
-//         $post_id = $sql_link->query("SELECT id FROM post WHERE picture='$temp_pic_name'");
-//         $post_id = $post_id->fetch(PDO::FETCH_ASSOC); //turn php object into array
-//         $post_id = implode($post_id);
-//         $new_pic_name = "post_" . $post_id . time() . "." . $pic_ex_lc;
-//         $pic_upload_path = "../../static/images/blog_post/post/" . $new_pic_name;
-//         if (move_uploaded_file($tmp_name, $pic_upload_path)) {
-//             print("success");
-//             //Insert into database
-//             $sql = $sql_link->exec("UPDATE post SET picture='$new_pic_name' WHERE id=$post_id");
-//             print("success");
-//             //header("Location: ../posts/edit_form.php");
-
-//         } else { //avoid file is error
-//             $return_msg = "unknown error occurred!";
-//             $_SESSION["show_message"] = $return_msg;
-//         }
-
-
-//     }
-// }
 ?>

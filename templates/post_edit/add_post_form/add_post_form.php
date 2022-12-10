@@ -22,16 +22,7 @@
                                         Open up
                                     </small>
                                 </label>
-                                <!-- onchange="loadFile(event) 
-                                    <script>
-                                    var loadFile = function(event) {
-                                        var sub_pic_output = document.getElementById("sub_pic_output");
-                                        sub_pic_output.src = URL.createObjectURL(event.target.files[0]);
-                                        sub_pic_output.onload = function() {
-                                            URL.revokeObjectURL(sub_pic_output.src) // free memory
-                                        }
-                                    };
-                                </script> -->
+                                
                             </div>
                             <!-- Uploaded image area-->
                             <p class="font-italic text-secondary text-center">

@@ -4,7 +4,7 @@ include './login/logout_form.php';
 include './login/policy.html';
 include './login/show_message.php';
 include './login/signin_form.php';
-include './posts/add_post_form.php';
+include './post_edit/add_post_form/add_post_form.php';
 
 if (isset($_SESSION['user']) && ($_SESSION['user']['icon'] != "")) {
     $icon = "../static/images/user/icon/" . $_SESSION['user']['icon'];

@@ -14,7 +14,8 @@ if (!$sql_link) {
     exit();
 }
 $url = "../../index.php";
-
+$data = NULL;
+$dir = NULL;
 if (isset($_POST["image"])) {
 
     $data = $_POST["image"];
@@ -27,8 +28,7 @@ if (isset($_POST["image"])) {
 
     $data = base64_decode($image_array_2[1]);
 
-    $image_name = "post_" . $_SESSION["profile"]["id"]
-        . "_pic_" . time() . ".png";
+    $image_name = "post_" . "_pic_" . time() . ".png";
 
     file_put_contents($image_name, $data);
 
@@ -48,16 +48,21 @@ if (isset($_POST["save-add-post"])) {
     $description = $_POST["description"];
     date_default_timezone_set("Asia/Taipei");
     $datetime = date("Y-m-d H:i:s");
-    $temp_pic_name = uniqid("PIC-", true);
-    $add_post = $sql_link->exec("INSERT INTO post(email, picture, title, description, create_at) VALUES('$email', '$temp_pic_name','$title', '$description', '$datetime')");
+    $image_name = $_SESSION["post"]["upload-picture"];
+    $add_post = $sql_link->exec("INSERT INTO post(email, picture, title, description, create_at) VALUES('$email', '$image_name','$title', '$description', '$datetime')");
 
     if (isset($_SESSION["post"]["upload-picture"])) {
 
-        $post_id = $sql_link->query("SELECT id FROM post WHERE picture='$temp_pic_name'");
+        $post_id = $sql_link->query("SELECT id FROM post WHERE picture='$image_name'");
         $post_id = $post_id->fetch(PDO::FETCH_ASSOC); //turn php object into array
         $post_id = implode($post_id);
 
-        $image_name = $_SESSION["post"]["upload-picture"];
+        $post_id_image_name = "post_" . $post_id
+            . "_pic_" . time() . ".png";
+        file_put_contents($post_id_image_name, $data);
+        rename($post_id_image_name, "../../../" . $dir . $post_id_image_name);
+
+        //$image_name = $_SESSION["post"]["upload-picture"];
 
         $dir_original = "static/images/blog_post/upload/";
         $dir_target = "static/images/blog_post/post/";
@@ -68,7 +73,7 @@ if (isset($_POST["save-add-post"])) {
             }
         }
         $sql = "UPDATE `post` 
-            SET `picture`='$image_name'
+            SET `picture`='$post_id_image_name'
             WHERE `id`='$post_id'";
 
         if ($sql_link->exec($sql)) {
@@ -80,7 +85,7 @@ if (isset($_POST["save-add-post"])) {
 
         rename(
             "../../../" . $dir_original . $image_name,
-            "../../../" . $dir_target . $image_name
+            "../../../" . $dir_target . $post_id_image_name
         );
 
         $files = glob("../../../" . $dir_original . '/*'); //遞迴取得子資料夾 | 檔名不含路徑

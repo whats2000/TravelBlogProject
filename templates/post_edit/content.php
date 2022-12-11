@@ -5,7 +5,6 @@ $article = $_SESSION["article"];
 //test
 $_SESSION['user']['email'] = "kh0109092@gmail.com";
 ?>
-
 <section id="posts-content" class="container p-5">
     <h2 class="pb-4 mb-4 fst-italic border-bottom fs-2 fw-bold">
         <?= $post_description ?>
@@ -31,20 +30,12 @@ $_SESSION['user']['email'] = "kh0109092@gmail.com";
                                     <i class="bi bi-pencil-fill"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <input type="button" class="dropdown-item delete_data" value="delete">
                                     <form action="./post_edit/change.php" method="POST">
-                                        <input type="hidden" name="for_post" value="   <?= $value['for_post'] ?>">
-                                        <input type="hidden" name="position" value="   <?= $value['position'] ?>">
+                                        <input type="hidden" name="for_post" value="<?= $value['for_post'] ?>">
+                                        <input type="hidden" name="position" value="<?= $value['position'] ?>">
+                                        <input class="dropdown-item" type="submit" name="delete" value="delete">
                                         <input class="dropdown-item" type="submit" name="move_up" value="move up">
-                                    </form>
-                                    <form action="./post_edit/change.php" method="POST">
-                                        <input type="hidden" name="for_post" value="   <?= $value['for_post'] ?>">
-                                        <input type="hidden" name="position" value="   <?= $value['position'] ?>">
                                         <input class="dropdown-item" type="submit" name="move_down" value="move down">
-                                    </form>
-                                    <form action="./post_edit/change.php" method="POST">
-                                        <input type="hidden" name="for_post" value="   <?= $value['for_post'] ?>">
-                                        <input type="hidden" name="position" value="   <?= $value['position'] ?>">
                                         <input class="dropdown-item" type="submit" name="edit" value="edit">
                                     </form>
                                 </ul>
@@ -61,7 +52,6 @@ $_SESSION['user']['email'] = "kh0109092@gmail.com";
                                         <h5 class="card-title">
                                             <?= $value["title"] ?>
                                         </h5>
-
                                         <div class="card-text lh-base">
                                             <?= $value["description"] ?>
                                         </div>
@@ -75,20 +65,12 @@ $_SESSION['user']['email'] = "kh0109092@gmail.com";
                                                 <i class="bi bi-pencil-fill"></i>
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <input type="button" class="dropdown-item delete_data" value="delete">
                                                 <form action="./post_edit/change.php" method="POST">
                                                     <input type="hidden" name="for_post" value="<?= $value['for_post'] ?>">
                                                     <input type="hidden" name="position" value="<?= $value['position'] ?>">
+                                                    <input class="dropdown-item" type="submit" name="delete" value="delete">
                                                     <input class="dropdown-item" type="submit" name="move_up" value="move up">
-                                                </form>
-                                                <form action="./post_edit/change.php" method="POST">
-                                                    <input type="hidden" name="for_post" value="<?= $value['for_post'] ?>">
-                                                    <input type="hidden" name="position" value="<?= $value['position'] ?>">
                                                     <input class="dropdown-item" type="submit" name="move_down" value="move down">
-                                                </form>
-                                                <form action="./post_edit/change.php" method="POST">
-                                                    <input type="hidden" name="for_post" value="<?= $value['for_post'] ?>">
-                                                    <input type="hidden" name="position" value="<?= $value['position'] ?>">
                                                     <input class="dropdown-item" type="submit" name="edit" value="edit">
                                                 </form>
                                             </ul>
@@ -146,25 +128,24 @@ $_SESSION['user']['email'] = "kh0109092@gmail.com";
         </form>
     </div>
 </section>
-<script>
-    $(".delete_data").click(function() {
-        alert("test");
-        // if (choice === true) {
-        //     var del_id = $(this).attr('id');
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: 'delete.php',
-        //         data: 'delete_id=' + del_id,
-        //         success: function(data) {
-        //             if (!data) {
-        //                 window.location.replace("memberpage.php");
-        //             } else {
-        //                 alert('failed');
-        //             }
-        //         }
-        //     });
-        // } else {
-        //     return false;
-        // }
-    });
-</script>
+<!-- <div class="btn-group">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-pencil-fill"></i>
+    </button>
+    <ul class="dropdown-menu">
+        <form action="./post_edit/change.php" method="POST">
+            <input type="hidden" name="for_post" value="<?= $value['for_post'] ?>">
+            <input type="hidden" name="position" value="<?= $value['position'] ?>">
+            <input class="dropdown-item" type="submit" name="delete" value="delete">
+            <input class="dropdown-item" type="submit" name="move_up" value="move up">
+            <input class="dropdown-item" type="submit" name="move_down" value="move down">
+            <input class="dropdown-item" type="submit" name="edit" value="edit">
+        </form>
+    </ul>
+</div>
+<form action="./post/post_handle.php">
+    <input class="btn btn-secondary" type="submit" value="new article">
+</form>
+<form action="./post/post_handle.php">
+    <input class="float-end btn btn-secondary" type="submit" value="complete">
+</form> -->

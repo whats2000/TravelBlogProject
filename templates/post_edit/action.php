@@ -1,13 +1,19 @@
 <?php
 session_start();
+
 include "../core/config.php";
+
 $sql_link = connect("root", "");
+
 $position = $_POST['pos'];
 $post = $_POST['post'];
+
 $sql = "SELECT * FROM `article` WHERE `for_post` = '$post'";
+
 $result = $sql_link->query($sql);
 $rowcount = $result->rowCount();
-$_SESSION['exec_msg'] = NULL;
+
+$_SESSION['exec_msg'] = null;
 if ($_POST['action'] == "delete") {
     $sql = "DELETE FROM `article` WHERE `position` = '$position' AND `for_post` = '$post'";
     $sql_link->exec($sql);
@@ -17,7 +23,7 @@ if ($_POST['action'] == "delete") {
         $sql_link->exec($sql);
     }
     $_SESSION['exec_msg'] = "complete.";
-} else if ($_POST['action'] == "move_up") {
+} elseif ($_POST['action'] == "move_up") {
     if ($position == 1) {
         $_SESSION['exec_msg'] = "already at top.";
     } else {
@@ -32,7 +38,7 @@ if ($_POST['action'] == "delete") {
         $sql_link->exec($sql);
         $_SESSION['exec_msg'] = "complete.";
     }
-} else if ($_POST['action'] == "move_down") {
+} elseif ($_POST['action'] == "move_down") {
     if ($position == $rowcount) {
         $_SESSION['exec_msg'] = "already at bottom.";
     } else {

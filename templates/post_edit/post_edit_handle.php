@@ -1,12 +1,12 @@
 <?php
 include("../core/config.php");
+
 session_start();
-$_SESSION["post"] = NULL;
-$_SESSION["article"] = NULL;
-// test usage remove later
-$_SESSION["post"]["id"] = 1;
+
+unset($_SESSION["article"]);
 
 if (!isset($_SESSION["post"]["id"])) {
+    $_SESSION["show_message"] = "Undefine post id";
     exit();
 }
 
@@ -30,36 +30,48 @@ $post_result = $sql_link->query($sql);
 if ($post_result) {
     $row = $post_result->fetch();
 
-    $_SESSION["post"] = [
-        "post_email" => $row['email'],
-        "title" => $row["title"],
-        "description" => $row["description"],
-        "picture" => $row["picture"],
-        "create_at" => $row["create_at"]
-    ];
+    if ($row["email"] == $_SESSION["user"]["email"]) {
+        $_SESSION["post"] = [
+            "id" => $row["id"],
+            "post_email" => $row['email'],
+            "title" => $row["title"],
+            "description" => $row["description"],
+            "picture" => $row["picture"],
+            "create_at" => $row["create_at"]
+        ];
 
-    $sql = "SELECT * FROM `article` WHERE `for_post` = '$post_id' ORDER BY `position`";
+        $sql = "SELECT * FROM `article` WHERE `for_post` = '$post_id' ORDER BY `position`";
 
-    $article_result = $sql_link->query($sql);
+        $article_result = $sql_link->query($sql);
 
-    if ($article_result) {
-        $article_rows = [];
+        if ($article_result) {
+            if ($article_result->rowCount() > 0) {
+                $article_rows = [];
 
-        while ($row = $article_result->fetch()) {
-            $_SESSION["article"][$row["id"]] = [
-                "id" => $row["id"],
-                "title" => $row["title"],
-                "description" => $row["description"],
-                "picture" => $row["picture"],
-                "display" => $row["display"],
-                "edit_time" => $row["edit_time"],
-                "for_post" => $row["for_post"],
-                "position" => $row["position"]
-            ];
+                while ($row = $article_result->fetch()) {
+                    $_SESSION["article"][$row["id"]] = [
+                        "id" => $row["id"],
+                        "title" => $row["title"],
+                        "description" => $row["description"],
+                        "picture" => $row["picture"],
+                        "display" => $row["display"],
+                        "edit_time" => $row["edit_time"],
+                        "for_post" => $row["for_post"],
+                        "position" => $row["position"]
+                    ];
+                }
+            } else {
+                unset($_SESSION["article"]);
+            }
+
+            $url = "../post_edit.php";
+        } else {
+            $url = "../index.php";
+            $return_msg = "Fail to fetch article data from database";
         }
     } else {
         $url = "../index.php";
-        $return_msg = "Fail to fetch article data from database";
+        $return_msg = "You don't have permission to edit this post.";
     }
 } else {
     $url = "../index.php";
@@ -71,6 +83,6 @@ if ($return_msg != "") {
 }
 ?>
 <script>
-    window.location.href = '<?= $url ?>';
+window.location.href = '<?= $url ?>';
 </script>
 <?php exit() ?>

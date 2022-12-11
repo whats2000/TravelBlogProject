@@ -1,12 +1,16 @@
 <?php
 include("../core/config.php");
+
 session_start();
-$_SESSION["post"] = NULL;
-$_SESSION["article"] = NULL;
-// test usage remove later
-$_SESSION["post"]["id"] = 1;
+
+unset($_SESSION["article"]);
+
+if (@$_GET["id"]) {
+    $_SESSION["post"]["id"] = $_GET["id"];
+}
 
 if (!isset($_SESSION["post"]["id"])) {
+    $_SESSION["show_message"] = "Undefine post id";
     exit();
 }
 
@@ -20,8 +24,6 @@ if (!$sql_link) {
     exit();
 }
 
-$return_msg = "";
-
 $post_id = $_SESSION["post"]["id"];
 $sql = "SELECT * FROM `post` WHERE `id` = '$post_id'";
 
@@ -31,6 +33,7 @@ if ($post_result) {
     $row = $post_result->fetch();
 
     $_SESSION["post"] = [
+        "id" => $row["id"],
         "post_email" => $row['email'],
         "title" => $row["title"],
         "description" => $row["description"],
@@ -71,6 +74,6 @@ if ($return_msg != "") {
 }
 ?>
 <script>
-    window.location.href = '<?= $url ?>';
+window.location.href = '<?= $url ?>';
 </script>
 <?php exit() ?>

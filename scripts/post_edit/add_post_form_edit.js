@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#upload-picture').on('change', function () { //#upload-picture in post_edit/add_post_form/add_post_form.php
+    $('#upload-post-picture').on('change', function () { //#upload-post-picture in post_edit/add_post_form/add_post_form.php
         var reader = new FileReader();
         reader.onload = function (event) {
             $image_crop.croppie('bind', {

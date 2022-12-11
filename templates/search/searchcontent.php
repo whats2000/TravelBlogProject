@@ -18,7 +18,7 @@ if(isset($_SESSION["search_input"])){
     if($UrowCount>0){
         echo"<h2><b>Your Searching Result From User...</b></h2><br>";
         foreach($Urows as $Urow){
-            echo "<a href='./search/searchconnection.php'>$Urow[name]</a><br>";
+            echo "<a href='./search/searchconnection.php?user=$Urow[id]'>$Urow[name]</a><br>";
         }
     }
     echo"<br>";

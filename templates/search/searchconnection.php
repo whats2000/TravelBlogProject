@@ -2,7 +2,7 @@
 session_start();
 if(isset($_GET["user"])){
     $_SESSION["profile"]=$_GET["user"];
-    header("Location: ../profile.php");
+    header("Location: ../user_intro.php?user_intro_id=$_SESSION[profile]");
 }
 elseif(isset($_GET["post"])){
     $_SESSION["post"]["id"]=$_GET["post"];

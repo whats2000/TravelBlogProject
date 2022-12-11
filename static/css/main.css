@@ -1208,7 +1208,7 @@ section#posts-topic h3 {
   font-family: "Pacifico", cursive;
 }
 
-div#add-post-form input#upload-picture {
+div#add-post-form input#upload-post-picture {
   opacity: 0;
 }
 div#add-post-form label#upload-label {

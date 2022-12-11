@@ -13,11 +13,13 @@ if (!$sql_link) {
     $_SESSION["show_message"] = "Error at connect to database";
     exit();
 }
-$url = "../../index.php";
-$data = NULL;
-$dir = NULL;
-if (isset($_POST["image"])) {
 
+$url = "../../index.php";
+
+$data = null;
+$dir = null;
+
+if (isset($_POST["image"])) {
     $data = $_POST["image"];
 
     $dir = "static/images/blog_post/upload/";
@@ -38,69 +40,77 @@ if (isset($_POST["image"])) {
 
     rename($image_name, "../../../" . $dir . $image_name);
 
-    $_SESSION["post"]["upload-picture"] = $image_name;
+    $_SESSION["post"]["upload-post-picture"] = $image_name;
     echo '<img src="../' . $dir . $image_name . '" class="img-thumbnail" />';
 }
+
 if (isset($_POST["save-add-post"])) {
     //INSERT email, name, title, description, create_at upload
-    $email = $_SESSION['profile']['email'];
+    date_default_timezone_set("Asia/Taipei");
+
+    $email = $_SESSION['user']['email'];
     $title = $_POST["title"];
     $description = $_POST["description"];
-    date_default_timezone_set("Asia/Taipei");
     $datetime = date("Y-m-d H:i:s");
-    $image_name = $_SESSION["post"]["upload-picture"];
-    $add_post = $sql_link->exec("INSERT INTO post(email, picture, title, description, create_at) VALUES('$email', '$image_name','$title', '$description', '$datetime')");
 
-    if (isset($_SESSION["post"]["upload-picture"])) {
+    $image_name = $_SESSION["post"]["upload-post-picture"];
 
-        $post_id = $sql_link->query("SELECT id FROM post WHERE picture='$image_name'");
-        $post_id = $post_id->fetch(PDO::FETCH_ASSOC); //turn php object into array
-        $post_id = implode($post_id);
+    $add_post = $sql_link->exec("INSERT INTO post(email, picture, title, description, create_at) 
+                                 VALUES('$email', '$image_name','$title', '$description', '$datetime')");
 
-        $post_id_image_name = "post_" . $post_id
-            . "_pic_" . time() . ".png";
-        file_put_contents($post_id_image_name, $data);
-        rename($post_id_image_name, "../../../" . $dir . $post_id_image_name);
+    $sql = "SELECT id FROM post WHERE picture='$image_name'";
 
-        //$image_name = $_SESSION["post"]["upload-picture"];
+    $result = $sql_link->query($sql);
 
-        $dir_original = "static/images/blog_post/upload/";
-        $dir_target = "static/images/blog_post/post/";
+    if ($result) {
+        $row = $result->fetch();
+        $post_id = $row["id"];
+        $_SESSION["post"]["id"] = $row["id"];
 
-        if ($_SESSION["post"]["picture"] != "") {
-            if (file_exists("../../../" . $dir_target . $_SESSION["post"]["picture"])) {
-                unlink("../../../" . $dir_target . $_SESSION["post"]["picture"]);
-            }
-        }
-        $sql = "UPDATE `post` 
+        if (isset($_SESSION["post"]["upload-post-picture"])) {
+            $post_id_image_name = "post_" . "{$post_id}"
+                . "_pic_" . time() . ".png";
+
+            $dir_original = "static/images/blog_post/upload/";
+            $dir_target = "static/images/blog_post/post/";
+
+            $sql = "UPDATE `post` 
             SET `picture`='$post_id_image_name'
             WHERE `id`='$post_id'";
 
-        if ($sql_link->exec($sql)) {
-            $_SESSION["post"]["picture"] = $image_name;
-            $return_msg = "Upload successfully";
-        } else {
-            $return_msg = "Fail to upload post image";
-        }
-
-        rename(
-            "../../../" . $dir_original . $image_name,
-            "../../../" . $dir_target . $post_id_image_name
-        );
-
-        $files = glob("../../../" . $dir_original . '/*'); //遞迴取得子資料夾 | 檔名不含路徑
-        foreach ($files as $file) {
-            if (is_file($file)) {
-                unlink($file);
+            if ($sql_link->exec($sql)) {
+                $_SESSION["post"]["picture"] = $image_name;
+                $return_msg = "Upload successfully";
+            } else {
+                $return_msg = "Fail to upload post image";
             }
+
+            rename(
+                "../../../" . $dir_original . $image_name,
+                "../../../" . $dir_target . $post_id_image_name
+            );
+
+            $files = glob("../../../" . $dir_original . '/*'); //遞迴取得子資料夾 | 檔名不含路徑
+            foreach ($files as $file) {
+                if (is_file($file)) {
+                    unlink($file);
+                }
+            }
+
+            $url = "../../post_edit/post_edit_handle.php";
         }
+    } else {
+        $url = "../index.php";
+        $return_msg = "Fail to fetch post data from database";
     }
-?>
-    <script>
-        window.location.href = "../../post/post_handle.php";
-    </script>
+
+    ?>
+<script>
+window.location.href = '<?=$url?>';
+</script>
 <?php
 }
+
 if (isset($_POST["cancel-save"])) {
     $dir = "static/images/blog_post/upload/";
 
@@ -110,9 +120,9 @@ if (isset($_POST["cancel-save"])) {
             unlink($file);
         }
     } ?>
-    <script>
-        window.location.href = "../../index.php";
-    </script>
+<script>
+//window.location.href = "../../index.php";
+</script>
 <?php
 }
 

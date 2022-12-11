@@ -10,7 +10,12 @@ if (@$_GET["id"]) {
 }
 
 if (!isset($_SESSION["post"]["id"])) {
-    $_SESSION["show_message"] = "Undefine post id";
+    $_SESSION["show_message"] = "Undefine post id";?>
+<script>
+window.location.href = '../index.php';
+</script>
+<?php
+    
     exit();
 }
 
@@ -38,7 +43,8 @@ if ($post_result) {
         "title" => $row["title"],
         "description" => $row["description"],
         "picture" => $row["picture"],
-        "create_at" => $row["create_at"]
+        "create_at" => $row["create_at"],
+        "edit" => false
     ];
 
     $sql = "SELECT * FROM `article` WHERE `for_post` = '$post_id' ORDER BY `position`";

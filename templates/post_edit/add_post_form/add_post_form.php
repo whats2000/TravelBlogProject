@@ -22,14 +22,14 @@
                                         Open up
                                     </small>
                                 </label>
-                                
+
                             </div>
                             <!-- Uploaded image area-->
                             <p class="font-italic text-secondary text-center">
                                 The image uploaded will be rendered inside the box
                                 below.
                             </p>
-                            <div class="image-area mt-4 text-center text-muted">
+                            <div class="image-area mt-4 text-center text-muted mb-5">
                                 <div id="uploaded-picture">
                                     <p>There nothing here currently</p>
                                 </div>

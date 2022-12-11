@@ -38,12 +38,32 @@ if (isset($_SESSION["user_intro"])) { ?>
                         <div class="card-header">
                             Content
                         </div>
+                        <?php
+                        if($_SESSION["user_intro_prow"] == 0){
+                        ?>
                         <div class="card-body">
                             <h5 class="card-title">Oops</h5>
                             <p class="card-text text-center">
                                 There is no post here.
                             </p>
                         </div>
+                        <?php
+                        }
+                        else{
+                            foreach($_SESSION["user_intro_post"] as $content){
+                        ?>
+                        <a href="./search/searchconnection.php?post=<?=$content["id"]?>">
+                            <div class="card-body">
+                                <p class="card-title"><?=$content["title"]?></p>
+                                <p class="card-text text-center">
+                                <?=$content["description"]?>
+                            </p>
+                            </div>
+                        </a>
+                        <?php
+                            }    
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

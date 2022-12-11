@@ -31,6 +31,12 @@ else {
                             "about" => $row["about"],
                             "permission" => $row["permission"],
                             "create_at" => $row["create_at"]];
+                            
+    $email = $_SESSION["user_intro"]["email"];
+    $sql_post = "SELECT * FROM `post` WHERE `email` = '$email'";
+    $presult = $sql_link->query($sql_post);
+    $_SESSION["user_intro_post"] = $presult->fetchall();
+    $_SESSION["user_intro_prow"] = $presult->rowCount();
 
     header("Location: ../user_intro.php?user_intro_id=$intro_id");
     exit();

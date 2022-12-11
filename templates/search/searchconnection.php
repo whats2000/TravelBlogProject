@@ -7,7 +7,7 @@ if(isset($_GET["user"])){
 elseif(isset($_GET["post"])){
     $_SESSION["post"]["id"]=$_GET["post"];
     print($_SESSION["post"]["id"]);
-    header("Location: ../posts/post_handle.php");
+    header("Location: ../post/post_handle.php");
 }
 else{
     header("Location: ../index.php");

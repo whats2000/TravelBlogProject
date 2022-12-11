@@ -92,7 +92,7 @@ if (isset($_POST["save-add-post"])) {
     }
 ?>
     <script>
-        window.location.href = "../../posts/post_handle.php";
+        window.location.href = "../../post/post_handle.php";
     </script>
 <?php
 }

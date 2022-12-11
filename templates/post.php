@@ -1,19 +1,24 @@
 <?php
 session_start();
-$_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
-?>
+if (!isset($_SESSION["post"]) || !isset($_SESSION["article"])) { ?>
+    <script>
+        alert("switch.");
+        window.location.href = './post/post_handler.php';
+    </script>
+<?php } ?>
 
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            maximum-scale=1" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
-    <title>WannaGo &raquo; Home</title>
+    <title>WannaGo &raquo; <?= $_SESSION["post"]["title"] ?> </title>
 
     <link href="../static/images/icon/icon.svg" rel="icon" />
 
@@ -29,8 +34,6 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
     <script src="../scripts/password_validation.js"></script>
-    <script src="../scripts/croppie.js"></script>
-    <script src="../scripts/post_edit/add_post_form_edit.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -38,20 +41,13 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 <body>
     <header>
         <?php include('./core/navbar.php'); ?>
-        <?php include './post_edit/add_post_form/add_post_form.php'; ?>
-        <?php include './post_edit/add_post_form/add_post_form_crop.php'; ?>
-        <div include-html="index/carousel.html">
+
+        <div include-html="post/topic.php">
         </div>
     </header>
 
     <main>
-        <div include-html="index/about.html">
-        </div>
-
-        <div include-html="index/post.html">
-        </div>
-
-        <div include-html="index/tips.html">
+        <div include-html="post/content.php">
         </div>
     </main>
 

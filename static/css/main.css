@@ -1208,6 +1208,25 @@ section#posts-topic h3 {
   font-family: "Pacifico", cursive;
 }
 
+div#add-post-form input#upload-picture {
+  opacity: 0;
+}
+div#add-post-form label#upload-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+div#add-post-form div.image-area {
+  border: 2px dashed gray;
+  padding: 1rem;
+  position: relative;
+}
+div#add-post-form div.image-area img {
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
 /**********************************
 *
 *          login modal

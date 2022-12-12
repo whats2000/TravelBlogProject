@@ -19,113 +19,113 @@ if(isset($_GET["search"])){//start the search code here
         $_SESSION["search_input"] = $targets;
         //deal with sql query and save them to $_SESSION
         //from user
-        $sql_uA =  "SELECT * FROM user WHERE";
+        $sql_user_a =  "SELECT * FROM user WHERE";
         foreach($targets as $target){
-            $sql_uA.=" (name = '$target') OR";
+            $sql_user_a.=" (name = '$target') OR";
         }
-        $sql_uA = rtrim($sql_uA, "OR");
-        $sql_uA .= "LIMIT 100";
-        $uArows = $sql_link->query($sql_uA);
-        $uArowcount = $uArows->rowCount();
-        $Result_uA = $uArows->fetchall(PDO::FETCH_ASSOC);
-        $rb = 100 - $uArows->rowCount();
-        $sql_uB =  "SELECT * FROM user WHERE(";
+        $sql_user_a = rtrim($sql_user_a, "OR");
+        $sql_user_a .= "LIMIT 100";
+        $user_a_rows = $sql_link->query($sql_user_a);
+        $user_a_count = $user_a_rows->rowCount();
+        $result_user_a = $user_a_rows->fetchall(PDO::FETCH_ASSOC);
+        $rb = 100 - $user_a_rows->rowCount();
+        $sql_user_b =  "SELECT * FROM user WHERE(";
         foreach($targets as $target){
-            $sql_uB.=" (name LIKE '%$target%') OR";
+            $sql_user_b.=" (name LIKE '%$target%') OR";
         }
-        $sql_uB = rtrim($sql_uB, "OR");
-        $sql_uB .=")AND NOT(";
+        $sql_user_b = rtrim($sql_user_b, "OR");
+        $sql_user_b .=")AND NOT(";
         foreach($targets as $target){
-            $sql_uB.="(name = '$target') OR";
+            $sql_user_b.="(name = '$target') OR";
         }
-        $sql_uB = rtrim($sql_uB, "OR");
-        $sql_uB .=")";
-        $sql_uB .= "LIMIT $rb";
-        $uBrows = $sql_link->query($sql_uB);
-        $uBrowcount = $uBrows->rowCount();
-        $Result_uB = $uBrows->fetchall(PDO::FETCH_ASSOC);
-        $rc = $rb - $uBrows->rowCount();
+        $sql_user_b = rtrim($sql_user_b, "OR");
+        $sql_user_b .=")";
+        $sql_user_b .= "LIMIT $rb";
+        $user_b_rows = $sql_link->query($sql_user_b);
+        $user_b_count = $user_b_rows->rowCount();
+        $result_user_b = $user_b_rows->fetchall(PDO::FETCH_ASSOC);
+        $rc = $rb - $user_b_rows->rowCount();
         if($rc>0){
-            $sql_uC =  "SELECT * FROM user WHERE(";
+            $sql_user_c =  "SELECT * FROM user WHERE(";
             foreach($targets as $target){
-                $sql_uC.=" (name SOUNDS LIKE '$target') OR";
+                $sql_user_c.=" (name SOUNDS LIKE '$target') OR";
             }
-            $sql_uC = rtrim($sql_uC, "OR");
-            $sql_uC .=")AND NOT(";
+            $sql_user_c = rtrim($sql_user_c, "OR");
+            $sql_user_c .=")AND NOT(";
             foreach($targets as $target){
-                $sql_uC.="(name = '$target') OR";
+                $sql_user_c.="(name = '$target') OR";
             }
-            $sql_uC = rtrim($sql_uC, "OR");
-            $sql_uC .=")AND NOT(";
+            $sql_user_c = rtrim($sql_user_c, "OR");
+            $sql_user_c .=")AND NOT(";
             foreach($targets as $target){
-                $sql_uC.="(name LIKE '%$target%') OR";
+                $sql_user_c.="(name LIKE '%$target%') OR";
             }
-            $sql_uC = rtrim($sql_uC, "OR");
-            $sql_uC .=")";
-            $sql_uC .= "LIMIT $rc";
-            $uCrows = $sql_link->query($sql_uC);
-            $uCrowcount = $uCrows->rowCount();
-            $Result_uC = $uCrows->fetchall(PDO::FETCH_ASSOC);
+            $sql_user_c = rtrim($sql_user_c, "OR");
+            $sql_user_c .=")";
+            $sql_user_c .= "LIMIT $rc";
+            $user_c_rows = $sql_link->query($sql_user_c);
+            $user_c_count = $user_c_rows->rowCount();
+            $result_user_c = $user_c_rows->fetchall(PDO::FETCH_ASSOC);
         }
         //combine the result to $_SESSION["SResult_U"],$_SESSION["SResult_U_rowcount"]
-        $Result_u = array_merge($Result_uA,$Result_uB);
-        $Result_u = array_merge($Result_u,$Result_uC);
-        $_SESSION["SResult_U"] = $Result_u;
-        $_SESSION["SResult_U_rowcount"] = $uArowcount+$uBrowcount+$uCrowcount;
+        $result_user = array_merge($result_user_a,$result_user_b);
+        $result_user = array_merge($result_user,$result_user_c);
+        $_SESSION["SResult_U"] = $result_user;
+        $_SESSION["SResult_U_rowcount"] = $user_a_count+$user_b_count+$user_c_count;
         //from post
-        $sql_pA =  "SELECT * FROM post WHERE";
+        $sql_post_a =  "SELECT * FROM post WHERE";
         foreach($targets as $target){
-            $sql_pA.=" (title = '$target') OR";
+            $sql_post_a.=" (title = '$target') OR";
         }
-        $sql_pA = rtrim($sql_pA, "OR");
-        $sql_pA .= "LIMIT 100";
-        $pArows = $sql_link->query($sql_pA);
-        $pArowcount = $pArows->rowCount();
-        $Result_pA = $pArows->fetchall(PDO::FETCH_ASSOC);
-        $rb = 100 - $pArows->rowCount();
+        $sql_post_a = rtrim($sql_post_a, "OR");
+        $sql_post_a .= "LIMIT 100";
+        $post_a_rows = $sql_link->query($sql_post_a);
+        $post_a_count = $post_a_rows->rowCount();
+        $result_post_a = $post_a_rows->fetchall(PDO::FETCH_ASSOC);
+        $rb = 100 - $post_a_rows->rowCount();
 
-        $sql_pB =  "SELECT * FROM post WHERE(";
+        $sql_post_b =  "SELECT * FROM post WHERE(";
         foreach($targets as $target){
-            $sql_pB.=" (title LIKE '%$target%') OR";
+            $sql_post_b.=" (title LIKE '%$target%') OR";
         }
-        $sql_pB = rtrim($sql_pB, "OR");
-        $sql_pB .=")AND NOT(";
+        $sql_post_b = rtrim($sql_post_b, "OR");
+        $sql_post_b .=")AND NOT(";
         foreach($targets as $target){
-            $sql_pB.="(title = '$target') OR";
+            $sql_post_b.="(title = '$target') OR";
         }
-        $sql_pB = rtrim($sql_pB, "OR");
-        $sql_pB .=")";
-        $sql_pB .= "LIMIT $rb";
-        $pBrows = $sql_link->query($sql_pB);
-        $pBrowcount = $pBrows->rowCount();
-        $Result_pB = $pBrows->fetchall(PDO::FETCH_ASSOC);
-        $rc = $rb - $pBrows->rowCount();
+        $sql_post_b = rtrim($sql_post_b, "OR");
+        $sql_post_b .=")";
+        $sql_post_b .= "LIMIT $rb";
+        $post_b_rows = $sql_link->query($sql_post_b);
+        $post_b_count = $post_b_rows->rowCount();
+        $result_post_b = $post_b_rows->fetchall(PDO::FETCH_ASSOC);
+        $rc = $rb - $post_b_rows->rowCount();
         if($rc>0){
-            $sql_pC =  "SELECT * FROM post WHERE(";
+            $sql_post_c =  "SELECT * FROM post WHERE(";
             foreach($targets as $target){
-                $sql_pC.=" (title SOUNDS LIKE '$target') OR";
+                $sql_post_c.=" (title SOUNDS LIKE '$target') OR";
             }
-            $sql_pC = rtrim($sql_pC, "OR");
-            $sql_pC .=")AND NOT(";
+            $sql_post_c = rtrim($sql_post_c, "OR");
+            $sql_post_c .=")AND NOT(";
             foreach($targets as $target){
-                $sql_pC.="(title = '$target') OR";
+                $sql_post_c.="(title = '$target') OR";
             }
-            $sql_pC = rtrim($sql_pC, "OR");
-            $sql_pC .=")AND NOT(";
+            $sql_post_c = rtrim($sql_post_c, "OR");
+            $sql_post_c .=")AND NOT(";
             foreach($targets as $target){
-                $sql_pC.="(title LIKE '%$target%') OR";
+                $sql_post_c.="(title LIKE '%$target%') OR";
             }
-            $sql_pC = rtrim($sql_pC, "OR");
-            $sql_pC .=")";
-            $sql_uC .= "LIMIT $rc";
-            $pCrows = $sql_link->query($sql_pC);
-            $pCrowcount = $pCrows->rowCount();
-            $Result_pC = $pCrows->fetchall(PDO::FETCH_ASSOC);
+            $sql_post_c = rtrim($sql_post_c, "OR");
+            $sql_post_c .=")";
+            $sql_post_c .= "LIMIT $rc";
+            $post_c_rows = $sql_link->query($sql_post_c);
+            $post_c_count = $post_c_rows->rowCount();
+            $result_post_c = $post_c_rows->fetchall(PDO::FETCH_ASSOC);
         }
-        $Result_p = array_merge($Result_pA,$Result_pB);
-        $Result_p = array_merge($Result_p,$Result_pC);
-        $_SESSION["SResult_P"] = $Result_p;
-        $_SESSION["SResult_P_rowcount"] = $pArowcount+$pBrowcount+$pCrowcount;
+        $result_post = array_merge($result_post_a,$result_post_b);
+        $result_post = array_merge($result_post,$result_post_c);
+        $_SESSION["SResult_P"] = $result_post;
+        $_SESSION["SResult_P_rowcount"] = $post_a_count+$post_b_count+$post_c_count;
     }
     else{
         header("Location: ../index.php");

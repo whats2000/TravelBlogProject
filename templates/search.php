@@ -40,12 +40,12 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
         <?php include('./core/navbar.php');?>
         </div>
 
-        <div include-html="index/carousel.html">
+        <div include-html="search/topic.html">
         </div>
     </header>
 
     <main>
-        <?php include('./search/searchcontent.php');?>
+        <?php include('./search/content.php');?>
         </div>
         <div include-html="index/post.html">
         </div>

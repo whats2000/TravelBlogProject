@@ -1489,4 +1489,28 @@ section#profile-edit-topic div.config-button {
 }
 section#profile-edit-topic div.config-button p {
   font-size: 2em;
+}
+
+/**********************************
+*
+*          search.php
+*
+**********************************/
+/* topic.html */
+section#search-topic {
+  height: 35vh;
+}
+section#search-topic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section#search-topic h3 {
+  font-size: 4em;
+  color: white;
+  position: absolute;
+  top: 17.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: "Pacifico", cursive;
 }/*# sourceMappingURL=main.css.map */

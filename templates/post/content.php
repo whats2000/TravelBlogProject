@@ -77,8 +77,8 @@ $article = $_SESSION["article"];
             </nav>
         </div>
     </div>
-
-    <div class="row mb-5">
+    <?php include("../comment/comment_content.php"); ?>
+    <!-- <div class="row mb-5">
         <form id="Comments" class="mb-5" action="" method="post">
             <h3>Comments</h3>
             <div class="mb-3">
@@ -98,5 +98,5 @@ $article = $_SESSION["article"];
                 Submit
             </button>
         </form>
-    </div>
+    </div> -->
 </section>

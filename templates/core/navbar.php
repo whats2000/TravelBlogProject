@@ -34,9 +34,9 @@ if (isset($_SESSION['user']) && ($_SESSION['user']['icon'] != "")) {
                 </li>
             </ul>
             <div class="d-flex align-items-center">
-                <form class="me-2 w-100" role="search">
+                <form class="me-2 w-100" role="search" action="./search/search_handle.php">
                     <input type="search" class="form-control form-control-sm no-shadowv btn-primary"
-                        placeholder="Search..." aria-label="Search">
+                        placeholder="Search..." aria-label="Search" name="search" ?>
                 </form>
                 <div class="dropdown text-end">
                     <a href="#" class="d-block text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"

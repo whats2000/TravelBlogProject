@@ -57,6 +57,8 @@ if(isset($_SESSION["post"]["id"])){//know to post id
             else{
                 $icon = "../static/images/user/icon/".$comment["icon"];
             }
+            $content_tag_id = "tag_id_".$comment["id"];
+            $edit_button_id = "edit_id_".$comment["id"];
             if(isset($_SESSION["user"]["email"])){
                 if( $email!=$comment["email"]){
                 ?>
@@ -66,7 +68,7 @@ if(isset($_SESSION["post"]["id"])){//know to post id
                             <div class="d-flex flex-row align-items-center">
                                 <img src="<?=$icon?>" alt="avatar" width="25"
                                 height="25" />
-                                <p class="card-title"><?=$comment["name"]?></p>
+                                <p class="card-title px-3 mt-2"><?=$comment["name"]?></p>
                             </div>
                         </div>
                         <p><b><?=$comment["content"]?></b></p>
@@ -75,6 +77,21 @@ if(isset($_SESSION["post"]["id"])){//know to post id
                 <?php
                 }
                 else{//those comment they can edit
+                    ?>
+                    <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="<?=$icon?>" alt="avatar" width="25"
+                                height="25" />
+                                <p class="card-title px-3 mt-2" id=<?=$content_tag_id?>><?=$comment["name"]?></p>
+                                <button id=<?=$edit_button_id?> type="button" class="btn btn-outline-secondary" onclick="edit(<?=$content_tag_id?>,<?=$edit_button_id?>)" >edit</button>
+                            </div>
+                        </div>
+                        <p><b><?=$comment["content"]?></b></p>
+                    </div>
+                </div>
+                <?php
 
                 }
             }
@@ -93,9 +110,8 @@ if(isset($_SESSION["post"]["id"])){//know to post id
                     </div>
                 </div>
                 <?php
-            }
+            }        
         }
     }
 }
 ?>
-

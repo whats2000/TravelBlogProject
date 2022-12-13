@@ -13,7 +13,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
-    <title>WannaGo &raquo; Tips</title>
+    <title>WannaGo &raquo; Search</title>
 
     <link href="../static/images/icon/icon.svg" rel="icon" />
 
@@ -31,6 +31,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
+    <script src="../scripts/password_validation.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -47,7 +48,8 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
     <main>
         <?php include('./search/content.php');?>
         </div>
-        <div include-html="index/post.html">
+        
+        <div include-html="index/tips.html">
         </div>
     </main>
 

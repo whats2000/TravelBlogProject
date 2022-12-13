@@ -3,13 +3,13 @@ $(document).ready(function () {
     $image_crop = $('#picture-upload').croppie({ //#picture-upload in post_edit/add_post_form/add_post_form_crop.php
         enableExif: true,
         viewport: {
-            width: 400,
-            height: 300,
+            width: 1000,
+            height: 750,
             type: 'square'
         },
         boundary: {
-            width: 450,
-            height: 450
+            width: 1200,
+            height: 900
         }
     });
 

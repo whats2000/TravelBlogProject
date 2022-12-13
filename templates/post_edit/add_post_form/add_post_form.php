@@ -33,7 +33,7 @@
                                 below.
                             </p>
                             <div class="image-area mt-4 text-center text-muted mb-5">
-                                <div id="uploaded-picture">
+                                <div id="uploaded-picture" class="text-center">
                                     <p>There nothing here currently</p>
                                 </div>
                             </div>

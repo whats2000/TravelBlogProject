@@ -1,5 +1,5 @@
 <div id="modal-upload-post-picture" class="modal bg-secondary">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="icon-form-label">Crop post image</h1>

@@ -41,7 +41,7 @@ if (isset($_POST["image"])) {
     rename($image_name, "../../../" . $dir . $image_name);
 
     $_SESSION["post"]["upload-post-picture"] = $image_name;
-    echo '<img src="../' . $dir . $image_name . '" class="img-thumbnail" />';
+    echo '<img src="../' . $dir . $image_name . '" class="img-fluid" />';
 }
 
 if (isset($_POST["save-add-post"])) {
@@ -100,7 +100,7 @@ if (isset($_POST["save-add-post"])) {
             $url = "../../post_edit/post_edit_handle.php";
         }
     } else {
-        $url = "../index.php";
+        $url = "../../index.php";
         $return_msg = "Fail to fetch post data from database";
     }
 
@@ -121,7 +121,7 @@ if (isset($_POST["cancel-save"])) {
         }
     } ?>
 <script>
-//window.location.href = "../../index.php";
+window.location.href = "<?=$url?>";
 </script>
 <?php
 }

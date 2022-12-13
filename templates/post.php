@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["post"]) || !isset($_SESSION["article"])) { ?>
+if (!isset($_SESSION["post"])) { ?>
 <script>
 window.location.href = './post/post_handle.php';
 </script>

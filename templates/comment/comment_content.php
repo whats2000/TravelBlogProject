@@ -63,6 +63,22 @@ if(isset($_SESSION["post"]["id"])){//know to post id
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center pb-1">
+                                <img src="<?=$icon?>" alt="avatar" width="25"
+                                height="25" />
+                                <p class="card-title m-2"><?=$comment["name"]?></p>
+                            </div>
+                        </div>
+                        <p><b><?=$comment["content"]?></b></p>
+                    </div>
+                </div>
+                <?php
+                }
+                else{//those comment they can edit
+                ?>
+                    <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
                             <div class="d-flex flex-row align-items-center">
                                 <img src="<?=$icon?>" alt="avatar" width="25"
                                 height="25" />
@@ -73,8 +89,6 @@ if(isset($_SESSION["post"]["id"])){//know to post id
                     </div>
                 </div>
                 <?php
-                }
-                else{//those comment they can edit
 
                 }
             }

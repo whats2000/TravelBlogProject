@@ -31,6 +31,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
+    <script src="../scripts/password_validation.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>

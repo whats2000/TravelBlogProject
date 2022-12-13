@@ -48,7 +48,6 @@ if (isset($_SESSION["profile"]["about"])) {
 
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
-    <script src="../scripts/croppie.js"></script>
     <script src="../scripts/profile_edit/icon_edit.js"></script>
     <script src="../scripts/password_validation.js"></script>
 

@@ -1400,7 +1400,7 @@ section#profile-edit-content a:hover {
   background-color: gray;
 }
 
-div#icon-form input#upload-image {
+div#icon-form input#upload-icon {
   opacity: 0;
 }
 div#icon-form label#upload-label {

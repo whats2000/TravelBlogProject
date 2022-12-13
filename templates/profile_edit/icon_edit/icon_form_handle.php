@@ -10,8 +10,8 @@ include("../../core/config.php");
 
 $return_msg = "";
 
-if (isset($_POST["image"])) {
-    $data = $_POST["image"];
+if (isset($_POST["icon"])) {
+    $data = $_POST["icon"];
 
     $dir = "static/images/user/upload/";
 

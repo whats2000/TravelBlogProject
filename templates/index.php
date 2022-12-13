@@ -29,10 +29,13 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
     <script src="../scripts/password_validation.js"></script>
     <script src="../scripts/croppie.js"></script>
+    <script src="../scripts/index_post_ajax.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -48,8 +51,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
         <div include-html="index/about.html">
         </div>
 
-        <div include-html="index/post.html">
-        </div>
+        <?php include('./index/post.php'); ?>
 
         <div include-html="index/tips.html">
         </div>

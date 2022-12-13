@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include("../core/config.php");
 
@@ -8,33 +9,30 @@ if (!$sql_link) {
     $_SESSION["show_message"] = "Error at connect to database";
     exit();
 }
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $return_msg ="";
     $post_id = $_SESSION["post"]["id"];
     $email = $_SESSION["user"]["email"];
 
     //insert the data to db
-    if(!empty($_POST["comment_content"])){
+    if (!empty($_POST["comment_content"])) {
         $sql = "INSERT INTO comment (post_id, email, content) VALUES ($post_id, '$email', '$_POST[comment_content]')";
-        if ($sql_link->query($sql) === TRUE) {
+        if ($sql_link->query($sql) === true) {
             echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . $sql_link->error;
         }
-    }
-    else{
+    } else {
         $return_msg = "Please Enter Something first";
         header("Location: ../post/post_handle.php?post=$post_id");
-        exist();
+        exit();
     }
-    }
-else{
+} else {
     header("Location: ../index.php");
-    exist();
+    exit();
 }
 if ($return_msg != "") {
     $_SESSION["show_message"] = $return_msg;
 }
 header("Location: ../post/post_handle.php?post=$post_id");
-exist();
-?>
+exit();

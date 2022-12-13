@@ -1,7 +1,9 @@
 <?php
 session_start();
 $post_description = $_SESSION["post"]["description"];
-$article = $_SESSION["article"];
+if (isset($_SESSION["article"])) {
+    $article = $_SESSION["article"];
+}
 ?>
 <section id="posts-content" class="container p-5">
     <h2 class="pb-4 mb-4 fst-italic border-bottom fs-2 fw-bold">
@@ -10,8 +12,9 @@ $article = $_SESSION["article"];
     <div class="row">
         <div class="col-md-8">
             <div id="nav-content">
-                <?php foreach ($article as $key => $value) {
-                    if ($value["display"] == "normal") { ?>
+                <?php if (isset($_SESSION["article"])) {
+                    foreach ($article as $key => $value) {
+                        if ($value["display"] == "normal") { ?>
                 <div id="<?= $value["id"] ?>" class="mb-5 pt-5">
                     <h3><?= $value["title"] ?></h3>
                     <?php if ($value["picture"] != "") { ?>
@@ -51,6 +54,7 @@ $article = $_SESSION["article"];
                 </div>
                 <?php }
                 }
+                }
                 if (isset($_SESSION["user"])) {
                     if ($_SESSION["user"]["email"] == $_SESSION["post"]["post_email"]) { ?>
                 <form class="d-grid mx-auto" action="./post_edit/post_edit_handle.php">
@@ -63,13 +67,15 @@ $article = $_SESSION["article"];
         <div class="col-4 mb-5">
             <nav id="sitcky-posts-nav" class="position-sticky d-none d-md-block">
                 <nav class="nav nav-pills flex-column pt-5">
-                    <?php foreach ($article as $key => $value) {
-                        if ($value["display"] != "card") { ?>
+                    <?php if (isset($_SESSION["article"])) {
+                        foreach ($article as $key => $value) {
+                            if ($value["display"] != "card") { ?>
                     <a class="nav-link" href="#<?= $value["id"] ?>">
                         <?= $value["title"] ?>
                     </a>
                     <?php }
-                        } ?>
+                            }
+                    } ?>
                     <a class="nav-link" href="#Comments">
                         Comments
                     </a>
@@ -78,25 +84,4 @@ $article = $_SESSION["article"];
         </div>
     </div>
     <?php include("../comment/comment_content.php"); ?>
-    <!-- <div class="row mb-5">
-        <form id="Comments" class="mb-5" action="" method="post">
-            <h3>Comments</h3>
-            <div class="mb-3">
-                <label for="comment-email" class="form-label">
-                    Email address
-                </label>
-                <input type="email" class="form-control" id="comment-email" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-                <label for="comment-article" class="form-label">
-                    Please leave your message here
-                </label>
-                <textarea class="form-control" id="comment-article" rows="3"
-                    placeholder="Welcome to Wanna Go !"></textarea>
-            </div>
-            <button type="submit" class="btn btn-secondary d-flex float-end">
-                Submit
-            </button>
-        </form>
-    </div> -->
 </section>

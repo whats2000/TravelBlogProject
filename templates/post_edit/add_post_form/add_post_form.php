@@ -47,7 +47,6 @@
                                 <label for="exampleFormControlInput1" class="form-label">Subtitle</label>
                                 <input class="form-control" type="text" name="description" />
                             </div>
-
                         </div>
                     </div>
                 </div>

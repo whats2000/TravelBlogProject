@@ -36,13 +36,15 @@ window.location.href = './post_edit/post_edit_handle.php';
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
 
-
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script src="../scripts/ckeditor/ckeditor.js"></script>
 
     <script src="../scripts/index_nav.html.js"></script>
     <script src="../scripts/include_HTML.js"></script>
     <script src="../scripts/password_validation.js"></script>
+    <script src="../scripts/post_edit/add_article_form.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -50,6 +52,9 @@ window.location.href = './post_edit/post_edit_handle.php';
 <body>
     <header>
         <?php include('./core/navbar.php'); ?>
+        <?php include('./post_edit/article_add/add_article_form.php'); ?>
+        <?php include('./post_edit/article_edit/edit_article_form.php'); ?>
+        <?php include('./post_edit/article_edit/article_delete_confirm.php'); ?>
 
         <div include-html="post_edit/topic.php">
         </div>
@@ -72,5 +77,13 @@ includeHTML();
 
 $(document).ready(function() {
     $('#modal-show-message').modal('show');
+
+    CKEDITOR.replace("add-article", {
+        height: "200px"
+    });
 });
+
+const myModalAlternative = new bootstrap.Modal('#add-article-form', {
+    focus: false
+})
 </script>

@@ -37,4 +37,18 @@ section#posts-content {
             background-color: gray;
         }
     }
+
+    ul.dropdown-menu {
+        li {
+            input {
+                &:focus-visible {
+                    outline: none !important;
+                }
+
+                &:active {
+                    background-color: gray;
+                }
+            }
+        }
+    }
 }

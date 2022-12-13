@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $post_description = $_SESSION["post"]["description"];
 if (isset($_SESSION["article"])) {
     $article = $_SESSION["article"];
@@ -37,13 +38,29 @@ if (isset($_SESSION["article"])) {
                             <i class="bi bi-pencil-fill"></i>
                         </button>
                         <ul class="dropdown-menu">
-                            <form action="./post_edit/change.php" method="POST">
+                            <form action="./post_edit/article_edit/article_modify.php" method="POST">
                                 <input type="hidden" name="for_post" value="<?= $value['for_post'] ?>">
                                 <input type="hidden" name="position" value="<?= $value['position'] ?>">
-                                <input class="dropdown-item" type="submit" name="delete" value="delete">
-                                <input class="dropdown-item" type="submit" name="move_up" value="move up">
-                                <input class="dropdown-item" type="submit" name="move_down" value="move down">
-                                <input class="dropdown-item" type="submit" name="edit" value="edit">
+                                <li>
+                                    <input class="dropdown-item" data-bs-toggle="modal"
+                                        data-bs-target="#modal-article-delete" value="Delete"
+                                        <?php $_SESSION["delete"] = ["for_post" => $value['for_post'], "position" => $value['position']]?> />
+                                </li>
+                                <li>
+                                    <input class="dropdown-item" type="submit" name="move_up" value="Move Up">
+                                </li>
+                                <li>
+                                    <input class="dropdown-item" type="submit" name="move_down" value="Move Down">
+                                </li>
+                                <li>
+                                    <input class="dropdown-item" data-bs-toggle="modal"
+                                        data-bs-target="#edit-article-form" value="Edit" <?php $_SESSION["edit"] = [
+                                            "id" => $value['id'],
+                                            "title" => $value['title'],
+                                            "display" => $value['display'],
+                                            "picture" => $value['picture'],
+                                            "description" => $value['description']]?> />
+                                </li>
                             </form>
                         </ul>
                     </div>
@@ -74,14 +91,31 @@ if (isset($_SESSION["article"])) {
                                         <i class="bi bi-pencil-fill"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <form action="./post_edit/change.php" method="POST">
+                                        <form action="./post_edit/article_edit/article_modify.php" method="POST">
                                             <input type="hidden" name="for_post" value="<?= $value['for_post'] ?>">
                                             <input type="hidden" name="position" value="<?= $value['position'] ?>">
-                                            <input class="dropdown-item" type="submit" name="delete" value="delete">
-                                            <input class="dropdown-item" type="submit" name="move_up" value="move up">
-                                            <input class="dropdown-item" type="submit" name="move_down"
-                                                value="move down">
-                                            <input class="dropdown-item" type="submit" name="edit" value="edit">
+                                            <li>
+                                                <input class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#modal-article-delete" value="Delete"
+                                                    <?php $_SESSION["delete"] = ["for_post" => $value['for_post'], "position" => $value['position']]?> />
+                                            </li>
+                                            <li>
+                                                <input class="dropdown-item" type="submit" name="move_up"
+                                                    value="Move Up">
+                                            </li>
+                                            <li>
+                                                <input class="dropdown-item" type="submit" name="move_down"
+                                                    value="Move Down">
+                                            </li>
+                                            <li>
+                                                <input class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-article-form" value="Edit" <?php $_SESSION["edit"] = [
+                                                        "id" => $value['id'],
+                                                        "title" => $value['title'],
+                                                        "display" => $value['display'],
+                                                        "picture" => $value['picture'],
+                                                        "description" => $value['description']]?> />
+                                            </li>
                                         </form>
                                     </ul>
                                 </div>
@@ -92,7 +126,7 @@ if (isset($_SESSION["article"])) {
                 <?php }
                 }
                 } ?>
-                <div class="d-grid mx-auto">
+                <div class="d-grid mx-auto" data-bs-toggle="modal" data-bs-target="#add-article-form">
                     <a class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3">
                         Add new article
                     </a>

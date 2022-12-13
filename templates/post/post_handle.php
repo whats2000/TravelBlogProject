@@ -14,9 +14,7 @@ if (!isset($_SESSION["post"]["id"])) {
 <script>
 window.location.href = '../index.php';
 </script>
-<?php
-    
-    exit();
+<?php exit();
 }
 
 $return_msg = "";

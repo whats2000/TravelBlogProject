@@ -1196,6 +1196,12 @@ section#posts-content a:hover {
   color: white;
   background-color: gray;
 }
+section#posts-content ul.dropdown-menu li input:focus-visible {
+  outline: none !important;
+}
+section#posts-content ul.dropdown-menu li input:active {
+  background-color: gray;
+}
 
 /* topic.html */
 section#posts-topic {
@@ -1232,6 +1238,40 @@ div#add-post-form div.image-area {
 }
 div#add-post-form div.image-area img {
   margin: 0 auto;
+}
+
+div#add-article-form input#upload-article-picture {
+  opacity: 0;
+}
+div#add-article-form label#upload-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+div#add-article-form div.image-area {
+  border: 2px dashed lightgray;
+  padding: 1rem;
+  position: relative;
+}
+div#add-article-form div.image-area img {
+  margin: 0 auto;
+}
+div#add-article-form div.image-area::before {
+  content: "There is nothing currently";
+  color: gray;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  z-index: 1;
+}
+div#add-article-form div.image-area img {
+  z-index: 2;
+  position: relative;
 }
 
 /**********************************

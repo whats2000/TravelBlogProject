@@ -22,6 +22,7 @@ if (@$_GET["method"] == "logout") {
     $return_msg = "Logout successfully";
     unset($_SESSION["user"]);
     unset($_SESSION["profile"]);
+    unset($_SESSION["post"]);
 }
 
 if (@$_POST["method"] == "login") {

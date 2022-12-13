@@ -977,13 +977,15 @@ nav#index-navbar a.top-link.button-hidden {
 }
 
 /* post.html */
-section#index-post div.img-container div.img-hov {
-  display: flex;
+section#index-post div.img-container div.img-hov form.post-list {
+  --bs-bg-opacity: .3;
 }
-section#index-post div.img-container div.img-hov a.img-hov-item {
+section#index-post div.img-container div.img-hov form.post-list button.img-hov-item {
+  border: none;
+  padding: 0;
   position: relative;
 }
-section#index-post div.img-container div.img-hov a.img-hov-item div.img-hov-cover {
+section#index-post div.img-container div.img-hov form.post-list button.img-hov-item div.img-hov-cover {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -993,7 +995,7 @@ section#index-post div.img-container div.img-hov a.img-hov-item div.img-hov-cove
   transition: 0.3s ease;
   background-color: black;
 }
-section#index-post div.img-container div.img-hov a.img-hov-item figcaption.img-hov-text {
+section#index-post div.img-container div.img-hov form.post-list button.img-hov-item figcaption.img-hov-text {
   color: white;
   opacity: 0;
   position: absolute;
@@ -1003,21 +1005,11 @@ section#index-post div.img-container div.img-hov a.img-hov-item figcaption.img-h
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-section#index-post div.img-container div.img-hov a.img-hov-item:hover div.img-hov-cover {
+section#index-post div.img-container div.img-hov form.post-list button.img-hov-item:hover div.img-hov-cover {
   opacity: 0.5;
 }
-section#index-post div.img-container div.img-hov a.img-hov-item:hover figcaption.img-hov-text {
+section#index-post div.img-container div.img-hov form.post-list button.img-hov-item:hover figcaption.img-hov-text {
   opacity: 1;
-}
-@media only screen and (max-width: 768px) {
-  section#index-post div.img-container div.display-2-col {
-    display: none;
-  }
-}
-@media only screen and (min-width: 769px) {
-  section#index-post div.img-container div.display-1-col {
-    display: none;
-  }
 }
 section#index-post h2 {
   font-family: "Handlee", cursive;
@@ -1034,6 +1026,22 @@ section#index-post p {
   section#index-post p {
     display: none;
   }
+}
+section#index-post div.show-more-main {
+  padding: 15px 0px;
+}
+section#index-post div.show-more-main span.show-more {
+  border: 1px solid lightgray;
+  font-size: 12px;
+  padding: 10px 0;
+  text-align: center;
+  display: block;
+}
+section#index-post div.show-more-main span.loading {
+  border: 1px solid lightgray;
+  display: block;
+  text-align: center;
+  padding: 10.75px 0;
 }
 
 /* tips.html */
@@ -1152,7 +1160,7 @@ section#tips-topic h3 {
 
 /**********************************
 *
-*          posts.html
+*          post.php
 *
 **********************************/
 /* content.html */

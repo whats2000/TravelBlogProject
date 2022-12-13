@@ -5,7 +5,14 @@ if (!isset($_SESSION["post"])) { ?>
 <script>
 window.location.href = './post_edit/post_edit_handle.php';
 </script>
+<?php }
+
+if (!$_SESSION["post"]["edit"]) { ?>
+<script>
+window.location.href = './post_edit/post_edit_handle.php';
+</script>
 <?php } ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

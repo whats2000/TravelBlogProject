@@ -24,6 +24,15 @@ elseif($_SESSION["user_intro"]["id"]!=$_GET["user_intro_id"]){
     </script>
     <?php
 }
+else{
+    if(isset($_SESSION["user"]["name"])){
+        if($_SESSION["user_intro"]["name"] == $_SESSION["user"]["name"]){
+            header("Location: ./profile/profile_handle.php");
+            exit();
+        }
+    }
+    
+}
 
 
 $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";

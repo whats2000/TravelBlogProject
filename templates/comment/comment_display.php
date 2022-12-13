@@ -1,5 +1,4 @@
 <?php
-
 //cannot change page
 include("../core/config.php");
 if (!isset($_SESSION["post"]["id"])) {
@@ -12,3 +11,4 @@ $sql_link = connect('root', '');
 $rows = $sql_link->query($sql_comment);
 $rowcount_comment = $rows->rowCount();
 $result_comment = $rows->fetchall(PDO::FETCH_ASSOC);
+?>

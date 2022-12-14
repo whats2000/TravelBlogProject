@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal-signin" aria-hidden="true" aria-labelledby="modal-signin-label" tabindex="-1">
+<div class="modal fade" id="modal-signin" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="modal-signin-label" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-4 shadow">
             <div class="modal-header p-5 pb-4 border-bottom-0">

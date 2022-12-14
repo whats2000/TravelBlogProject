@@ -1,3 +1,29 @@
+<?php
+include '../core/config.php';
+
+$sql_link = connect('root', '');
+
+if (!$sql_link) {
+    $_SESSION["show_message"] = "Error at connect to database";
+    exit();
+}
+
+$sql = "SELECT * FROM `post` ORDER BY `id` DESC LIMIT 6";
+
+$result = $sql_link->query($sql);
+
+$i = 0;
+$post_list = array();
+
+while ($row = $result->fetch()) {
+    $post_list[$i] = [
+        "id" => $row["id"],
+        "title" => $row["title"]
+    ];
+
+    $i++;
+}
+?>
 <section id="index-footer" class="border-top">
     <div class="container px-5">
         <div class="row py-5 justify-content-center">
@@ -18,21 +44,33 @@
 
             <div class="col-lg-3 col-sm-4">
                 <h5 class="fst-italic"><a href="post1.php">Explore</a></h5>
-                <ul class="row">
-                    <li class="col">
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="post1.php" class="nav-link p-0">Hsinchu</a></li>
-                            <li class="nav-item mb-2"><a href="post2.php" class="nav-link p-0">Kaohsiung</a></li>
-                            <li class="nav-item mb-2"><a href="post3.php" class="nav-link p-0">Kinmen</a></li>
-                        </ul>
-                    </li>
-                    <li class="col">
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="post4.php" class="nav-link p-0">Nantou</a></li>
-                            <li class="nav-item mb-2"><a href="post5.php" class="nav-link p-0">Pingtung</a></li>
-                            <li class="nav-item mb-2"><a href="post6.php" class="nav-link p-0">Taitung</a></li>
-                        </ul>
-                    </li>
+                <ul>
+                    <form class="row" action="post/post_handle.php">
+                        <li class="col">
+                            <ul class="nav flex-column">
+                                <?php for ($a= 0; $a < 3; $a++) {?>
+                                <li class="nav-item mb-1">
+                                    <button name="id" class="nav-link p-0 border-0 bg-transparent"
+                                        value="<?=$post_list[$a]["id"]?>">
+                                        <a><?=$post_list[$a]["title"]?></a>
+                                    </button>
+                                </li>
+                                <?php }?>
+                            </ul>
+                        </li>
+                        <li class="col">
+                            <ul class="nav flex-column">
+                                <?php for ($a= 3; $a < 6; $a++) {?>
+                                <li class="nav-item mb-1">
+                                    <button name="id" class="nav-link p-0 border-0 bg-transparent"
+                                        value="<?=$post_list[$a]["id"]?>">
+                                        <a><?=$post_list[$a]["title"]?></a>
+                                    </button>
+                                </li>
+                                <?php }?>
+                            </ul>
+                        </li>
+                    </form>
                 </ul>
             </div>
 

@@ -71,7 +71,8 @@ if (isset($_POST["save-add-article"])) {
         $image_name = $_SESSION["article"]["upload-article-picture"];
     }
 
-    $description = $_POST["add-article"];
+    $description = str_replace(array("<script>","</script>"), "", $_POST["add-article"]);
+
     $display = $_POST["article-display"];
     $edit_time = date("Y-m-d H:i:s");
 

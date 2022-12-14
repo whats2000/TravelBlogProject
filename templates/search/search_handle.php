@@ -14,6 +14,9 @@ if (isset($_GET["search"])) {//start the search code here
         //deal with raw input
         $targets = $_GET["search"];
 
+        $targets = htmlspecialchars($targets);
+
+        $targets = str_replace("\\", "", $targets);
         $targets = preg_replace('/[^0-9A-z,]/', ' ', $targets);
         $targets = preg_replace(array('/\s{2,}/', '/[\t\n]/','/\+/','/,/'), ' ', $targets);
         $targets = explode(" ", $targets);

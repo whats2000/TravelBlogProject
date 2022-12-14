@@ -22,9 +22,11 @@ if (isset($_POST["save-about"])) {
 
     $text = $_POST["about-article"];
 
-    $sql = "UPDATE `user` 
-            SET `about`='$text'
-            WHERE `id`='$user_id'";
+    $text = str_replace(array("<script>","</script>"), "", $text);
+
+    $sql = "UPDATE `user`
+    SET `about`='$text'
+    WHERE `id`='$user_id'";
 
     if ($sql_link->exec($sql)) {
         $_SESSION["user"]["about"] = $text;

@@ -42,13 +42,15 @@ if (isset($_SESSION["article"])) {
                                 below.
                             </p>
                             <div class="image-area p-5 mt-4 text-center text-muted mb-5">
-                                <img class="uploaded-article-edit" src="#" alt=""
+                                <img class="uploaded-article-edit"
+                                    src="../static/images/blog_post/article/<?=$value["picture"]?>" alt=""
                                     class="img-fluid rounded shadow-sm mx-auto d-block" value="">
                             </div>
                             <!--Add Title-->
                             <div class="mb-3 ">
                                 <label for="article-title" class="form-label">Title</label>
-                                <input class="form-control" type="text" name="article-title" value="" /> <br />
+                                <input class="form-control" type="text" name="article-title"
+                                    value="<?=$value["title"]?>" /> <br />
                             </div>
                             <!--Add Text-->
                             <div class="mb-3 ">

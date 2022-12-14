@@ -58,7 +58,7 @@ if (isset($_SESSION["article"])) {
                 if (isset($_SESSION["user"])) {
                     if ($_SESSION["user"]["email"] == $_SESSION["post"]["post_email"]) { ?>
                 <form class="d-grid mx-auto" action="./post_edit/post_edit_handle.php">
-                    <input class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit" value='edit'>
+                    <input class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit" value='Edit'>
                 </form>
                 <?php }
                     } ?>

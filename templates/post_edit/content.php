@@ -116,10 +116,11 @@ if (isset($_SESSION["article"])) {
                 }
                 } ?>
                 <div class="d-grid mx-auto" data-bs-toggle="modal" data-bs-target="#add-article-form">
-                    <a class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3">
-                        Add new article
-                    </a>
+                    <input class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" value="Add new article">
                 </div>
+                <form class="d-grid mx-auto" action="./post/post_handle.php">
+                    <input class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit" value="Finish">
+                </form>
             </div>
         </div>
         <div class="col-4 mb-5">

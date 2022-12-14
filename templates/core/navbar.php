@@ -49,9 +49,6 @@ if (isset($_SESSION['user']) && ($_SESSION['user']['icon'] != "")) {
                                 Post...</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Settings</a>
-                        </li>
-                        <li>
                             <a class="dropdown-item" href="./profile/profile_handle.php">Profile</a>
                         </li>
                         <?php } else { ?>

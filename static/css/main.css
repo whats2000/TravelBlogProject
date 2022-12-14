@@ -1376,6 +1376,18 @@ section#profile-content a:hover {
   color: white;
   background-color: gray;
 }
+section#profile-content #my-post a {
+  color: black;
+  font-size: 30px;
+  font-family: "Kalam", cursive;
+}
+section#profile-content #my-post a:hover {
+  color: gray;
+  background-color: white;
+}
+section#profile-content #my-post p {
+  font-size: 1.4rem;
+}
 
 /* topic.html */
 section#profile-topic {

@@ -38,7 +38,17 @@ else {
     $_SESSION["user_intro_post"] = $presult->fetchall();
     $_SESSION["user_intro_prow"] = $presult->rowCount();
 
-    header("Location: ../user_intro.php?user_intro_id=$intro_id");
+    if(isset($_SESSION["user"]["name"])){
+        if($_SESSION["user_intro"]["name"] == $_SESSION["user"]["name"]){
+            header("Location: ../profile/profile_handle.php");
+        }
+        else{
+            header("Location: ../user_intro.php?user_intro_id=$intro_id");
+        }
+    }
+    else{
+        header("Location: ../user_intro.php?user_intro_id=$intro_id");
+    }
     exit();
 }
 ?>

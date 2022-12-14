@@ -43,8 +43,7 @@ if (isset($_SESSION["article"])) {
                                 <input type="hidden" name="position" value="<?= $value['position'] ?>">
                                 <li>
                                     <input class="dropdown-item" data-bs-toggle="modal"
-                                        data-bs-target="#modal-article-delete" value="Delete"
-                                        <?php $_SESSION["delete"] = ["for_post" => $value['for_post'], "position" => $value['position']]?> />
+                                        data-bs-target="#modal-article-delete-<?=$value["id"]?>" value="Delete" />
                                 </li>
                                 <li>
                                     <input class="dropdown-item" type="submit" name="move_up" value="Move Up">
@@ -91,8 +90,8 @@ if (isset($_SESSION["article"])) {
                                             <input type="hidden" name="position" value="<?= $value['position'] ?>">
                                             <li>
                                                 <input class="dropdown-item" data-bs-toggle="modal"
-                                                    data-bs-target="#modal-article-delete" value="Delete"
-                                                    <?php $_SESSION["delete"] = ["for_post" => $value['for_post'], "position" => $value['position']]?> />
+                                                    data-bs-target="#modal-article-delete-<?=$value['id']?>"
+                                                    value="Delete" />
                                             </li>
                                             <li>
                                                 <input class="dropdown-item" type="submit" name="move_up"

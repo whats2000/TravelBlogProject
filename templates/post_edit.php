@@ -55,6 +55,7 @@ window.location.href = './post_edit/post_edit_handle.php';
         <?php include('./core/navbar.php'); ?>
         <?php include('./post_edit/article_add/add_article_form.php'); ?>
         <?php include('./post_edit/article_edit/edit_article_form.php'); ?>
+        <?php include('./post_edit/article_edit/article_delete_confirm.php'); ?>
 
         <div include-html="post_edit/topic.php">
         </div>

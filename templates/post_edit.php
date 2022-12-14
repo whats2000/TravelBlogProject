@@ -45,6 +45,7 @@ window.location.href = './post_edit/post_edit_handle.php';
     <script src="../scripts/include_HTML.js"></script>
     <script src="../scripts/password_validation.js"></script>
     <script src="../scripts/post_edit/add_article_form.js"></script>
+    <script src="../scripts/post_edit/edit_article_form.js"></script>
 
     <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -54,7 +55,6 @@ window.location.href = './post_edit/post_edit_handle.php';
         <?php include('./core/navbar.php'); ?>
         <?php include('./post_edit/article_add/add_article_form.php'); ?>
         <?php include('./post_edit/article_edit/edit_article_form.php'); ?>
-        <?php include('./post_edit/article_edit/article_delete_confirm.php'); ?>
 
         <div include-html="post_edit/topic.php">
         </div>

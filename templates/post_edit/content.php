@@ -54,12 +54,7 @@ if (isset($_SESSION["article"])) {
                                 </li>
                                 <li>
                                     <input class="dropdown-item" data-bs-toggle="modal"
-                                        data-bs-target="#edit-article-form" value="Edit" <?php $_SESSION["edit"] = [
-                                            "id" => $value['id'],
-                                            "title" => $value['title'],
-                                            "display" => $value['display'],
-                                            "picture" => $value['picture'],
-                                            "description" => $value['description']]?> />
+                                        data-bs-target="#edit-article-<?=$value['id']?>" value="Edit" />
                                 </li>
                             </form>
                         </ul>
@@ -109,12 +104,7 @@ if (isset($_SESSION["article"])) {
                                             </li>
                                             <li>
                                                 <input class="dropdown-item" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-article-form" value="Edit" <?php $_SESSION["edit"] = [
-                                                        "id" => $value['id'],
-                                                        "title" => $value['title'],
-                                                        "display" => $value['display'],
-                                                        "picture" => $value['picture'],
-                                                        "description" => $value['description']]?> />
+                                                    data-bs-target="#edit-article-<?=$value['id']?>" value="Edit" />
                                             </li>
                                         </form>
                                     </ul>

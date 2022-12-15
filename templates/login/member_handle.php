@@ -61,14 +61,14 @@ if (@$_POST["method"] == "login") {
         $return_msg = "Fail to fetch data from database";
     }
 } elseif (@$_POST["method"] == "signup") {
+    $email = test_input($_POST["email"]);
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $return_msg = "Invalid email format";
     } else {
-        $email = $sql_link->quote($email);
-        $email = test_input($_POST["email"]);
         $name = $_POST["name"];
 
-        $sql = "SELECT * FROM `user` WHERE `email` = $email";
+        $sql = "SELECT * FROM `user` WHERE `email` = '$email'";
         $result = $sql_link->query($sql);
 
         if ($result) {

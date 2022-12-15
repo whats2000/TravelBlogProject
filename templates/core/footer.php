@@ -1,5 +1,5 @@
 <?php
-include '../core/config.php';
+include 'config.php';
 
 $sql_link = connect('root', '');
 

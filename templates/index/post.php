@@ -8,7 +8,7 @@ if (!$sql_link) {
     exit();
 }
 
-$sql = "SELECT * FROM `post` ORDER BY `id` DESC LIMIT 6";
+$sql = "SELECT * FROM `post` ORDER BY `id` DESC LIMIT 5";
 
 $result = $sql_link->query($sql);
 ?>

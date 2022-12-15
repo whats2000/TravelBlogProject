@@ -10,13 +10,14 @@ if (!$sql_link) {
     exit();
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $return_msg ="";
+    $return_msg = "";
     $post_id = $_SESSION["post"]["id"];
     $email = $_SESSION["user"]["email"];
+    $comment = $sql_link->quote($_POST["comment_content"]);
 
     //insert the data to db
     if (!empty($_POST["comment_content"])) {
-        $sql = "INSERT INTO comment (post_id, email, content) VALUES ($post_id, '$email', '$_POST[comment_content]')";
+        $sql = "INSERT INTO comment (post_id, email, content) VALUES ($post_id, '$email', $comment)";
         if ($sql_link->query($sql) === true) {
             echo "New record created successfully";
         } else {

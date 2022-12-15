@@ -2,18 +2,18 @@
 
 session_start();
 
-if (!isset($_SESSION["user"])) {?>
-<script>
-window.location.href = '../../index.php';
-</script>
+if (!isset($_SESSION["user"])) { ?>
+    <script>
+        window.location.href = '../../index.php';
+    </script>
 <?php exit();
 }
 
 if (!isset($_SESSION["post"]["id"])) {
-    $_SESSION["show_message"] = "Undefine post id";?>
-<script>
-window.location.href = '../../index.php';
-</script>
+    $_SESSION["show_message"] = "Undefine post id"; ?>
+    <script>
+        window.location.href = '../../index.php';
+    </script>
 <?php exit();
 }
 
@@ -66,12 +66,13 @@ if (isset($_POST["save-add-article"])) {
     $position = $rowCount + 1;
 
     $title = $_POST["article-title"];
+    $title = $sql_link->quote($title);
 
     if (isset($_SESSION["article"]["upload-article-picture"])) {
         $image_name = $_SESSION["article"]["upload-article-picture"];
     }
 
-    $description = str_replace(array("<script>","</script>"), "", $_POST["add-article"]);
+    $description = str_replace(array("<script>", "</script>"), "", $_POST["add-article"]);
 
     $display = $_POST["article-display"];
     $edit_time = date("Y-m-d H:i:s");
@@ -79,7 +80,7 @@ if (isset($_POST["save-add-article"])) {
     $sql = "INSERT INTO article(for_post, position, title, 
                                 picture, description, 
                                 display, edit_time) 
-            VALUES ($for_post_id, $position,'$title', 
+            VALUES ($for_post_id, $position,$title, 
                    '$image_name','$description', 
                    '$display', '$edit_time')";
 
@@ -100,7 +101,7 @@ if (isset($_POST["save-add-article"])) {
 
             if (isset($_SESSION["article"]["upload-article-picture"])) {
                 $article_id_image_name = "article_" . "{$for_post_id}" . "_" . "{$article_id}"
-                . "_" . time() . ".png";
+                    . "_" . time() . ".png";
 
                 $dir_original = "static/images/blog_post/upload/";
                 $dir_target = "static/images/blog_post/article/";
@@ -138,10 +139,10 @@ if (isset($_POST["save-add-article"])) {
 
     if ($return_msg != "") {
         $_SESSION["show_message"] = $return_msg;
-    }?>
-<script>
-window.location.href = '<?= $url ?>';
-</script>
+    } ?>
+    <script>
+        window.location.href = '<?= $url ?>';
+    </script>
 <?php }
 
 exit(); ?>

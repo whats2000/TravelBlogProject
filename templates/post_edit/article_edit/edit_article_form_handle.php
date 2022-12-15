@@ -67,7 +67,7 @@ if (isset($_POST["save-edit-article"])) {
                         `display`='$display', `edit_time`='$edit_time'
                         WHERE `id`='$article_id'";
 
-                $edit_article = $sql_link->exec($sql);
+                $edit_article = $sql_link-> exec($sql);
             }
             $url = "../../post_edit/post_edit_handle.php";
         } else {

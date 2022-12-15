@@ -37,10 +37,12 @@ if (@$_POST["method"] == "login") {
             $row = $result->fetch();
             if ($row["password"] == $password) {
                 // 將會員名稱存入session
-                $_SESSION["user"] = ["name" => $row["name"],
-                                     "email" => $row["email"],
-                                     "icon" => $row["icon"],
-                                     "permission" => $row["permission"]];
+                $_SESSION["user"] = [
+                    "name" => $row["name"],
+                    "email" => $row["email"],
+                    "icon" => $row["icon"],
+                    "permission" => $row["permission"]
+                ];
                 $return_msg = "Login successfully";
             } else {
                 $return_msg = "Password or email is incorrect";
@@ -51,8 +53,7 @@ if (@$_POST["method"] == "login") {
     }
 } elseif (@$_POST["method"] == "signup") {
     $name = $_POST["name"];
-
-    $sql = "SELECT * FROM `user` WHERE `email` = '$email'";
+    $sql = "SELECT * FROM `user` WHERE `email` = $email";
     $result = $sql_link->query($sql);
 
     if ($result) {
@@ -60,16 +61,20 @@ if (@$_POST["method"] == "login") {
         if ($num == 0) {
             date_default_timezone_set('Asia/Taipei');
             $current_time = date('Y-m-d h:i:s');
+            $name = $sql_link->quote($name);
+            $password = $sql_link->quote($password);
             $sql = "INSERT INTO `user` (`name`, `email`, `password`, `create_at`) 
-                    VALUES ('$name', '$email', '$password', '$current_time')";
+                    VALUES ($name, '$email', $password, '$current_time')";
 
             if ($sql_link->exec($sql)) {
                 $return_msg = "Sign up successfully";
                 // 將會員名稱存入session
-                $_SESSION["user"] = ["name" => $name,
-                                     "email" => $email,
-                                     "icon" => "",
-                                     "permission" => "user"];
+                $_SESSION["user"] = [
+                    "name" => $name,
+                    "email" => $email,
+                    "icon" => "",
+                    "permission" => "user"
+                ];
             } else {
                 $return_msg = "Fail to write data to database";
             }
@@ -93,7 +98,7 @@ if ($return_msg != "") {
 
 ?>
 <script>
-window.location.href = '<?=$url?>';
+    window.location.href = '<?= $url ?>';
 </script>
 
 <?php exit(); ?>

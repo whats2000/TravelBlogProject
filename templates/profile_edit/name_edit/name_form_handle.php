@@ -21,9 +21,10 @@ if (isset($_POST["save-name"])) {
     $user_id = $_SESSION["profile"]["id"];
 
     $name = $_POST["name-input"];
+    $name = $sql_link->quote($name);
 
     $sql = "UPDATE `user` 
-            SET `name`='$name'
+            SET `name`=$name
             WHERE `id`='$user_id'";
 
     if ($sql_link->exec($sql)) {
@@ -32,9 +33,9 @@ if (isset($_POST["save-name"])) {
     } else {
         $return_msg = "Fail to update name";
     }
-    ?>
-<script>
-window.location.href = "../profile_edit_handle.php";
-</script>
+?>
+    <script>
+        window.location.href = "../profile_edit_handle.php";
+    </script>
 <?php
 }

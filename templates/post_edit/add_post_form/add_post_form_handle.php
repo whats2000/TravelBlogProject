@@ -49,14 +49,17 @@ if (isset($_POST["save-add-post"])) {
     date_default_timezone_set("Asia/Taipei");
 
     $email = $_SESSION['user']['email'];
+    //$email = $sql_link->quote($email);
     $title = $_POST["title"];
+    $title = $sql_link->quote($title);
     $description = $_POST["description"];
+    $description = $sql_link->quote($description);
     $datetime = date("Y-m-d H:i:s");
 
     $image_name = $_SESSION["post"]["upload-post-picture"];
 
     $add_post = $sql_link->exec("INSERT INTO post(email, picture, title, description, create_at) 
-                                 VALUES('$email', '$image_name','$title', '$description', '$datetime')");
+                                 VALUES('$email', '$image_name',$title, $description, '$datetime')");
 
     $sql = "SELECT id FROM post WHERE picture='$image_name'";
 
@@ -104,10 +107,10 @@ if (isset($_POST["save-add-post"])) {
         $return_msg = "Fail to fetch post data from database";
     }
 
-    ?>
-<script>
-window.location.href = '<?=$url?>';
-</script>
+?>
+    <script>
+        window.location.href = '<?= $url ?>';
+    </script>
 <?php
 }
 
@@ -120,9 +123,9 @@ if (isset($_POST["cancel-save"])) {
             unlink($file);
         }
     } ?>
-<script>
-window.location.href = "<?=$url?>";
-</script>
+    <script>
+        window.location.href = "<?= $url ?>";
+    </script>
 <?php
 }
 

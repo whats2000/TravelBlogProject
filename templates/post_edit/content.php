@@ -123,7 +123,7 @@ if (isset($_SESSION["article"])) {
                 </form>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4 mb-5">
             <nav id="sitcky-posts-nav" class="position-sticky d-none d-md-block">
                 <nav class="nav nav-pills flex-column pt-5">
                     <?php if (isset($_SESSION["article"])) {

@@ -36,7 +36,23 @@ if (isset($_SESSION["user"])) {
         $return_msg = "Fail to deal with this cast";
     }
 } else {
-    $return_msg = "Please login first";
+    if (!isset($_SESSION["user_intro"])) {
+        $_SESSION["user_intro_id"] = $_SESSION["profile"]["id"];
+        ?>
+<script>
+window.location.href = '../user_intro/intro_handle.php';
+</script>
+<?php
+    } elseif (($_SESSION["user_intro"]["name"]!=$_SESSION["user"]["name"])) {
+        $_SESSION["user_intro_id"] = $_SESSION["profile"]["id"];
+        ?>
+<script>
+window.location.href = '../user_intro/intro_handle.php';
+</script>
+<?php
+    } else {
+        $return_msg = "Please login first";
+    }
 }
 
 if (isset($_SESSION["user"])) {
@@ -49,22 +65,7 @@ if ($return_msg != "") {
     $_SESSION["show_message"] = $return_msg;
 }
 
-if(!isset($_SESSION["user_intro"])){
-    $_SESSION["user_intro_id"] = $_SESSION["profile"]["id"];
-    ?>
-    <script>
-    window.location.href = '../user_intro/intro_handle.php';
-    </script>
-    <?php
-}
-elseif(($_SESSION["user_intro"]["name"]!=$_SESSION["user"]["name"])){
-    $_SESSION["user_intro_id"] = $_SESSION["profile"]["id"];
-    ?>
-    <script>
-    window.location.href = '../user_intro/intro_handle.php';
-    </script>
-    <?php
-}
+
 
 ?>
 <script>

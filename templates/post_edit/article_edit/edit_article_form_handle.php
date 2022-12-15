@@ -3,17 +3,17 @@
 session_start();
 
 if (!isset($_SESSION["user"])) { ?>
-    <script>
-        window.location.href = '../../index.php';
-    </script>
+<script>
+window.location.href = '../../index.php';
+</script>
 <?php exit();
 }
 
 if (!isset($_POST["article-id"])) {
     $_SESSION["show_message"] = "Undefine article id"; ?>
-    <script>
-        window.location.href = '../../index.php';
-    </script>
+<script>
+window.location.href = '../../index.php';
+</script>
 <?php exit();
 }
 
@@ -93,9 +93,9 @@ if (isset($_POST["save-edit-article"])) {
     if ($return_msg != "") {
         $_SESSION["show_message"] = $return_msg;
     } ?>
-    <script>
-        window.location.href = '<?= $url ?>';
-    </script>
+<script>
+window.location.href = '<?= $url ?>';
+</script>
 <?php }
 
 exit(); ?>

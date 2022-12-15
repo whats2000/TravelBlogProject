@@ -32,6 +32,7 @@ if (@$_GET["method"] == "logout") {
     unset($_SESSION["user"]);
     unset($_SESSION["profile"]);
     unset($_SESSION["post"]);
+    unset($_SESSION["user_intro"]);
 }
 
 if (@$_POST["method"] == "login") {

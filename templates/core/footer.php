@@ -50,7 +50,7 @@ while ($row = $result->fetch()) {
                             <ul class="nav flex-column">
                                 <?php for ($a= 0; $a < 3; $a++) {?>
                                 <li class="nav-item mb-1">
-                                    <button name="id" class="nav-link p-0 border-0 bg-transparent"
+                                    <button name="id" class="nav-link p-0 border-0 bg-transparent text-start"
                                         value="<?=$post_list[$a]["id"]?>">
                                         <a><?=$post_list[$a]["title"]?></a>
                                     </button>
@@ -62,7 +62,7 @@ while ($row = $result->fetch()) {
                             <ul class="nav flex-column">
                                 <?php for ($a= 3; $a < 6; $a++) {?>
                                 <li class="nav-item mb-1">
-                                    <button name="id" class="nav-link p-0 border-0 bg-transparent"
+                                    <button name="id" class="nav-link p-0 border-0 bg-transparent text-start"
                                         value="<?=$post_list[$a]["id"]?>">
                                         <a><?=$post_list[$a]["title"]?></a>
                                     </button>

@@ -32,7 +32,7 @@ if (isset($_SESSION["article"])) {
                         Last updated at <?= date('Y-m-d', strtotime($value["edit_time"])) ?>
                     </small>
 
-                    <div class="btn-group">
+                    <div class="btn-group mt-2">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <i class="bi bi-pencil-fill"></i>
@@ -79,7 +79,7 @@ if (isset($_SESSION["article"])) {
                                         Last updated at <?= date('Y-m-d', strtotime($value["edit_time"])) ?>
                                     </small>
                                 </p>
-                                <div class="btn-group">
+                                <div class="btn-group mt-2">
                                     <button type="button" class="btn btn-secondary dropdown-toggle"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-pencil-fill"></i>
@@ -123,7 +123,7 @@ if (isset($_SESSION["article"])) {
                 </form>
             </div>
         </div>
-        <div class="col-4 mb-5">
+        <div class="col-4">
             <nav id="sitcky-posts-nav" class="position-sticky d-none d-md-block">
                 <nav class="nav nav-pills flex-column pt-5">
                     <?php if (isset($_SESSION["article"])) {

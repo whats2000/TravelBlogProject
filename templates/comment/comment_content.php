@@ -54,8 +54,8 @@ if (isset($_SESSION["post"]["id"])) {//know to post id
             $i++;
             if ($i==4) {
                 ?>
-<button class="btn btn-dark col-12 mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetarget"
-    aria-expanded="false" aria-controls="collapsetarget">
+<button class="btn btn-secondary col-12 mt-5 shadow-none" type="button" data-bs-toggle="collapse"
+    data-bs-target="#collapsetarget" aria-expanded="false" aria-controls="collapsetarget">
     Click to see more!
 </button>
 <br>
@@ -78,10 +78,10 @@ if (isset($_SESSION["post"]["id"])) {//know to post id
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-row align-items-center">
                     <img src="<?=$icon?>" alt="avatar" width="25" height="25" />
-                    <p class="card-title px-3 mt-2"><?=$comment["name"]?></p>
+                    <p class="card-title px-3 mt-2"><b><?=$comment["name"]?></b></p>
                 </div>
             </div>
-            <p class="col-12 lh-base"><b><?=$comment["content"]?></b></p>
+            <p class="col-12 lh-base"><?=$comment["content"]?></p>
         </div>
     </div>
     <?php
@@ -92,11 +92,11 @@ if (isset($_SESSION["post"]["id"])) {//know to post id
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-row align-items-center card-title">
                     <img src="<?=$icon?>" alt="avatar" width="25" height="25" />
-                    <p class=" px-3 mt-2" id=<?=$content_tag_id?>><?=$comment["name"]?></p>
+                    <p class=" px-3 mt-2" id=<?=$content_tag_id?>><b><?=$comment["name"]?></b></p>
                 </div>
             </div>
             <div class="d-flex justify-content-between card-text">
-                <p class="col-12 lh-base"><b><?=$comment["content"]?></b></p>
+                <p class="col-12 lh-base"><?=$comment["content"]?></p>
             </div>
             <form class="float-end" action="./comment/comment_delete.php" method="post">
                 <input type="hidden" name="comment_id" value="<?=$comment["id"] ?>">
@@ -116,10 +116,10 @@ if (isset($_SESSION["post"]["id"])) {//know to post id
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-row align-items-center">
                     <img src="<?=$icon?>" alt="avatar" width="25" height="25" />
-                    <p class="card-title"><?=$comment["name"]?></p>
+                    <p class="card-title"><b><?=$comment["name"]?></b></p>
                 </div>
             </div>
-            <p class="col-12 lh-base"><b><?=$comment["content"]?></b></p>
+            <p class="col-12 lh-base"><?=$comment["content"]?></p>
         </div>
     </div>
     <?php

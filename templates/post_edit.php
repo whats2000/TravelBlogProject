@@ -82,6 +82,10 @@ $(document).ready(function() {
     CKEDITOR.replace("add-article", {
         height: "200px"
     });
+
+    CKEDITOR.replace("edit-article", {
+        height: "200px"
+    });
 });
 
 const myModalAlternative = new bootstrap.Modal('#add-article-form', {

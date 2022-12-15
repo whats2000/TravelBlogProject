@@ -76,7 +76,6 @@ if (isset($_POST["save-edit-article"])) {
             $return_msg = "Fail to fetch article data from database";
         }
     } else {
-        $title = $sql_link->quote($title);
         $sql = "UPDATE `article`
             SET `title`=$title, `description`='$description', `display`='$display', `edit_time`='$edit_time'
             WHERE `id`='$article_id'";

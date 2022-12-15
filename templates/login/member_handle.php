@@ -74,21 +74,27 @@ if (@$_POST["method"] == "login") {
         if ($result) {
             $num = $result->rowCount();
             if ($num == 0) {
-                $return_msg = "Can not find membership for this user";
-            } else {
-                $row = $result->fetch();
-                if ($row["password"] == $password) {
+                date_default_timezone_set('Asia/Taipei');
+                $current_time = date('Y-m-d h:i:s');
+                $name = $sql_link->quote($name);
+                $password = $sql_link->quote($password);
+                $sql = "INSERT INTO user (name, email, password, create_at) 
+                        VALUES ($name, '$email', $password, '$current_time')";
+
+                if ($sql_link->exec($sql)) {
+                    $return_msg = "Sign up successfully";
                     // 將會員名稱存入session
                     $_SESSION["user"] = [
-                        "name" => $row["name"],
-                        "email" => $row["email"],
-                        "icon" => $row["icon"],
-                        "permission" => $row["permission"]
+                        "name" => $name,
+                        "email" => $email,
+                        "icon" => "",
+                        "permission" => "user"
                     ];
-                    $return_msg = "Login successfully";
                 } else {
-                    $return_msg = "Password or email is incorrect";
+                    $return_msg = "Fail to write data to database";
                 }
+            } else {
+                $return_msg = "This email have already sign up, please use other email";
             }
         } else {
             $return_msg = "Fail to fetch data from database";

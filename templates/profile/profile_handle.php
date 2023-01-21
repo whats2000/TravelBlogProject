@@ -32,6 +32,12 @@ if (isset($_SESSION["user"])) {
                                     "permission" => $row["permission"],
                                     "create_at" => $row["create_at"]];
         }
+
+        $email = $_SESSION["user"]["email"];
+        $sql_post = "SELECT * FROM `post` WHERE `email` = '$email'";
+        $presult = $sql_link->query($sql_post);
+        $_SESSION["user_intro_post"] = $presult->fetchall();
+        $_SESSION["user_intro_prow"] = $presult->rowCount();
     } else {
         $return_msg = "Fail to deal with this cast";
     }

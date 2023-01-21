@@ -1,17 +1,15 @@
 <?php
 session_start();
-if(isset($_GET["user"])){
-    $_SESSION["profile"]=$_GET["user"];
-    header("Location: ../user_intro.php?user_intro_id=$_SESSION[profile]");
+if (isset($_GET["user"])) {
+    $_SESSION["user_intro_id"]=$_GET["user"];
+    header("Location: ../user_intro/intro_handle.php");
     exit();
-}
-elseif(isset($_GET["post"])){
+} elseif (isset($_GET["post"])) {
     $_SESSION["post"]["id"]=$_GET["post"];
     print($_SESSION["post"]["id"]);
     header("Location: ../post/post_handle.php");
     exit();
-}
-else{
+} else {
     header("Location: ../index.php");
     exit();
 }

@@ -10,10 +10,10 @@ if (@$_GET["id"]) {
 }
 
 if (!isset($_SESSION["post"]["id"])) {
-    $_SESSION["show_message"] = "Undefine post id";?>
-<script>
-window.location.href = '../index.php';
-</script>
+    $_SESSION["show_message"] = "Undefine post id"; ?>
+    <script>
+        window.location.href = '../index.php';
+    </script>
 <?php exit();
 }
 
@@ -27,6 +27,7 @@ if (!$sql_link) {
     exit();
 }
 
+//fetch post data
 $post_id = $_SESSION["post"]["id"];
 $sql = "SELECT * FROM `post` WHERE `id` = '$post_id'";
 
@@ -45,6 +46,7 @@ if ($post_result) {
         "edit" => false
     ];
 
+    //fetch article data
     $sql = "SELECT * FROM `article` WHERE `for_post` = '$post_id' ORDER BY `position`";
 
     $article_result = $sql_link->query($sql);
@@ -68,6 +70,22 @@ if ($post_result) {
         $url = "../index.php";
         $return_msg = "Fail to fetch article data from database";
     }
+
+    //fetch author data
+    $post_email = $_SESSION["post"]["post_email"];
+    $sql = "SELECT * FROM `user` WHERE `email` = '$post_email'";
+    $author_result = $sql_link->query($sql);
+    if ($author_result) {
+        $row = $author_result->fetch();
+        $_SESSION["author"] = [
+            "name" => $row["name"],
+            "icon" => $row['icon'],
+            "about" => $row["about"],
+        ];
+    } else {
+        $url = "../index.php";
+        $return_msg = "Fail to fetch author data from database";
+    }
 } else {
     $url = "../index.php";
     $return_msg = "Fail to fetch post data from database";
@@ -78,6 +96,6 @@ if ($return_msg != "") {
 }
 ?>
 <script>
-window.location.href = '<?= $url ?>';
+    window.location.href = '<?= $url ?>';
 </script>
 <?php exit() ?>

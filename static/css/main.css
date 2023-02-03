@@ -1196,6 +1196,31 @@ section#posts-content a:hover {
   color: white;
   background-color: gray;
 }
+section#posts-content div#author:hover {
+  background-color: white;
+  color: black;
+}
+section#posts-content div#author p {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  padding: 0px;
+  text-align: start;
+}
+section#posts-content div#author h5 {
+  color: black;
+  font-size: 30px;
+  font-family: "Kalam", cursive;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section#posts-content div#author i {
+  font-size: 100px;
+}
 section#posts-content ul.dropdown-menu li input:focus-visible {
   outline: none !important;
 }
@@ -1237,6 +1262,24 @@ div#add-post-form div.image-area {
   position: relative;
 }
 div#add-post-form div.image-area img {
+  margin: 0 auto;
+}
+
+div#edit-post-form input#upload-edited-post-picture {
+  opacity: 0;
+}
+div#edit-post-form label#edit-post-upload-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+div#edit-post-form div.edit-post-image-area {
+  border: 2px dashed gray;
+  padding: 1rem;
+  position: relative;
+}
+div#edit-post-form div.edit-post-image-area img {
   margin: 0 auto;
 }
 

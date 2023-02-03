@@ -8,6 +8,7 @@ $sql_link = connect("root", "");
 
 $position = $_POST["position"];
 $post = $_POST["for_post"];
+$article_pic = $_POST["article_pic"];
 
 $sql = "SELECT * FROM `article` 
         WHERE `for_post` = '$post'";
@@ -32,6 +33,14 @@ if (isset($_POST["delete"])) {
                 AND `position` = '$new_position'";
 
         $sql_link->exec($sql);
+    }
+
+    //clean article picture in file
+    if ($article_pic != "") {
+        $article_pic_file = "../../../static/images/blog_post/article/" . $article_pic;
+        if (file_exists($article_pic_file)) {
+            unlink($article_pic_file);
+        }
     }
 
     $return_msg = "Complete";
@@ -102,7 +111,7 @@ if ($return_msg != "") {
     $_SESSION["show_message"] = $return_msg;
 } ?>
 <script>
-window.location.href = "../post_edit_handle.php";
+    window.location.href = "../post_edit_handle.php";
 </script>
 <?php
 

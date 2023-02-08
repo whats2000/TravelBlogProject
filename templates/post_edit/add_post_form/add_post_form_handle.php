@@ -49,7 +49,6 @@ if (isset($_POST["save-add-post"])) {
     date_default_timezone_set("Asia/Taipei");
 
     $email = $_SESSION['user']['email'];
-    //$email = $sql_link->quote($email);
     $title = $_POST["title"];
     $title = $sql_link->quote($title);
     $description = $_POST["description"];

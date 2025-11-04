@@ -38,7 +38,7 @@ if (isset($_SESSION["post"]["id"])) {//know to post id
 </div>
 <?php
     }
-    include("../comment/comment_display.php");
+    include(__DIR__ . '/comment_display.php');
     if ($rowcount_comment==0) {
         ?>
 <div class="row mb-3">

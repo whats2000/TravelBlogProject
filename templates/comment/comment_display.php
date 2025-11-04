@@ -1,6 +1,6 @@
 <?php
 //cannot change page
-include("../core/config.php");
+include(__DIR__ . "/../core/config.php");
 if (!isset($_SESSION["post"]["id"])) {
     header("Location: ../index.php");
     exit();

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../core/config.php");
+include(__DIR__ . "/../core/config.php");
 
 if(($_SERVER['REQUEST_METHOD'] == 'POST')){
     if(isset($_SESSION["user"])){

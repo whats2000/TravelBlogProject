@@ -10,7 +10,7 @@
 
     <title>WannaGo &raquo; Kinmen</title>
 
-    <link href="../static/images/icon/icon.svg" rel="icon" />
+    <link href="../../static/images/icon/icon.svg" rel="icon" />
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css" />
 
@@ -22,11 +22,11 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
 
-    <script src="../scripts/index_nav.html.js"></script>
-    <script src="../scripts/include_HTML.js"></script>
-    <script src="../scripts/password_validation.js"></script>
+    <script src="../../scripts/index_nav.html.js"></script>
+    <script src="../../scripts/include_HTML.js"></script>
+    <script src="../../scripts/password_validation.js"></script>
 
-    <link href="../static/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../../static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

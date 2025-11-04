@@ -1,12 +1,13 @@
 <?php
-include './login/login_form.php';
-include './login/logout_form.php';
-include './login/policy.html';
-include './login/show_message.php';
-include './login/signin_form.php';
+include __DIR__ . '/../login/login_form.php';
+include __DIR__ . '/../login/logout_form.php';
+include __DIR__ . '/../login/policy.html';
+include __DIR__ . '/../login/show_message.php';
+include __DIR__ . '/../login/signin_form.php';
 
-include './post_edit/add_post_form/add_post_form.php';
-include './post_edit/add_post_form/add_post_form_crop.php';
+include __DIR__ . '/../post_edit/add_post_form/add_post_form.php';
+include __DIR__ . '/../post_edit/add_post_form/add_post_form_crop.php';
+
 
 if (isset($_SESSION['user']) && ($_SESSION['user']['icon'] != "")) {
     $icon = "../static/images/user/icon/" . $_SESSION['user']['icon'];

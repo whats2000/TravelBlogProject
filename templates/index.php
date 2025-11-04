@@ -1,7 +1,8 @@
 <?php
-session_start();
-$_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
+// Include configuration (which loads bootstrap)
+require_once __DIR__ . '/core/config.php';
 
+$_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
 <body>
     <header>
-        <?php include('./core/navbar.php'); ?>
+        <?php include(__DIR__ . '/core/navbar.php'); ?>
         <div include-html="index/carousel.html">
         </div>
     </header>
@@ -51,7 +52,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
         <div include-html="index/about.html">
         </div>
 
-        <?php include('./index/post.php'); ?>
+        <?php include(__DIR__ . '/index/post.php'); ?>
 
         <div include-html="index/tips.html">
         </div>

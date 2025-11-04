@@ -1,0 +1,55 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# Environment configuration
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# User uploaded files (keep directory structure but not files)
+/static/images/user/*
+!/static/images/user/.gitkeep
+/static/images/blog_post/*
+!/static/images/blog_post/.gitkeep
+
+# Cache
+cache/
+*.cache
+
+# Build files
+/bin/
+/build/
+
+# Dependencies
+node_modules/

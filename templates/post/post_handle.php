@@ -36,55 +36,65 @@ $post_result = $sql_link->query($sql);
 if ($post_result) {
     $row = $post_result->fetch();
 
-    $_SESSION["post"] = [
-        "id" => $row["id"],
-        "post_email" => $row['email'],
-        "title" => $row["title"],
-        "description" => $row["description"],
-        "picture" => $row["picture"],
-        "create_at" => $row["create_at"],
-        "edit" => false
-    ];
-
-    //fetch article data
-    $sql = "SELECT * FROM `article` WHERE `for_post` = '$post_id' ORDER BY `position`";
-
-    $article_result = $sql_link->query($sql);
-
-    if ($article_result) {
-        $article_rows = [];
-
-        while ($row = $article_result->fetch()) {
-            $_SESSION["article"][$row["id"]] = [
-                "id" => $row["id"],
-                "title" => $row["title"],
-                "description" => $row["description"],
-                "picture" => $row["picture"],
-                "display" => $row["display"],
-                "edit_time" => $row["edit_time"],
-                "for_post" => $row["for_post"],
-                "position" => $row["position"]
-            ];
-        }
-    } else {
+    if (!$row) {
         $url = "../index.php";
-        $return_msg = "Fail to fetch article data from database";
-    }
-
-    //fetch author data
-    $post_email = $_SESSION["post"]["post_email"];
-    $sql = "SELECT * FROM `user` WHERE `email` = '$post_email'";
-    $author_result = $sql_link->query($sql);
-    if ($author_result) {
-        $row = $author_result->fetch();
-        $_SESSION["author"] = [
-            "name" => $row["name"],
-            "icon" => $row['icon'],
-            "about" => $row["about"],
+        $return_msg = "Post not found";
+    } else {
+        $_SESSION["post"] = [
+            "id" => $row["id"],
+            "post_email" => $row['email'],
+            "title" => $row["title"],
+            "description" => $row["description"],
+            "picture" => $row["picture"],
+            "create_at" => $row["create_at"],
+            "edit" => false
         ];
-    } else {
-        $url = "../index.php";
-        $return_msg = "Fail to fetch author data from database";
+
+        //fetch article data
+        $sql = "SELECT * FROM `article` WHERE `for_post` = '$post_id' ORDER BY `position`";
+
+        $article_result = $sql_link->query($sql);
+
+        if ($article_result) {
+            $article_rows = [];
+
+            while ($row = $article_result->fetch()) {
+                $_SESSION["article"][$row["id"]] = [
+                    "id" => $row["id"],
+                    "title" => $row["title"],
+                    "description" => $row["description"],
+                    "picture" => $row["picture"],
+                    "display" => $row["display"],
+                    "edit_time" => $row["edit_time"],
+                    "for_post" => $row["for_post"],
+                    "position" => $row["position"]
+                ];
+            }
+        } else {
+            $url = "../index.php";
+            $return_msg = "Fail to fetch article data from database";
+        }
+
+        //fetch author data
+        $post_email = $_SESSION["post"]["post_email"];
+        $sql = "SELECT * FROM `user` WHERE `email` = '$post_email'";
+        $author_result = $sql_link->query($sql);
+        if ($author_result) {
+            $row = $author_result->fetch();
+            if (!$row) {
+                $url = "../index.php";
+                $return_msg = "Author not found";
+            } else {
+                $_SESSION["author"] = [
+                    "name" => $row["name"],
+                    "icon" => $row['icon'],
+                    "about" => $row["about"],
+                ];
+            }
+        } else {
+            $url = "../index.php";
+            $return_msg = "Fail to fetch author data from database";
+        }
     }
 } else {
     $url = "../index.php";

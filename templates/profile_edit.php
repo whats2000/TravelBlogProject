@@ -56,18 +56,18 @@ if (isset($_SESSION["profile"]["about"])) {
 
 <body>
     <header>
-        <?php include './profile_edit/icon_edit/icon_form.php';?>
-        <?php include './profile_edit/icon_edit/icon_form_crop.php';?>
-        <?php include './profile_edit/name_edit/name_form.php';?>
-        <?php include './profile_edit/about_edit/about_form.php';?>
-        <?php include('./core/navbar.php');?>
+        <?php include __DIR__ . '/profile_edit/icon_edit/icon_form.php';?>
+        <?php include __DIR__ . '/profile_edit/icon_edit/icon_form_crop.php';?>
+        <?php include __DIR__ . '/profile_edit/name_edit/name_form.php';?>
+        <?php include __DIR__ . '/profile_edit/about_edit/about_form.php';?>
+        <?php include(__DIR__ . '/core/navbar.php');?>
 
         <div include-html="profile_edit/topic.php">
         </div>
     </header>
 
     <main>
-        <?php include('./profile_edit/content.php');?>
+        <?php include(__DIR__ . '/profile_edit/content.php');?>
     </main>
 
     <footer>

@@ -123,5 +123,5 @@ if (isset($_SESSION["author"])) {
             </nav>
         </div>
     </div>
-    <?php include("../comment/comment_content.php"); ?>
+    <?php include(__DIR__ . "/../comment/comment_content.php"); ?>
 </section>

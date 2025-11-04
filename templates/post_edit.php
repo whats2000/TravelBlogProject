@@ -51,13 +51,13 @@ if (!$_SESSION["post"]["edit"]) { ?>
 
 <body>
     <header>
-        <?php include('./core/navbar.php'); ?>
-        <?php include('./post_edit/article_add/add_article_form.php'); ?>
-        <?php include('./post_edit/article_edit/edit_article_form.php'); ?>
-        <?php include('./post_edit/article_edit/article_delete_confirm.php'); ?>
-        <?php include('./post_edit/post_edit/post_delete_confirm.php'); ?>
-        <?php include('./post_edit/post_edit/edit_post_form.php'); ?>
-        <?php include('./post_edit/post_edit/edit_post_form_crop.php'); ?>
+        <?php include(__DIR__ . '/core/navbar.php'); ?>
+        <?php include(__DIR__ . '/post_edit/article_add/add_article_form.php'); ?>
+        <?php include(__DIR__ . '/post_edit/article_edit/edit_article_form.php'); ?>
+        <?php include(__DIR__ . '/post_edit/article_edit/article_delete_confirm.php'); ?>
+        <?php include(__DIR__ . '/post_edit/post_edit/post_delete_confirm.php'); ?>
+        <?php include(__DIR__ . '/post_edit/post_edit/edit_post_form.php'); ?>
+        <?php include(__DIR__ . '/post_edit/post_edit/edit_post_form_crop.php'); ?>
 
         <div include-html="post_edit/topic.php">
         </div>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../core/config.php");
+include(__DIR__ . "/../core/config.php");
 if(isset($_SESSION["user_intro_id"])){
     $intro_id = $_SESSION["user_intro_id"];
 }

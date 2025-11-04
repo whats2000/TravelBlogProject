@@ -2,7 +2,7 @@
 if (@$_POST["id"]) {
     session_start();
 
-    include("../../core/config.php");
+    include(__DIR__ . "/../../core/config.php");
 
     $return_msg = "";
     $show_limit = 2;

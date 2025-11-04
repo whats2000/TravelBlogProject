@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../../core/config.php";
+include __DIR__ . "/../../core/config.php";
 
 $return_msg = "";
 $sql_link = connect("root", "");

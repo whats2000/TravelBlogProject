@@ -44,7 +44,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
 <body>
     <header>
-        <?php include('./core/navbar.php');?>
+        <?php include(__DIR__ . '/core/navbar.php');?>
 
         <div include-html="profile/topic.php">
         </div>

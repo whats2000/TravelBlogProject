@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION["user"])) {
     exit();
 }
-include("../../core/config.php");
+include(__DIR__ . "/../../core/config.php");
 
 $return_msg = "";
 

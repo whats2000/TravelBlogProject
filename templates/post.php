@@ -39,7 +39,7 @@ if (!isset($_SESSION["post"])) { ?>
 
 <body>
     <header>
-        <?php include('./core/navbar.php'); ?>
+        <?php include __DIR__ . '/core/navbar.php'; ?>
 
         <div include-html="post/topic.php">
         </div>

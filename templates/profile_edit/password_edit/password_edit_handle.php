@@ -1,6 +1,6 @@
 <?php
 
-include("../../core/config.php");
+include(__DIR__ . "/../../core/config.php");
 session_start();
 
 $return_msg = "";

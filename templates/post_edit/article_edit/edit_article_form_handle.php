@@ -17,7 +17,7 @@ window.location.href = '../../index.php';
 <?php exit();
 }
 
-include("../../core/config.php");
+include(__DIR__ . "/../../core/config.php");
 
 $return_msg = "";
 

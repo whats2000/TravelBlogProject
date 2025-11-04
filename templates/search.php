@@ -38,7 +38,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
 
 <body>
     <header>
-        <?php include('./core/navbar.php');?>
+        <?php include(__DIR__ . '/core/navbar.php');?>
         </div>
 
         <div include-html="search/topic.html">
@@ -46,7 +46,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
     </header>
 
     <main>
-        <?php include('./search/content.php');?>
+        <?php include(__DIR__ . '/search/content.php');?>
         </div>
         
         <div include-html="index/tips.html">
@@ -54,7 +54,7 @@ $_SESSION['last_url'] = "{$_SERVER['PHP_SELF']}";
     </main>
 
     <footer>
-        <?php include('./core/footer.php');?>
+        <?php include(__DIR__ . '/core/footer.php');?>
         </div>
     </footer>
 </body>
